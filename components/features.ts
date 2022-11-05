@@ -10,7 +10,7 @@ import herovsguardian from '../public/secondary/HerovsGuardian.png';
 import midnightlegion from '../public/secondary/midnightlegion.png';
 import treasuresandtraps from '../public/secondary/treasuresandtraps.png';
 import villagersandvillains from '../public/secondary/villagersandvillains.png';
-import zanjan from '../public/secondary/zanjan.png';
+import zanjan from '../public/secondary/Zanjan.png';
 import sweetneighbors from '../public/secondary/SweetNeighborsComeinAllColors.png';
 
 export const primaryFeatures = [

@@ -24,7 +24,7 @@ export default function Home() {
             height={450}
           />
         </div>
-        <p className="text-2xl py-8 px-8 sm:py-12 sm:px-12 lg:px-16 mx-auto w-full sm:w-4/5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <p className="text-2xl py-8 px-8 sm:py-12 sm:px-12 lg:px-16 mx-auto w-full sm:w-4/5">A family friendly media company making magic since 2005.</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4">
         {primaryFeatures.map((i, index) => 
           <motion.div

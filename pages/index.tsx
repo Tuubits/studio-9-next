@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { primaryFeatures, secondaryFeatures } from '../components/features';
 import { footer } from '../components/navigation';
 import { motion } from 'framer-motion';
-import headLogo from '../public/s9gamesLOGO_alpha.png';
+import headLogo from '../public/s9incLOGO(covCLEAR).png';
 
 export default function Home() {
   return (

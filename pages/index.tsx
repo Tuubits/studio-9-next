@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { primaryFeatures, secondaryFeatures } from '../components/features';
 import { footer } from '../components/navigation';
 import { motion } from 'framer-motion';
@@ -49,7 +50,9 @@ export default function Home() {
                 },
               }}
             >
-              <Image src={i.image} alt={i.title} width={450} height={450} />
+              <Link href={`${i.link}`}>
+                <Image src={i.image} alt={i.title} width={450} height={450} />
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -75,7 +78,9 @@ export default function Home() {
                 },
               }}
             >
-              <Image src={i.image} alt={i.title} width={250} height={250} />
+              <Link href={`${i.link}`}>
+                <Image src={i.image} alt={i.title} width={250} height={250} />
+              </Link>
             </motion.div>
           ))}
         </div>

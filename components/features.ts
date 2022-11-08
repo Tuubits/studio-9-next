@@ -14,19 +14,67 @@ import zanjan from '../public/secondary/Zanjan.png';
 import sweetneighbors from '../public/secondary/SweetNeighborsComeinAllColors.png';
 
 export const primaryFeatures = [
-    {title: 'Dottie and Me', image: dottieandme},
-    {title: 'Charms', image: charms},
-    {title: 'Golden Era Gaming', image: goldeneragaming}
+    {
+        title: 'Dottie and Me', 
+        image: dottieandme,
+        link: ''
+    },
+    {
+        title: 'Charms', 
+        image: charms,
+        link: 'https://www.charmsgame.com'
+    },
+    {
+        title: 'Golden Era Gaming', 
+        image: goldeneragaming,
+        link: ''
+    }
 ];
 
 export const secondaryFeatures = [
-    {title: 'Blessed Is the Spot', image: blessedisthespot},
-    {title: 'First Prayer Tender Plant', image: firstprayertenderplant},
-    {title: 'Sweet Neighbors Come in All Colors', image: sweetneighbors},
-    {title: 'Zanjan', image: zanjan},
-    {title: 'Villagers and Villains', image: villagersandvillains},
-    {title: 'Global Crisis', image: globalcrisis},
-    {title: 'Treasures and Traps', image: treasuresandtraps},
-    {title: 'Midnight Legion', image: midnightlegion},
-    {title: 'Hero versus Guardian: A Game of Dungeon Craft', image: herovsguardian},
+    {
+        title: 'Blessed Is the Spot', 
+        image: blessedisthespot,
+        link: '/'
+    },
+    {
+        title: 'First Prayer Tender Plant', 
+        image: firstprayertenderplant,
+        link: '/'
+    },
+    {
+        title: 'Sweet Neighbors Come in All Colors', 
+        image: sweetneighbors,
+        link: '/'
+    },
+    {
+        title: 'Zanjan', 
+        image: zanjan,
+        link: '/'
+    },
+    {
+        title: 'Villagers and Villains', 
+        image: villagersandvillains,
+        link: '/games/villagersandvillains'
+    },
+    {
+        title: 'Global Crisis', 
+        image: globalcrisis,
+        link: '/games/globalcrisis'
+    },
+    {
+        title: 'Treasures and Traps', 
+        image: treasuresandtraps,
+        link: '/games/treasuresandtraps'
+    },
+    {
+        title: 'Midnight Legion', 
+        image: midnightlegion,
+        link: '/games/midnightlegion'
+    },
+    {
+        title: 'Hero versus Guardian: A Game of Dungeon Craft', 
+        image: herovsguardian,
+        link: '/games/heroversusguardian'
+    },
 ];

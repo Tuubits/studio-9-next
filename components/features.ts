@@ -35,22 +35,22 @@ export const secondaryFeatures = [
     {
         title: 'Blessed Is the Spot', 
         image: blessedisthespot,
-        link: '/'
+        link: '/books/blessedisthespot'
     },
     {
         title: 'First Prayer Tender Plant', 
         image: firstprayertenderplant,
-        link: '/'
+        link: '/books/firstprayertenderplant'
     },
     {
         title: 'Sweet Neighbors Come in All Colors', 
         image: sweetneighbors,
-        link: '/'
+        link: '/books/sweetneighborscomeinallcolors'
     },
     {
         title: 'Zanjan', 
         image: zanjan,
-        link: '/'
+        link: '/books/zanjan'
     },
     {
         title: 'Villagers and Villains', 

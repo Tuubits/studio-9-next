@@ -6,11 +6,18 @@ const nextConfig = {
 
 // module.exports = nextConfig
 
+// module.exports = {
+//   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+//       config.node = {
+//           fs: 'empty', // This is required
+//       }
+//       return config
+//   }
+// }
+
 module.exports = {
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-      config.node = {
-          fs: 'empty', // This is required
-      }
-      return config
+  webpack: (config, { isServer }) => {
+    if (!isServer) config.resolve.fallback.fs = false;
+    return config;
   }
-}
+};

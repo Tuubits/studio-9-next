@@ -1,0 +1,32 @@
+{
+    "books": [
+      { 
+        "id": "blessedisthespot", 
+        "title": "Blessed is the Spot", 
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis donec et odio pellentesque diam. Facilisis mauris sit amet massa.", 
+        "mainImage": "BlessedistheSpot.png",
+        "testimonials": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,"
+      },
+      { 
+        "id": "firstprayertenderplant", 
+        "title": "First Prayer Tender Plant", 
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis donec et odio pellentesque diam. Facilisis mauris sit amet massa.",  
+        "mainImage": "FirstPrayerTenderPlant.png",
+        "testimonials": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,"
+      },
+      { 
+        "id": "sweetneighborscomeinallcolors", 
+        "title": "Sweet Neighbors Come in All Colors", 
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis donec et odio pellentesque diam. Facilisis mauris sit amet massa.", 
+        "mainImage": "SweetNeighborsComeinAllColors.png",
+        "testimonials": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,"
+      },
+      { 
+        "id": "zanjan", 
+        "title": "Zanjan", 
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis donec et odio pellentesque diam. Facilisis mauris sit amet massa.", 
+        "mainImage": "Zanjan.png",
+        "testimonials": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,"
+      }
+    ]
+  }

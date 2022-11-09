@@ -2,8 +2,6 @@ import { useEffect } from 'react';
 import fs from 'fs'
 import path from 'path'
 import Image from 'next/image';
-import Link from 'next/link';
-import gamesLogo from '../../public/s9gamesLOGOclearSML.png'
 import 'lightbox.js-react/dist/index.css'
 import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
 import Layout from '../../components/layout';

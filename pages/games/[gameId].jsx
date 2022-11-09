@@ -73,8 +73,9 @@ function getGameDetails(props){
             </div>
             <div className='pl-4 py-4'>
             <SlideshowLightbox className='container grid grid-cols-3 gap-2 mx-auto' theme='lightbox' lightboxIdentifier="lightbox1" framework="next" images={images}>
-                    {images.map((image) => (
+                    {images.map((image, index) => (
                         <Image
+                            key={index}
                             src={image.src}
                             alt={image.alt}
                             height={200}

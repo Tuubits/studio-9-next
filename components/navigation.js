@@ -14,7 +14,7 @@ export const footer = [
     },
     {
       name: 'Contact',
-      href: '#',
+      href: 'mailto:studio9inc@mac.com',
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path

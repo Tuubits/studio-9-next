@@ -17,7 +17,7 @@ export const primaryFeatures = [
     {
         title: 'Dottie and Me', 
         image: dottieandme,
-        link: ''
+        link: 'https://www.dottieandme.com/'
     },
     {
         title: 'Charms', 
@@ -27,7 +27,7 @@ export const primaryFeatures = [
     {
         title: 'Golden Era Gaming', 
         image: goldeneragaming,
-        link: ''
+        link: 'https://dccmccstudio9.surge.sh/'
     }
 ];
 

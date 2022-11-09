@@ -6,6 +6,7 @@ import Link from 'next/link';
 import gamesLogo from '../../public/s9gamesLOGOclearSML.png'
 import 'lightbox.js-react/dist/index.css'
 import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
+import Layout from '../../components/layout';
 
 const images = [
     {
@@ -30,18 +31,7 @@ function getGameDetails(props){
     });
 
     return (
-        <div className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
-        <div>
-            <Link href={'/'}>
-            <Image
-                src={gamesLogo}
-                className={'text-left'}
-                alt={'Studio 9 Games'}
-                width={150}
-                height={150}
-            />
-            </Link>
-        </div>
+        <Layout>
         <div>
             <Image
                 src={`${basePath}/${props.gameDetails.mainImage}`}
@@ -62,7 +52,12 @@ function getGameDetails(props){
                 <div className='text-center py-4'>
             <button
                 type="button"
-                className="w-full items-center rounded-md border-2 border-transparent bg-amber-100 px-6 py-3 text-lg font-medium text-slate-800 shadow-sm hover:text-yellow-600 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+                className="snipcart-add-item w-full items-center rounded-md border-2 border-transparent bg-amber-100 px-6 py-3 text-lg font-medium text-slate-800 shadow-sm hover:text-yellow-600 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+                data-item-id={props.gameDetails.title.replace(/\s+/g, '-').toLowerCase()}
+                data-item-price="79.99"
+                data-item-description="Item description here"
+                data-item-image={`${basePath}/${props.gameDetails.mainImage}`}
+                data-item-name={props.gameDetails.title}
             >
                 Add to Cart
             </button>
@@ -90,7 +85,7 @@ function getGameDetails(props){
 
             </div>
           </div>
-        </div>
+          </Layout>
     )
 }
 

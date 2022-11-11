@@ -24,6 +24,7 @@ export default function Home() {
             alt={'Studio 9 Inc'}
             width={450}
             height={450}
+            priority
           />
         </div>
         <p className="prose-xl lg:prose-2xl py-8 px-8 sm:py-12 sm:px-12 lg:px-16 mx-auto text-center w-full sm:w-4/5">
@@ -52,7 +53,7 @@ export default function Home() {
               }}
             >
               <Link href={`${i.link}`}>
-                <Image src={i.image} alt={i.title} width={450} height={450} />
+                <Image src={i.image} placeholder="blur" alt={i.title} width={450} height={450} />
               </Link>
             </motion.div>
           ))}
@@ -80,7 +81,7 @@ export default function Home() {
               }}
             >
               <Link href={`${i.link}`}>
-                <Image src={i.image} alt={i.title} width={250} height={250} />
+                <Image src={i.image} placeholder="blur" alt={i.title} width={250} height={250} />
               </Link>
             </motion.div>
           ))}

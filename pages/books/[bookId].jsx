@@ -49,7 +49,7 @@ function getBookDetails(props){
             <div className='col-span-2'>
                 <div className='text-center py-4'>
             <button
-                className="snipcart-add-item w-full items-center rounded-md border-2 border-transparent bg-amber-100 px-6 py-3 text-lg font-medium text-slate-800 shadow-sm hover:text-yellow-600 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+                className="snipcart-add-item w-full items-center rounded-md btn-primary border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2"
                 data-item-id={props.bookDetails.title.replace(/\s+/g, '-').toLowerCase()}
                 data-item-price="79.99"
                 data-item-description="Item description here"

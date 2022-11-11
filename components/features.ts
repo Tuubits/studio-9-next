@@ -27,7 +27,8 @@ export const primaryFeatures = [
     {
         title: 'Golden Era Gaming', 
         image: goldeneragaming,
-        link: 'https://dccmccstudio9.surge.sh/'
+        // link: 'https://dccmccstudio9.surge.sh/'
+        link: '/goldeneragaming'
     }
 ];
 

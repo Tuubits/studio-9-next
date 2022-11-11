@@ -10,7 +10,7 @@ module.exports = {
     return config;
   },
   images: {
-    domains: ['source.unsplash.com', 'app.snipcart.com', 'cdn.snipcart.com'],
+    domains: ['placeimg.com', 'source.unsplash.com', 'app.snipcart.com', 'cdn.snipcart.com'],
     formats: ['image/avif', 'image/webp'],
   },
   env: {

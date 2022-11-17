@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import Layout from '../components/layout';
+import GoldenEraLayout from '../components/goldenEraLayout';
 import modules from '../module_details.json';
 
 export default function GoldenEraGaming() {
@@ -13,7 +13,7 @@ export default function GoldenEraGaming() {
     }
 
   return (
-    <Layout>
+    <GoldenEraLayout theme={'light'}>
         <select 
             className="select select-accent select-lg mt-4 mb-4 w-full max-w-xs"
             onChange={(e)=>{handleChange(e.currentTarget.value)}}
@@ -118,6 +118,6 @@ export default function GoldenEraGaming() {
         )}
 
       </div>
-    </Layout>
+    </GoldenEraLayout>
   );
 }

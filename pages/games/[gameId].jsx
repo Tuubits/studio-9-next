@@ -4,7 +4,7 @@ import path from 'path'
 import Image from 'next/image';
 import 'lightbox.js-react/dist/index.css'
 import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
-import Layout from '../../components/layout';
+import Layout from '../../components/gameLayout';
 
 const images = [
     {

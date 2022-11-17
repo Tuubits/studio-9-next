@@ -6,6 +6,7 @@ import gamesLogo from '../public/s9gamesLOGOclearSML.png'
 export default function Layout({children}) {
     const { cart } = useSnipcartCount();
     const cartHasItems = cart.items.count !== 0;
+    
     return(
         <div className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
         <div className='flex justify-between'>

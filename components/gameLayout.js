@@ -3,12 +3,12 @@ import Link from 'next/link';
 import useSnipcartCount from "../lib/useSnipcartCount";
 import gamesLogo from '../public/s9gamesLOGOclearSML.png'
 
-export default function Layout({children}) {
+export default function Layout({children, theme}) {
     const { cart } = useSnipcartCount();
     const cartHasItems = cart.items.count !== 0;
     
     return(
-        <div className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
+        <div data-theme={theme} className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
         <div className='flex justify-between'>
           <div>
               <Link href={'/'}>

@@ -29,7 +29,7 @@ function getBookDetails(props){
     });
 
     return (
-        <Layout>
+        <Layout theme={props.bookDetails.theme}>
         <div>
             <Image
                 src={`${basePath}/${props.bookDetails.mainImage}`}

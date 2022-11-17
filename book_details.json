@@ -5,7 +5,8 @@
         "title": "Blessed is the Spot", 
         "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis donec et odio pellentesque diam. Facilisis mauris sit amet massa.", 
         "mainImage": "BlessedistheSpot.png",
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,"
+        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "theme": "dark"
       },
       { 
         "id": "firstprayertenderplant", 
@@ -13,7 +14,8 @@
         "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
         "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
         "mainImage": "FirstPrayerTenderPlant.png",
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,"
+        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "theme": "forest"
       },
       { 
         "id": "sweetneighborscomeinallcolors", 
@@ -21,7 +23,8 @@
         "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
         "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
         "mainImage": "SweetNeighborsComeinAllColors.png",
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,"
+        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "theme": "garden"
       },
       { 
         "id": "zanjan", 
@@ -29,7 +32,8 @@
         "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
         "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
         "mainImage": "Zanjan.png",
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,"
+        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "theme": "retro"
       }
     ]
   }

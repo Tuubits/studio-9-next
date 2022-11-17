@@ -3,7 +3,7 @@ import Link from 'next/link';
 import useSnipcartCount from "../lib/useSnipcartCount";
 import gamesLogo from '../public/s9gamesLOGOclearSML.png'
 
-export default function Layout({children, theme}) {
+export default function GameLayout({children, theme}) {
     const { cart } = useSnipcartCount();
     const cartHasItems = cart.items.count !== 0;
     

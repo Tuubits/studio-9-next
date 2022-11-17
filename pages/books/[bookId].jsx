@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import 'lightbox.js-react/dist/index.css'
 import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
-import Layout from '../../components/bookLayout';
+import BookLayout from '../../components/bookLayout';
 
 const images = [
     {
@@ -29,7 +29,7 @@ function getBookDetails(props){
     });
 
     return (
-        <Layout theme={props.bookDetails.theme}>
+        <BookLayout theme={props.bookDetails.theme}>
         <div>
             <Image
                 src={`${basePath}/${props.bookDetails.mainImage}`}
@@ -82,7 +82,7 @@ function getBookDetails(props){
 
             </div>
           </div>
-        </Layout>
+        </BookLayout>
     )
 }
 

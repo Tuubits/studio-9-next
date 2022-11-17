@@ -3,7 +3,7 @@ import Link from 'next/link';
 import useSnipcartCount from "../lib/useSnipcartCount";
 import booksLogo from '../public/s9incLOGOsml.png'
 
-export default function Layout({children, theme}) {
+export default function BookLayout({children, theme}) {
     const { cart } = useSnipcartCount();
     const cartHasItems = cart.items.count !== 0;
 

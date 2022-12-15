@@ -4,7 +4,6 @@ import dottieandme from '../public/primary/DottieandMe.png';
 import goldeneragaming from '../public/primary/GoldenEraGaming.png';
 /* Secondary image imports */
 import blessedisthespot from '../public/secondary/BlessedistheSpot.png';
-import firstprayertenderplant from '../public/secondary/FirstPrayerTenderPlant.png';
 import globalcrisis from '../public/secondary/GlobalCrisis.png';
 import herovsguardian from '../public/secondary/HerovsGuardian.png';
 import midnightlegion from '../public/secondary/midnightlegion.png';
@@ -37,11 +36,6 @@ export const secondaryFeatures = [
         title: 'Blessed Is the Spot', 
         image: blessedisthespot,
         link: '/books/blessedisthespot'
-    },
-    {
-        title: 'First Prayer Tender Plant', 
-        image: firstprayertenderplant,
-        link: '/books/firstprayertenderplant'
     },
     {
         title: 'Sweet Neighbors Come in All Colors', 

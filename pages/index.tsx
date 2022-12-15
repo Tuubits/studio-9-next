@@ -28,7 +28,7 @@ export default function Home() {
           />
         </div>
         <p className="prose-xl lg:prose-2xl py-8 px-8 sm:py-12 sm:px-12 lg:px-16 mx-auto text-center w-full sm:w-4/5">
-          A family friendly media company making magic since 2005.
+          A family friendly media company • Creating joy since 2005
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4">
           {primaryFeatures.map((i, index) => (

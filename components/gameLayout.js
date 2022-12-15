@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useSnipcartCount from "../lib/useSnipcartCount";
 import gamesLogo from '../public/s9gamesLOGOclearSML.png'
+import separator from '../public/bottom_separator.png';
+import mobileSeparator from '../public/bottom_separatorSMLsize.png';
 
 export default function GameLayout({children, theme}) {
     const { cart } = useSnipcartCount();
@@ -41,7 +43,23 @@ export default function GameLayout({children, theme}) {
           </div>
       </div>
         {children}
-        <footer className="footer footer-center mt-24 p-10 text-base-content rounded">
+        <div className='relative hidden md:block h-20 mt-24'>
+          <Image 
+            src={separator}
+            alt={'separator'}
+            fill
+            sizes="100vw" 
+          />
+      </div>
+      <div className='relative md:hidden h-20 mt-24'>
+          <Image 
+            src={mobileSeparator}
+            alt={'separator'}
+            fill
+            sizes="100vw" 
+          />
+      </div>
+        <footer className="footer footer-center pb-10 text-base-content rounded">
         <div className="grid grid-flow-col gap-4">
           <a className="prose-xl link link-hover">About us</a> 
           <a className="prose-xl link link-hover">Contact</a> 

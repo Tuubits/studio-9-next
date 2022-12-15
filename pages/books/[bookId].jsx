@@ -103,7 +103,6 @@ export async function getStaticPaths() {
     return {
         paths: [
             {  params: { bookId: 'blessedisthespot' } },
-            {  params: { bookId: 'firstprayertenderplant' } },
             {  params: { bookId: 'sweetneighborscomeinallcolors' } },
             {  params: { bookId: 'zanjan' } },
         ],

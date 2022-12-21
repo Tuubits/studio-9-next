@@ -16,6 +16,7 @@ module.exports = {
   daisyui: {
     darkTheme: "light",
     themes: [
+      'light',
       {
         studio9: {
           "primary": "#d97706",

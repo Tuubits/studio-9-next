@@ -29,7 +29,7 @@ function getGameDetails(props){
     });
 
     return (
-        <GameLayout theme={props.gameDetails.theme}>
+        <GameLayout>
         <div>
             <Image
                 src={`${basePath}/${props.gameDetails.mainImage}`}

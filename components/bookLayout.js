@@ -6,7 +6,8 @@ import mobileSeparator from '../public/bottom_separatorSMLsize.png';
 
 export default function BookLayout({children}) {
     return(
-        <div data-theme={'studio9'} className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
+        <div data-theme={'studio9'} >
+          <div className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
         <div className='flex justify-between'>
           <div>
               <Link href={'/'}>
@@ -50,9 +51,10 @@ export default function BookLayout({children}) {
           </div>
         </div> 
         <div>
-          <p className='prose-xl'>Copyright © 2022 - All right reserved by Studio 9 Inc</p>
+          <p className='prose-xl'>Copyright © {(new Date().getFullYear())} - All right reserved by Studio 9 Inc</p>
         </div>
       </footer>
+    </div>
     </div>
     )
 }

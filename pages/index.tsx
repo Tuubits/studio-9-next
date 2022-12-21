@@ -18,7 +18,7 @@ export default function Home() {
         <link rel="icon" href="/s9incLOGOsml.png" />
       </Head>
 
-      <main className="mx-auto max-w-7xl pt-8 px-4 sm:pt-12 sm:px-6 lg:px-8">
+      <main data-theme={'light'} className="mx-auto max-w-7xl pt-8 px-4 sm:pt-12 sm:px-6 lg:px-8">
         <div>
           <Image
             src={headLogo}
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
         </div> 
         <div>
-          <p className='prose-xl'>Copyright © 2022 - All right reserved by Studio 9 Inc</p>
+          <p className='prose-xl'>Copyright © {(new Date().getFullYear())} - All right reserved by Studio 9 Inc</p>
         </div>
       </footer>
     </div>

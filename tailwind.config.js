@@ -15,5 +15,20 @@ module.exports = {
   ],
   daisyui: {
     darkTheme: "light",
-  },
+    themes: [
+      {
+        studio9: {
+          "primary": "#d97706",
+          "secondary": "#c2410c",
+          "accent": "#fcd34d",
+          "neutral": "#a8a29e",
+          "base-100": "#f3f4f6",
+          "info": "#fbbf24",
+          "success": "#84cc16",
+          "warning": "#1c1917",
+          "error": "#7f1d1d",
+        },
+      },
+    ]
+  }
 }

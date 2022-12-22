@@ -1,7 +1,3 @@
-/* Primary image imports */
-import charms from '../public/primary/Charms.png';
-import dottieandme from '../public/primary/DottieandMe.png';
-import goldeneragaming from '../public/primary/GoldenEraGaming.png';
 /* Secondary image imports */
 import blessedisthespot from '../public/secondary/BlessedistheSpot.png';
 import globalcrisis from '../public/secondary/GlobalCrisis.png';
@@ -15,17 +11,17 @@ import sweetneighbors from '../public/secondary/SweetNeighborsComeinAllColors.pn
 export const primaryFeatures = [
     {
         title: 'Dottie and Me', 
-        image: dottieandme,
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671735180/studio9/DottieandMe_edswji.png',
         link: 'https://www.dottieandme.com/'
     },
     {
         title: 'Charms', 
-        image: charms,
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671735182/studio9/Charms_vh0pjf.png',
         link: 'https://www.charmsgame.com'
     },
     {
         title: 'Golden Era Gaming', 
-        image: goldeneragaming,
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671735181/studio9/GoldenEraGaming_stkarq.png',
         // link: 'https://dccmccstudio9.surge.sh/'
         link: '/goldeneragaming'
     }

@@ -1,16 +1,35 @@
-import { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import GoldenEraLayout from '../components/goldenEraLayout';
 import modules from '../module_details.json';
+import { Store } from '../utils/Store';
+
 
 export default function GoldenEraGaming() {
+    const router = useRouter();
+    const { state, dispatch } = useContext(Store);
+
     const feature = modules[0]
     const [options, setOptions] = useState(modules.map(i => i.title))
     const [selected, setSelected] = useState(feature.title)
-    const basePath = '/modules'
+
     const handleChange = (value) => {
         setSelected(value)
     }
+
+    const addToCartHandler = (mod) => {
+        const existItem = state.cart.cartItems.find((x) => x.slug === mod.slug);
+        const quantity = existItem ? existItem.quantity + 1 : 1;
+        if(mod.i) {
+          dispatch({ type: 'CART_ADD_ITEM', payload: { ...mod.i, quantity } });
+        } else if(mod.feature) {
+            dispatch({ type: 'CART_ADD_ITEM', payload: { ...mod.feature, quantity } });
+        } else {
+            dispatch({ type: 'CART_ADD_ITEM', payload: { ...mod, quantity } });
+        }
+
+    };
 
   return (
     <GoldenEraLayout theme={'light'}>
@@ -19,8 +38,8 @@ export default function GoldenEraGaming() {
             onChange={(e)=>{handleChange(e.currentTarget.value)}}
         >
             <option>Pick a module</option>
-            {options.map(i => 
-                <option>{i}</option>    
+            {options.map((i, index) => 
+                <option key={index}>{i}</option>    
             )}
         </select>
       <div>
@@ -28,7 +47,7 @@ export default function GoldenEraGaming() {
             <div key={feature.id} className="card sm:card-side bg-base-100 m-4 sm:m-0 sm:mb-4 shadow-xl">
                 <figure className='relative h-96 sm:w-full'>
                     <Image
-                        src={`${basePath}/${feature.mainImage}`}
+                        src={`${feature.mainImage}`}
                         className='mt-6 sm:mt-0 rounded'
                         alt={feature.title}
                         layout={'fill'}
@@ -39,17 +58,12 @@ export default function GoldenEraGaming() {
                 <h2 className="card-title">{feature.title}</h2>
                 <p>{feature.details}</p>
                 <div className="card-actions justify-end">
-                    <button
-                        type="button"
-                        className="snipcart-add-item btn btn-primary"
-                        data-item-id={feature.title.replace(/\s+/g, '-').toLowerCase()}
-                        data-item-price="79.99"
-                        data-item-description="Item description here"
-                        data-item-image={`${basePath}/${feature.mainImage}`}
-                        data-item-name={feature.title}
-                    >
-                        Add to Cart
-                    </button>
+                <button
+              className="w-full items-center rounded-md btn-primary border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2"
+              onClick={()=>{addToCartHandler({feature}); router.push('/cart')}}
+            >
+              Add to cart
+            </button>
                 </div>
             </div>
         </div>
@@ -58,7 +72,7 @@ export default function GoldenEraGaming() {
             <div key={i.id} className="card sm:card-side bg-base-100 m-4 sm:m-0 sm:mb-4 shadow-xl">
                 <figure className='relative h-96 sm:w-full'>
                     <Image
-                        src={`${basePath}/${i.mainImage}`}
+                        src={`${i.mainImage}`}
                         className='mt-6 sm:mt-0 rounded'
                         alt={i.title}
                         layout={'fill'}
@@ -69,17 +83,12 @@ export default function GoldenEraGaming() {
                 <h2 className="card-title">{i.title}</h2>
                 <p>{i.details}</p>
                 <div className="card-actions justify-end">
-                    <button
-                        type="button"
-                        className="snipcart-add-item btn btn-primary"
-                        data-item-id={i.title.replace(/\s+/g, '-').toLowerCase()}
-                        data-item-price="79.99"
-                        data-item-description="Item description here"
-                        data-item-image={`${basePath}/${i.mainImage}`}
-                        data-item-name={i.title}
-                    >
-                        Add to Cart
-                    </button>
+                <button
+              className="w-full items-center rounded-md btn-primary border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2"
+              onClick={()=>{addToCartHandler({i}); router.push('/cart')}}
+            >
+              Add to cart
+            </button>
                 </div>
             </div>
             </div>
@@ -90,7 +99,7 @@ export default function GoldenEraGaming() {
             <div key={i.id} className="card bg-base-100 max-w-md shadow-xl">
                 <figure className='relative h-96 sm:w-full'>
                     <Image
-                        src={`${basePath}/${i.mainImage}`}
+                        src={`${i.mainImage}`}
                         className='mt-6 sm:mt-0 rounded'
                         alt={i.title}
                         layout={'fill'}
@@ -101,17 +110,12 @@ export default function GoldenEraGaming() {
                 <h2 className="card-title">{i.title}</h2>
                 <p>{i.details}</p>
                 <div className="card-actions justify-end">
-                    <button
-                        type="button"
-                        className="snipcart-add-item btn btn-primary"
-                        data-item-id={i.title.replace(/\s+/g, '-').toLowerCase()}
-                        data-item-price="79.99"
-                        data-item-description="Item description here"
-                        data-item-image={`${basePath}/${i.mainImage}`}
-                        data-item-name={i.title}
-                    >
-                        Add to Cart
-                    </button>
+                <button
+              className="w-full items-center rounded-md btn-primary border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2"
+              onClick={()=>{addToCartHandler({i}); router.push('/cart')}}
+            >
+              Add to cart
+            </button>
                 </div>
             </div>
             </div>

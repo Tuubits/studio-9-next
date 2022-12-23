@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import fs from 'fs'
 import path from 'path'
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import 'lightbox.js-react/dist/index.css'
 import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
 import GameLayout from '../../components/gameLayout';
+import { Store } from '../../utils/Store';
 
 const images = [
     {
@@ -21,25 +23,32 @@ const images = [
     },
 ]
 
-const basePath = '/secondary'
-
 function getGameDetails(props){
     useEffect(() => {
         initLightboxJS(`${process.env.lightbox}`, 'team');
     });
+    const router = useRouter();
+    const { state, dispatch } = useContext(Store);
+
+    const addToCartHandler = () => {
+        const existItem = state.cart.cartItems.find((x) => x.slug === props.gameDetails.slug);
+        const quantity = existItem ? existItem.quantity + 1 : 1;
+        dispatch({ type: 'CART_ADD_ITEM', payload: { ...props.gameDetails, quantity } });
+        router.push('/cart');
+    };
 
     return (
         <GameLayout>
         <div>
             <Image
-                src={`${basePath}/${props.gameDetails.mainImage}`}
+                src={`${props.gameDetails.mainImage}`}
                 className={'mx-auto my-4 sm:my-6'}
                 alt={props.gameDetails.title}
                 width={400}
                 height={200}
             />
         </div>
-          <div className="">
+          <div className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
             {/* <h1 className="text-yellow-600">{props.gameDetails.title}</h1> */}
             <div className="mx-auto grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-6">
             <div className='col-span-4'>
@@ -48,16 +57,11 @@ function getGameDetails(props){
             </div>
             <div className='col-span-2'>
                 <div className='text-center py-4'>
-            <button
-                type="button"
-                className="snipcart-add-item w-full items-center rounded-md btn-primary border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2"
-                data-item-id={props.gameDetails.title.replace(/\s+/g, '-').toLowerCase()}
-                data-item-price="79.99"
-                data-item-description="Item description here"
-                data-item-image={`${basePath}/${props.gameDetails.mainImage}`}
-                data-item-name={props.gameDetails.title}
+                <button
+              className="w-full items-center rounded-md btn-primary border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2"
+              onClick={addToCartHandler}
             >
-                Add to Cart
+              Add to cart
             </button>
             </div>
             <div className='prose lg:prose-xl pl-4 py-4'>
@@ -103,11 +107,11 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
     return {
         paths: [
-            {  params: { gameId: 'villagersandvillains' } },
-            {  params: { gameId: 'treasuresandtraps' } },
-            {  params: { gameId: 'heroversusguardian' } },
-            {  params: { gameId: 'midnightlegion' } },
-            {  params: { gameId: 'globalcrisis' } },
+            {  params: { gameId: 'villagers-and-villains' } },
+            {  params: { gameId: 'treasures-and-traps' } },
+            {  params: { gameId: 'hero-versus-guardian' } },
+            {  params: { gameId: 'midnight-legion' } },
+            {  params: { gameId: 'global-crisis' } },
         ],
         fallback: false
     }

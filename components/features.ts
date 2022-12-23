@@ -23,20 +23,20 @@ export const primaryFeatures = [
         title: 'Golden Era Gaming', 
         image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671735181/studio9/GoldenEraGaming_stkarq.png',
         // link: 'https://dccmccstudio9.surge.sh/'
-        link: '/goldeneragaming'
+        link: '/golden-era-gaming'
     }
 ];
 
 export const secondaryFeatures = [
     {
-        title: 'Blessed Is the Spot', 
+        title: 'Blessed Is the Spot',
         image: blessedisthespot,
-        link: '/books/blessedisthespot'
+        link: '/books/blessed-is-the-spot'
     },
     {
         title: 'Sweet Neighbors Come in All Colors', 
         image: sweetneighbors,
-        link: '/books/sweetneighborscomeinallcolors'
+        link: '/books/sweet-neighbors-come-in-all-colors'
     },
     {
         title: 'Zanjan', 
@@ -46,26 +46,26 @@ export const secondaryFeatures = [
     {
         title: 'Villagers and Villains', 
         image: villagersandvillains,
-        link: '/games/villagersandvillains'
+        link: '/games/villagers-and-villains'
     },
     {
         title: 'Global Crisis', 
         image: globalcrisis,
-        link: '/games/globalcrisis'
+        link: '/games/global-crisis'
     },
     {
         title: 'Treasures and Traps', 
         image: treasuresandtraps,
-        link: '/games/treasuresandtraps'
+        link: '/games/treasures-and-traps'
     },
     {
         title: 'Midnight Legion', 
         image: midnightlegion,
-        link: '/games/midnightlegion'
+        link: '/games/midnight-legion'
     },
     {
         title: 'Hero versus Guardian: A Game of Dungeon Craft', 
         image: herovsguardian,
-        link: '/games/heroversusguardian'
+        link: '/games/hero-versus-guardian'
     },
 ];

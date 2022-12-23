@@ -1,10 +1,19 @@
+import React, { useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ShoppingCartIcon } from '@heroicons/react/24/outline'
 import booksLogo from '../public/s9incLOGOsml.png'
 import separator from '../public/bottom_separator.png';
 import mobileSeparator from '../public/bottom_separatorSMLsize.png';
+import { Store } from '../utils/Store';
 
 export default function BookLayout({children}) {
+  const { state } = useContext(Store);
+  const { cart } = state;
+  const [cartItemsCount, setCartItemsCount] = useState(0);
+  useEffect(() => {
+    setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
+  }, [cart.cartItems]);
     return(
         <div data-theme={'studio9'} >
           <div className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
@@ -18,6 +27,17 @@ export default function BookLayout({children}) {
                   width={150}
                   height={150}
               />
+              </Link>
+          </div>
+          <div className='m-6'>
+          <Link href="/cart" className='p-10'> 
+          {cart.cartItems.length > 0 && 
+                  (cartItemsCount > 0 && (
+                    <span className="ml-2 rounded-full bg-accent px-2 py-1 text-xs font-bold text-black">
+                      {cartItemsCount}
+                    </span>
+                  ))}        
+                <ShoppingCartIcon />
               </Link>
           </div>
       </div>

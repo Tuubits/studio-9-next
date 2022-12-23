@@ -1,10 +1,12 @@
+import React, { useContext, useEffect } from 'react';
 import fs from 'fs'
 import path from 'path'
-import { useEffect } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import 'lightbox.js-react/dist/index.css'
 import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
 import BookLayout from '../../components/bookLayout';
+import { Store } from '../../utils/Store';
 
 const images = [
     {
@@ -21,25 +23,34 @@ const images = [
     },
 ]
 
-const basePath = '/secondary'
-
 function getBookDetails(props){
     useEffect(() => {
         initLightboxJS(`${process.env.lightbox}`, 'team');
     });
 
+    const router = useRouter();
+    const { state, dispatch } = useContext(Store);
+
+    const addToCartHandler = () => {
+        const existItem = state.cart.cartItems.find((x) => x.slug === props.bookDetails.slug);
+        const quantity = existItem ? existItem.quantity + 1 : 1;
+
+        dispatch({ type: 'CART_ADD_ITEM', payload: { ...props.bookDetails, quantity } });
+        router.push('/cart');
+    };
+
     return (
         <BookLayout>
         <div>
             <Image
-                src={`${basePath}/${props.bookDetails.mainImage}`}
+                src={`${props.bookDetails.mainImage}`}
                 className={'mx-auto my-4 sm:my-6'}
                 alt={props.bookDetails.title}
                 width={400}
                 height={200}
             />
         </div>
-          <div className="">
+          <div className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
             {/* <h1 className="text-yellow-600">{props.gameDetails.title}</h1> */}
             <div className="mx-auto grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-6">
             <div className='col-span-4'>
@@ -49,14 +60,10 @@ function getBookDetails(props){
             <div className='col-span-2'>
                 <div className='text-center py-4'>
             <button
-                className="snipcart-add-item w-full items-center rounded-md btn-primary border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2"
-                data-item-id={props.bookDetails.title.replace(/\s+/g, '-').toLowerCase()}
-                data-item-price="79.99"
-                data-item-description="Item description here"
-                data-item-image={`${basePath}/${props.bookDetails.mainImage}`}
-                data-item-name={props.bookDetails.title}
+              className="w-full items-center rounded-md btn-primary border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2"
+              onClick={addToCartHandler}
             >
-                Add to Cart
+              Add to cart
             </button>
             </div>
             <div className='prose lg:prose-xl pl-4 py-4'>
@@ -102,8 +109,8 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
     return {
         paths: [
-            {  params: { bookId: 'blessedisthespot' } },
-            {  params: { bookId: 'sweetneighborscomeinallcolors' } },
+            {  params: { bookId: 'blessed-is-the-spot' } },
+            {  params: { bookId: 'sweet-neighbors-come-in-all-colors' } },
             {  params: { bookId: 'zanjan' } },
         ],
         fallback: false

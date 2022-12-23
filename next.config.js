@@ -2,10 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images:  {
-    loader: 'cloudinary',
-    path: 'https://res.cloudinary.com/rollfunkydice-com/image/upload'
-  },
 }
 
 module.exports = {
@@ -13,7 +9,12 @@ module.exports = {
     if (!isServer) config.resolve.fallback.fs = false;
     return config;
   },
+  images: {
+    domains: ['placeimg.com', 'source.unsplash.com', 'res.cloudinary.com'],
+    formats: ['image/avif', 'image/webp'],
+  },
   env: {
     lightbox: 'E20B-8C81-0A08-930B',
+    PAYPAL_CLIENT: `${process.env.PAYPAL_CLIENT}`
   },
 };

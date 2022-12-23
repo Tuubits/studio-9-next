@@ -1,49 +1,64 @@
 {    
   "games": [
     { 
-      "id": "villagersandvillains", 
-      "title": "Villagers and Villains", 
+      "id": "villagers-and-villains",
+      "slug": "villagers-and-villains",
+      "title": "Villagers and Villains",
+      "name": "Villagers and Villains", 
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
       "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
-      "mainImage": "villagersandvillains.png",
+      "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751051/studio9/villagersandvillains_j5c0mm.png",
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
-      "theme": "cupcake"
+      "price": 30,
+      "category": "games"
     },
     { 
-      "id": "treasuresandtraps", 
-      "title": "Treasures and Traps", 
+      "id": "treasures-and-traps",
+      "slug": "treasures-and-traps",
+      "title": "Treasures and Traps",
+      "name": "Treasures and Traps", 
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
       "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
-      "mainImage": "treasuresandtraps.png",
+      "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751051/studio9/treasuresandtraps_dr3kkk.png",
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
-      "theme": "bumblebee"
+      "price": 30,
+      "category": "games"
     },
     { 
-      "id": "heroversusguardian", 
-      "title": "Hero versus Guardian", 
+      "id": "hero-versus-guardian",
+      "slug": "hero-versus-guardian",
+      "title": "Hero versus Guardian",
+      "name": "Hero versus Guardian", 
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
       "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
-      "mainImage": "HerovsGuardian.png",
+      "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751051/studio9/HerovsGuardian_wskice.png",
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
-      "theme": "halloween"
+      "price": 30,
+      "category": "games"
     },
     { 
-      "id": "midnightlegion", 
-      "title": "Midnight Legion", 
+      "id": "midnight-legion",
+      "slug": "midnight-legion", 
+      "title": "Midnight Legion",
+      "name": "Midnight Legion", 
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
       "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
-      "mainImage": "midnightlegion.png",
+      "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751051/studio9/midnightlegion_vt948b.png",
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit",
-      "theme": "synthwave"
+      "price": 30,
+      "category": "games"
     },
     { 
-      "id": "globalcrisis", 
-      "title": "Global Crisis", 
+      "id": "global-crisis",
+      "slug": "global-crisis", 
+      "title": "Global Crisis",
+      "name": "Global Crisis",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
       "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
-      "mainImage": "GlobalCrisis.png",
+      "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751051/studio9/GlobalCrisis_jlghkg.png",
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
-      "theme": "corporate"
+      "price": 30,
+      "category": "games"
     }
   ]
 }

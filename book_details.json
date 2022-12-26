@@ -8,7 +8,7 @@
         "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis donec et odio pellentesque diam. Facilisis mauris sit amet massa.", 
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751050/studio9/BlessedistheSpot_kts37h.png",
         "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
-        "price": 30,
+        "price": 1,
         "category": "books"
       },
       { 
@@ -20,7 +20,7 @@
         "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751050/studio9/SweetNeighborsComeinAllColors_ye9bpz.png",
         "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
-        "price": 30,
+        "price": 1,
         "category": "books"
       },
       { 
@@ -32,7 +32,7 @@
         "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751051/studio9/Zanjan_jaqhlv.png",
         "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
-        "price": 30,
+        "price": 1,
         "category": "books"
       }
     ]

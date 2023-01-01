@@ -1,6 +1,25 @@
 {    
   "games": [
     { 
+      "id": "charms-antiracism",
+      "slug": "charms-antiracism",
+      "title": "Charms: Antiracism",
+      "name": "Charms: Antiracism", 
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
+      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
+      "mainImage": "",
+      "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521699/studio9/product/CharmQAR_zkqruv.png",
+      "sideImages": [
+        {
+        "src": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521509/studio9/box/CharmQAR_FinalBoxALLParts_Med_eceycv.jpg",
+        "alt": "Charms: Antiracism box contents"
+        }
+      ],
+      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "price": 1,
+      "category": "games"
+    },
+    { 
       "id": "villagers-and-villains",
       "slug": "villagers-and-villains",
       "title": "Villagers and Villains",
@@ -8,6 +27,46 @@
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
       "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751051/studio9/villagersandvillains_j5c0mm.png",
+      "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521701/studio9/product/VandV_qabese.png",
+      "sideImages": [
+        {
+        "src": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521507/studio9/box/FinalBoxParts_VilVil_njrvpq.png",
+        "alt": "Villagers and villains box contents"
+        }
+      ],
+      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "price": 1,
+      "category": "games"
+    },
+    { 
+      "id": "borderlands",
+      "slug": "borderlands",
+      "title": "Villagers and Villains: Borderlands",
+      "name": "Villagers and Villains: Borderlands", 
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
+      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
+      "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672448318/studio9/BorderLandVV_msxv9d.png",
+      "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521700/studio9/product/BorderlandVVexp_fj6aln.png",
+      "sideImages": [],
+      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "price": 1,
+      "category": "games"
+    },
+    { 
+      "id": "city-builder",
+      "slug": "city-builder",
+      "title": "Villagers and Villains: City Builder",
+      "name": "Villagers and Villains: City Builder", 
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
+      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
+      "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672448313/studio9/CityBuilder_vishua.png",
+      "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521700/studio9/product/CityBuilder_fnf8w4.png",
+      "sideImages": [
+        {
+        "src": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521507/studio9/box/VVsetCB_xtbglc.jpg",
+        "alt": "Villagers and villains: City Builder box contents"
+        }
+      ],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
       "category": "games"
@@ -20,6 +79,55 @@
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
       "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751051/studio9/treasuresandtraps_dr3kkk.png",
+      "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521700/studio9/product/TandT_etyj6z.png",
+      "sideImages": [
+        {
+        "src": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521507/studio9/box/FinalBoxParts_TandT_rbemot.png",
+        "alt": "Treasure and traps box contents"
+        }
+      ],
+      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "price": 1,
+      "category": "games"
+    },
+    { 
+      "id": "expanded-realms-1",
+      "slug": "expanded-realms-1",
+      "title": "Treasures and Traps: Expanded Realms",
+      "name": "Treasures and Traps: Expanded Realms", 
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
+      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
+      "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672448313/studio9/ExpandedRealm1_vmto3j.png",
+      "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521698/studio9/product/ExpandedRealm1_hdtesy.png",
+      "sideImages": [],
+      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "price": 1,
+      "category": "games"
+    },
+    { 
+      "id": "expanded-realms-2",
+      "slug": "expanded-realms-2",
+      "title": "Treasures and Traps: Expanded Realms 2",
+      "name": "Treasures and Traps: Expanded Realms 2", 
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
+      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
+      "mainImage": "",
+      "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521699/studio9/product/ExpandedREalm2_TT_gkjthh.png",
+      "sideImages": [],
+      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "price": 1,
+      "category": "games"
+    },
+    { 
+      "id": "random-encounters",
+      "slug": "random-encounters",
+      "title": "Treasures and Traps: Random Encounters",
+      "name": "Treasures and Traps: Random Encounters", 
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
+      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
+      "mainImage": "",
+      "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521700/studio9/product/RandomEncounterTT_ueor4z.png",
+      "sideImages": [],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
       "category": "games"
@@ -32,6 +140,13 @@
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
       "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751051/studio9/HerovsGuardian_wskice.png",
+      "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521701/studio9/product/HVG_oprn2c.png",
+      "sideImages": [
+        {
+        "src": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521507/studio9/box/FinalBoxParts_HeroVsGuardian_cwltlk.png",
+        "alt": "Hero versus guardian box contents"
+        }
+      ],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
       "category": "games"
@@ -44,6 +159,21 @@
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
       "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751051/studio9/midnightlegion_vt948b.png",
+      "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521701/studio9/product/MNL_ybsk14.png",
+      "sideImages": [
+        {
+        "src": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521510/studio9/box/seriesMNLcontents2_s9b781.jpg",
+        "alt": "Midnight legion box contents 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521510/studio9/box/MNLcontents_iki54u.jpg",
+          "alt": "Midnight legion box contents 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521506/studio9/box/interior02_o4uux6.jpg",
+          "alt": "Midnight legion book interior"
+        }
+      ],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit",
       "price": 1,
       "category": "games"
@@ -56,6 +186,13 @@
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
       "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1671751051/studio9/GlobalCrisis_jlghkg.png",
+      "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521699/studio9/product/GlobalCrisis_sztp9a.png",
+      "sideImages": [
+        {
+        "src": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672521508/studio9/box/FinalBoxParts_GlobalCrisis_egmbxa.png",
+        "alt": "Global crisis box contents 1"
+        }
+      ],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
       "category": "games"

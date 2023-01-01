@@ -8,21 +8,6 @@ import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
 import GameLayout from '../../components/gameLayout';
 import { Store } from '../../utils/Store';
 
-const images = [
-    {
-      src: 'https://source.unsplash.com/sQZ_A17cufs/549x711',
-      alt: 'Mechanical keyboard with white keycaps.',
-    },
-    {
-      src: 'https://source.unsplash.com/rsAeSMzOX9Y/768x512',
-      alt: 'Mechanical keyboard with white, pastel green and red keycaps.',
-    },
-    {
-      src: 'https://source.unsplash.com/Z6SXt1v5tP8/768x512',
-      alt: 'Mechanical keyboard with white, pastel pink, yellow and red keycaps.',
-    },
-]
-
 function getGameDetails(props){
     useEffect(() => {
         initLightboxJS(`${process.env.lightbox}`, 'team');
@@ -41,10 +26,10 @@ function getGameDetails(props){
         <GameLayout>
         <div>
             <Image
-                src={`${props.gameDetails.mainImage}`}
+                src={`${props.gameDetails.productImage}`}
                 className={'mx-auto my-4 sm:my-6'}
                 alt={props.gameDetails.title}
-                width={400}
+                width={500}
                 height={200}
             />
         </div>
@@ -69,14 +54,14 @@ function getGameDetails(props){
                 <p>{props.gameDetails.reviews}</p>
             </div>
             <div className='pl-4 py-4'>
-            <SlideshowLightbox className='container grid grid-cols-3 gap-2 mx-auto' theme='lightbox' lightboxIdentifier="lightbox1" framework="next" images={images}>
-                    {images.map((image, index) => (
+            <SlideshowLightbox className={`container grid ${ props.gameDetails.sideImages.length < 2 ? 'grid-cols-1' : 'grid-cols-2'} gap-2 mx-auto`} theme='lightbox' lightboxIdentifier="lightbox1" framework="next" images={props.gameDetails.sideImages}>
+                    {props.gameDetails.sideImages.map((image, index) => (
                         <Image
                             key={index}
                             src={image.src}
                             alt={image.alt}
-                            height={200}
-                            width={200}
+                            height={300}
+                            width={300}
                             data-lightboxjs="lightbox1"
                             quality={80}
                         />
@@ -107,8 +92,14 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
     return {
         paths: [
+            {  params: { gameId: 'charms-antiracism' } },
             {  params: { gameId: 'villagers-and-villains' } },
+            {  params: { gameId: 'borderlands' } },
+            {  params: { gameId: 'city-builder' } },
             {  params: { gameId: 'treasures-and-traps' } },
+            {  params: { gameId: 'random-encounters' } },
+            {  params: { gameId: 'expanded-realms-1' } },
+            {  params: { gameId: 'expanded-realms-2' } },
             {  params: { gameId: 'hero-versus-guardian' } },
             {  params: { gameId: 'midnight-legion' } },
             {  params: { gameId: 'global-crisis' } },

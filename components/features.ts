@@ -29,9 +29,34 @@ export const primaryFeatures = [
 
 export const secondaryFeatures = [
     {
+        title: 'Dottie and Me: Activity Book',
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672448313/studio9/DottieActBook_b1vs8h.png',
+        link: '/books/dottie-and-me-activity-book'
+    },
+    {
         title: 'Blessed Is the Spot',
         image: blessedisthespot,
         link: '/books/blessed-is-the-spot'
+    },
+    {
+        title: 'Charms: Antiracism', 
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672448313/studio9/CharmsAntiRacism_mqjyr0.png',
+        link: '/games/charms-antiracism'
+    },
+    {
+        title: 'Global Crisis', 
+        image: globalcrisis,
+        link: '/games/global-crisis'
+    },
+    {
+        title: 'Villagers and Villains', 
+        image: villagersandvillains,
+        link: '/games/villagers-and-villains'
+    },
+    {
+        title: 'Villagers and Villains: Borderlands', 
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672448318/studio9/BorderLandVV_msxv9d.png',
+        link: '/games/borderlands'
     },
     {
         title: 'Sweet Neighbors Come in All Colors', 
@@ -44,21 +69,6 @@ export const secondaryFeatures = [
         link: '/books/zanjan'
     },
     {
-        title: 'Villagers and Villains', 
-        image: villagersandvillains,
-        link: '/games/villagers-and-villains'
-    },
-    {
-        title: 'Global Crisis', 
-        image: globalcrisis,
-        link: '/games/global-crisis'
-    },
-    {
-        title: 'Treasures and Traps', 
-        image: treasuresandtraps,
-        link: '/games/treasures-and-traps'
-    },
-    {
         title: 'Midnight Legion', 
         image: midnightlegion,
         link: '/games/midnight-legion'
@@ -67,5 +77,30 @@ export const secondaryFeatures = [
         title: 'Hero versus Guardian: A Game of Dungeon Craft', 
         image: herovsguardian,
         link: '/games/hero-versus-guardian'
+    },
+    {
+        title: 'Villagers and Villains: City Builder', 
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672448313/studio9/CityBuilder_vishua.png',
+        link: '/games/city-builder'
+    },
+    {
+        title: 'Treasures and Traps', 
+        image: treasuresandtraps,
+        link: '/games/treasures-and-traps'
+    },
+    {
+        title: 'Treasures and Traps: Random Encounteres', 
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672448313/studio9/ExpandedRealm1_vmto3j.png',
+        link: '/games/random-encounters'
+    },
+    {
+        title: 'Treasures and Traps: Expanded Realms 1', 
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672448313/studio9/ExpandedRealm1_vmto3j.png',
+        link: '/games/expanded-realms-1'
+    },
+    {
+        title: 'Treasures and Traps: Expanded Realms 2', 
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/v1672448313/studio9/ExpandedRealm1_vmto3j.png',
+        link: '/games/expanded-realms-2'
     },
 ];

@@ -82,7 +82,7 @@ export default function Home() {
               }}
             >
               <Link href={`${i.link}`}>
-                <Image src={i.image} placeholder="blur" alt={i.title} width={250} height={250} />
+                <Image src={i.image} alt={i.title} width={250} height={250} />
               </Link>
             </motion.div>
           ))}

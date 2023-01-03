@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { primaryFeatures, secondaryFeatures } from '../components/features';
 import { motion } from 'framer-motion';
 import { CldImage } from 'next-cloudinary';
-import headLogo from '../public/s9incLOGO(covCLEAR).png';
 import separator from '../public/bottom_separator.png';
 import mobileSeparator from '../public/bottom_separatorSMLsize.png';
 
@@ -20,7 +19,7 @@ export default function Home() {
       <main data-theme={'light'} className="mx-auto max-w-7xl pt-8 px-4 sm:pt-12 sm:px-6 lg:px-8">
         <div>
           <Image
-            src={headLogo}
+            src={'https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672721304/studio9/s9incLOGO_covCLEAR_kwlbz5.png'}
             className={'mx-auto'}
             alt={'Studio 9 Inc'}
             width={450}
@@ -82,7 +81,7 @@ export default function Home() {
               }}
             >
               <Link href={`${i.link}`}>
-                <Image src={i.image} alt={i.title} width={250} height={250} />
+              <Image src={i.image} alt={i.title} width={250} height={250} />
               </Link>
             </motion.div>
           ))}

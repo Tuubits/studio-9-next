@@ -5,54 +5,58 @@
         "slug": "blessed-is-the-spot",
         "name": "Blessed is the Spot",
         "title": "Blessed is the Spot", 
-        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis donec et odio pellentesque diam. Facilisis mauris sit amet massa.", 
+        "details": "Children of all faiths will enjoy this simple yet powerful prayer that honors every place where God is praised. Animated DVD included. What makes a place sacred? Come on a journey through land, cave, and sea to find out! The young and young at heart can sing along with this delightful prayer book and animated DVD. 32 page board book. Animated DVD included. Art and animation by Lisa Blecker.", 
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751050/studio9/BlessedistheSpot_kts37h.png",
         "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521698/studio9/product/BlessedIsSpot_npbw5w.png",
         "sideImages": [],
         "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
         "price": 1,
-        "category": "books"
+        "category": "books",
+        "outOfStock": false
       },
       { 
         "id": "dottie-and-me-activity-book",
         "slug": "dottie-and-me-activity-book",
         "name": "Dottie and Me Activity Book",
         "title": "Dottie and Me Activity Book", 
-        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis donec et odio pellentesque diam. Facilisis mauris sit amet massa.", 
+        "details": "This inspiring companion to the award-winning picture book, The Good in Me From A to Z, by Dottie, encourages readers to let their good qualities and talents shine. With over 26 fun and simple finish-the-concept coloring activities, Dottie invites the young and young at heart to share and celebrate what makes them truly great.", 
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672448313/studio9/DottieActBook_b1vs8h.png",
         "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672524037/studio9/product/DottieandMeActBook_k3ira1.png",
         "sideImages": [],
         "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
         "price": 1,
-        "category": "books"
+        "category": "books",
+        "outOfStock": false
       },
       { 
         "id": "sweet-neighbors-come-in-all-colors", 
         "slug": "sweet-neighbors-come-in-all-colors",
         "name": "Sweet Neighbors Come in All Colors",
         "title": "Sweet Neighbors Come in All Colors", 
-        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-        "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
+        "details": "An ensemble of friendly fruit characters sing about their diversity of colors, shapes, and sizes. This title gives children the opportunity to explore early-learning concepts and offers families the chance to discuss ideas like unity and diversity. Includes sheet music and online link to the song’s recording.",
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751050/studio9/SweetNeighborsComeinAllColors_ye9bpz.png",
+        "bookLink": "https://www.amazon.com/Sweet-Neighbors-Colors-Introduction-Bahai/dp/1618511289",
         "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521701/studio9/product/SweetNeighbors_rralpt.png",
         "sideImages": [],
         "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
         "price": 1,
-        "category": "books"
+        "category": "books",
+        "outOfStock": false
       },
       { 
         "id": "zanjan",
         "slug": "zanjan", 
         "title": "Zanjan",
         "name": "Zanjan",
-        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-        "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
+        "details": "Zanjan (A Graphic Novel) is a rich fictional work that is based on actual events from one of the many dramatic episodes surrounding the emergence of the Baha'i Faith in mid-nineteenth century Persia. In this story, Navid has been trained from an early age to join the elite, but everything he learns only leads him to more questions. His search for answers will take him from the quiet village where he grew up to the greatest cities of nineteenth-century Persia, and ultimately into the middle of a war that will tear apart families, challenge the country's most powerful leaders, and force Navid to question everything that he thought he knew. As the imperial army clashes with scholars and peasants in the ancient streets of Zanjan, Navid will participate in the birth of a new spiritual movement that has the power to transform the world.",
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751051/studio9/Zanjan_jaqhlv.png",
+        "bookLink": "https://www.amazon.com/Zanjan-Graphic-Novel-Actual-Events/dp/1931847886",
         "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521698/studio9/product/Zanjan_fcong8.png",
         "sideImages": [],
         "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
         "price": 1,
-        "category": "books"
+        "category": "books",
+        "outOfStock": false
       }
     ]
   }

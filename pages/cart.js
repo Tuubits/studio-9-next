@@ -90,7 +90,7 @@ export default function CartScreen() {
                   <th className="p-5 text-left">Item</th>
                   <th className="p-5 text-right">Quantity</th>
                   <th className="p-5 text-right">Price</th>
-                  <th className="p-5">Action</th>
+                  <th className="p-5">Remove</th>
                 </tr>
               </thead>
               <tbody>
@@ -126,7 +126,7 @@ export default function CartScreen() {
                       }
 
                     </td>
-                    <td className="p-5 text-right">
+                    <td className="p-5 text-right text-xl">
                         {item.quantity}
                       {/* <select
                         className='bg-base-100'
@@ -142,8 +142,8 @@ export default function CartScreen() {
                         ))}
                       </select> */}
                     </td>
-                    <td className="p-5 text-right">${item.price}</td>
-                    <td className="p-5 text-center">
+                    <td className="p-5 text-right text-xl">${item.price}</td>
+                    <td className="p-5 text-center text-xl">
                       <button onClick={() => removeItemHandler(item)}>
                         <MinusCircleIcon className="h-5 w-5"></MinusCircleIcon>
                       </button>
@@ -157,7 +157,7 @@ export default function CartScreen() {
             <ul>
               <li>
                 <div className="pb-3 text-xl">
-                  Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
+                  Total ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
                   {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
                 </div>
               </li>

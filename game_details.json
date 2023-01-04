@@ -5,8 +5,8 @@
       "slug": "charms-antiracism",
       "title": "Charms: Antiracism",
       "name": "Charms: Antiracism", 
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
+      "details": "Quests for Antiracism is an expansion for Charms: A Game of Insight, or it can stand alone as discussion or reflection prompts. For use with the Charms game, Quests for Antiracism is best with 3-8 players • Ages 12 and up • 30-90 minutes. Charms can be used to gain insights into almost any topic. No subject is too light, heavy, shallow or deep. Players use their minds, hearts, and creative problem solving skills to help each other gain new perspectives, understanding, or ideas for positive action. In the context of this game, even the heaviest of quests can become lighter.",
+      "moreDetails": "In this expansion of Charms, the focus is on one of the most important topics, racism. Studio 9 Games and collaborators view racism as the most vital and challenging issue facing America. We understand that everyone belongs to one wonderfully diverse human family, we're all created noble, and we all deserve equal rights and fair opportunities. We also know that our collective well-being, peace, and security are dependent upon rooting out racism and prejudices, and that the sincere attention and sustained participation and action of all peoples are what is required to succeed in its elimination. While having conversations about racism is a necessary step towards creating justice and liberty for all, talking about it can be uncomfortable and challenging. Charms gameplay helps facilitate dialogs for antiracism with families, friends, or groups in a way that offers every player the opportunity to share and be heard.", 
       "mainImage": "",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521699/studio9/product/CharmQAR_zkqruv.png",
       "sideImages": [
@@ -17,15 +17,15 @@
       ],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
-      "category": "games"
+      "category": "games",
+      "outOfStock": false
     },
     { 
       "id": "villagers-and-villains",
       "slug": "villagers-and-villains",
       "title": "Villagers and Villains",
       "name": "Villagers and Villains", 
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
+      "details": "In the untamed wild, villains lurk in wait, terrors haunt dark lairs, tradesfolk seek riches, and heroes come to prove their valor. As the mayor of a frontier town, you stand in the center, eyeing the roads for talent and trouble. Will you take on challenges or hire help, develop your town or command its heroes? Your strategies, risks, and fortune can transform your village into a thriving city or forgotten ruins. Villagers and Villains is a card game with over 100 unique cards. The game is played over several rounds. Each round has 6 distinct Phases. During each Phase, all players (Mayors) have a chance to take specific actions. The Mayor who builds the most successful village wins.", 
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751051/studio9/villagersandvillains_j5c0mm.png",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521701/studio9/product/VandV_qabese.png",
       "sideImages": [
@@ -36,29 +36,29 @@
       ],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
-      "category": "games"
+      "category": "games",
+      "outOfStock": false
     },
     { 
       "id": "borderlands",
       "slug": "borderlands",
       "title": "Villagers and Villains: Borderlands",
       "name": "Villagers and Villains: Borderlands", 
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
+      "details": "The Borderlands adds new cards to Villagers and Villains—a humorous fantasy game where you build a village on the edge of civilization. For those who have played the game, you know the fun comes in the variety of how the game will unfold with 100 unique cards. The unusual card combinations, and diverse ways to score, make each experience feel fresh and the path to victory different each game. The Borderlands expansion provides 26 additional unique cards to bring even more variety to this favorite fantasy town building game. Some new features include: Cards that bring back other cards from the discard pile (hello lost pairs!) Cards that can pair 2 times for double the pairing bonus! Challenges that might help you (and in some ways hurt you). Some mild \"take that\" cards to annoy neighboring towns. New ways to make money for your town (some rather risky), and much more!",
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672448318/studio9/BorderLandVV_msxv9d.png",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521700/studio9/product/BorderlandVVexp_fj6aln.png",
       "sideImages": [],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
-      "category": "games"
+      "category": "games",
+      "outOfStock": false
     },
     { 
       "id": "city-builder",
       "slug": "city-builder",
       "title": "Villagers and Villains: City Builder",
       "name": "Villagers and Villains: City Builder", 
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.", 
+      "details": "City Builder (AVAILABLE NOW) expands and supplements the Villagers and Villains base game. In City Builder each mayor gets 2 City Upgrade Tokens. Mayors use these tokens to develop their village by placing them on the new City Cards. Since 18 City Cards come with City Builder, and each time you play the game a few City Cards are used, players get a wider variety of game experiences. During play, mayors gain added play options by placing their City Tokens on any available City Card. Each City Card in the expansion grants unique abilities—and provides added points to the final score—for up to 2 mayors per card. The City Builder expansion comes with components and rules to increase the maximum number of players from 5 to 6. In addition, this expansion comes with 6 town mats to give your village an identity, provide a quick reference guide for game play, and to organize game components, tokens, and gold. The City Builder expansion also comes with exciting new options, including: team play, cooperative play, and house rules for added variety.",
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672448313/studio9/CityBuilder_vishua.png",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521700/studio9/product/CityBuilder_fnf8w4.png",
       "sideImages": [
@@ -69,15 +69,15 @@
       ],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
-      "category": "games"
+      "category": "games",
+      "outOfStock": false
     },
     { 
       "id": "treasures-and-traps",
       "slug": "treasures-and-traps",
       "title": "Treasures and Traps",
       "name": "Treasures and Traps", 
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
+      "details": "Treasures and Traps is a complete card game that puts you in the role of the hero. Your quest is to collect three treasures before anyone else. Sounds simple enough, right? Now throw in a two-headed troll, a maze of dangerous doors, and a few cunning thieves. You never know what might happen next. With 100 different cards, each game is a unique journey of wild adventure never to be repeated again! The Award-Winning Card Game from Studio 9 Games. 2-6 players, ages 10 and up. Designed and Illustrated by C. Aaron Kreader.",
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751051/studio9/treasuresandtraps_dr3kkk.png",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521700/studio9/product/TandT_etyj6z.png",
       "sideImages": [
@@ -88,57 +88,57 @@
       ],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
-      "category": "games"
+      "category": "games",
+      "outOfStock": false
     },
     { 
       "id": "expanded-realms-1",
       "slug": "expanded-realms-1",
       "title": "Treasures and Traps: Expanded Realms",
       "name": "Treasures and Traps: Expanded Realms", 
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
+      "details": "Expanded Realms is an expansion for the Award-Winning game \"Treasures and Traps\". Unlock more magic and mayhem on your quest for treasure. This expansion of \"Best Card Game of the Year\" nominee Treasures and Traps will enhance your adventure possibilities. Open the door to 12 new cards, 2 exciting play variations, and Class Cards that give you the chance to be one of 10 unique heroes with special abilities. You must have the Treasures and Traps card game to use this expansion. Designed and Illustrated by C. Aaron Kreader.",
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672448313/studio9/ExpandedRealm1_vmto3j.png",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521698/studio9/product/ExpandedRealm1_hdtesy.png",
       "sideImages": [],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
-      "category": "games"
+      "category": "games",
+      "outOfStock": false
     },
     { 
       "id": "expanded-realms-2",
       "slug": "expanded-realms-2",
       "title": "Treasures and Traps: Expanded Realms 2",
       "name": "Treasures and Traps: Expanded Realms 2", 
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
+      "details": "Now Available! Like Expanded Realms 1, this expansion adds cards to add right into the Treasures and Traps base game deck. These 26 new cards have unique effects. No additional rules are required with Expanded Realms 2. Some added features include: Time control spells to affect the next few rounds, poison traps!, the deadly monk dojo, the surprise mimic trap, locations like the wishing rock and retreat to help you power your hand and your defenses, the duel event to challenge another player, the dimensional box to hold your goodies, and more.",
       "mainImage": "",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521699/studio9/product/ExpandedREalm2_TT_gkjthh.png",
       "sideImages": [],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
-      "category": "games"
+      "category": "games",
+      "outOfStock": false
     },
     { 
       "id": "random-encounters",
       "slug": "random-encounters",
       "title": "Treasures and Traps: Random Encounters",
       "name": "Treasures and Traps: Random Encounters", 
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
+      "details": "In the vast wilderness exotic travelers, mystic relics, legandary lands, and fabled heros have been found. Now, with Random Encounters you can wield these forces and bring glory to your realm. But be quick! Or your opponent may sieze these findings of good fortune first! With unique and powerful cards the Random Encounters expansion brings a new dimension to the fantasy adventure card game Treasures and Traps. In this distinct expansion there are 13 special cards, 2 custom dice, and a set of rules to manage how the new cards are used. In addition, this expansion is housed in a larger box ready to hold all your Treasures and Traps cards, rules, expansions and dice.",
       "mainImage": "",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521700/studio9/product/RandomEncounterTT_ueor4z.png",
       "sideImages": [],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
-      "category": "games"
+      "category": "games",
+      "outOfStock": false
     },
     { 
       "id": "hero-versus-guardian",
       "slug": "hero-versus-guardian",
       "title": "Hero versus Guardian",
       "name": "Hero versus Guardian", 
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
+      "details": "DungeonCraft is a game played with 2-4 players: one player as the Guardian against 1-3 Heroes. The Guardian of the Dungeon builds the dungeon and defends its rooms. The Heroes recruit adventurers, equip them, and plan their movement into the dungeon. More info visit: http://kck.st/Ssw6AQ For video prereview visit: http://youtu.be/vWWutJEtJS0 and review http://youtu.be/YmCtun0U04Q Suggested AGES: 13 and up.",
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751051/studio9/HerovsGuardian_wskice.png",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521701/studio9/product/HVG_oprn2c.png",
       "sideImages": [
@@ -149,15 +149,16 @@
       ],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
-      "category": "games"
+      "category": "games",
+      "outOfStock": false
     },
     { 
       "id": "midnight-legion",
       "slug": "midnight-legion", 
       "title": "Midnight Legion",
       "name": "Midnight Legion", 
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
+      "details": "The Midnight Legion is a highly advanced color illustrated gamebook series in the style of the classic Choose Your Own Adventure series, but with MUCH more (think more like an advanced version of SORCERY! or LONE WOLF with deeper character generation). The gameplay system is for solo or 2-player use. There are combat, puzzles, diplomacy, stealth and role playing elements. Collect information, knowledge and goods from the world around you to advance your character.",
+      "moreDetails": "You are an android agent who had been activated after hundreds of years of stasis. Your scheduled mission is still centuries in the future, but your underground base has been invaded and you are needed to defend it. Unfortunately, it will take time for your memories to return. As you fight, trick or sneak your way up from the lower levels to the surface and your memories begin filtering back, you realize that your mission is not what you thought it was—and you may not be who you think you are. Choose your strategy wisely, because every choice you make now will lead to different options later. The world has changed since you were put to sleep, and you will need to decide whether you are still willing to follow your ancient orders or whether you are ready to set a new future in motion.",
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751051/studio9/midnightlegion_vt948b.png",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521701/studio9/product/MNL_ybsk14.png",
       "sideImages": [
@@ -176,15 +177,17 @@
       ],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit",
       "price": 1,
-      "category": "games"
+      "category": "games",
+      "outOfStock": false
     },
     { 
       "id": "global-crisis",
       "slug": "global-crisis", 
       "title": "Global Crisis",
       "name": "Global Crisis",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Velit scelerisque in dictum non consectetur a erat nam at. In cursus turpis massa tincidunt dui ut. Tincidunt eget nullam non nisi est sit. Sollicitudin aliquam ultrices sagittis orci a. Velit dignissim sodales ut eu sem integer vitae. Placerat in egestas erat imperdiet sed. Id interdum velit laoreet id donec ultrices tincidunt arcu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Nibh venenatis cras sed felis eget velit.",
-      "moreDetails": "Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo. Varius quam quisque id diam. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Lectus proin nibh nisl condimentum. Sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum curabitur. Non sodales neque sodales ut etiam sit. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Vulputate dignissim suspendisse in est ante. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Id cursus metus aliquam eleifend. Risus commodo viverra maecenas accumsan lacus. Luctus accumsan tortor posuere ac ut. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Adipiscing tristique risus nec feugiat in. Odio eu feugiat pretium nibh ipsum. Orci nulla pellentesque dignissim enim sit amet venenatis.",
+      "details": "GLOBAL CRISIS is a cooperative card game for 2 to 5 players with an optional hidden role element. It is ideal for 13 and up, and playable within 60 minutes.",
+      "moreDetails": "Is it too late to counteract eons of destruction? Can humanity set aside their petty squabbles, age old hatreds, and demagogue-stoked fears in order to bring about what is only dreamed of? And what of suspicions? Is everyone a trusted ally or do some lurk in shadow, attempting to plunge the world into a dark age of fallout and waste?",
+      "quote": "The Great Peace towards which people of goodwill throughout the centuries have inclined their hearts, of which seers and poets for countless generations have expressed their vision, and for which from age to age the sacred scriptures of mankind have constantly held the promise, is now at long last within the reach of the nations. —From \"The Promise of World Peace\" by The Universal House of Justice",
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751051/studio9/GlobalCrisis_jlghkg.png",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521699/studio9/product/GlobalCrisis_sztp9a.png",
       "sideImages": [
@@ -195,7 +198,8 @@
       ],
       "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
       "price": 1,
-      "category": "games"
+      "category": "games",
+      "outOfStock": true
     }
   ]
 }

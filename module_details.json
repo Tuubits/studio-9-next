@@ -6,9 +6,10 @@
         "name": "Greenwood of the Fey Sovereign", 
         "details": "Players will need courage to face an assortment of unsuspected and cunning enemies, wits to survive the magical forces and clever snares, and a silver tongue to make quick friends out of foes.", 
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826930/studio9/greenwood_bn9ssb.webp",
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "driveThruLink": "https://www.drivethrurpg.com/product/242362/Greenwood-of-the-Fey-Sovereign",
         "price": 1,
-        "category": ""
+        "category": "",
+        "outOfStock": false
       },
       { 
         "id": "reckoning-of-the-gods", 
@@ -17,9 +18,10 @@
         "name": "Reckoning of the Gods", 
         "details": "In the beginning, the adventurers are contacted by a vengeful divine force, either through their cleric, or by means of a shared mystical experience. They learn that the gods are intent on punishing the transgressions of a mad wizard, but their influence is limited by the wizard's own dimensional reality.",
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826930/studio9/reckoningofthegods_gbng4b.webp",
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "driveThruLink": "https://www.drivethrurpg.com/product/273519/Reckoning-of-the-Gods--Into-the-Shadow-Realm",
         "price": 1,
-        "category": ""
+        "category": "",
+        "outOfStock": false
       },
       { 
         "id": "strange-night-at-the-pint-and-pony", 
@@ -28,9 +30,10 @@
         "name": "A Strange Night at the Pint 'n' Pony", 
         "details": "The little folk meet each night at a special place away from the troubles of big people. Here, after a long day of work, they share simple tales and sip ale. Tonight is nothing new—or is it? Sinister forces emerge during happy hour (hic) at this halfling pub.",
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826930/studio9/strangenight_clqbjo.webp",
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "driveThruLink": "https://www.drivethrurpg.com/product/323921/A-Strange-Night-at-the-Pint-n-Pony",
         "price": 1,
-        "category": ""
+        "category": "",
+        "outOfStock": false
       },
       { 
         "id": "101-city-encounters", 
@@ -39,9 +42,10 @@
         "name": "101 City Encounters", 
         "details": "Encounters can turn into significant new adventures, short side tracks, or simply texture. With these added layers, PCs will feel the endless opportunity of the city! This is an ideal gaming tool for DCC Lankhmar campaigns.",
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826930/studio9/cityencounters_n260vt.webp",
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "driveThruLink": "https://www.drivethrurpg.com/product/323923/101-City-Encounters",
         "price": 1,
-        "category": ""
+        "category": "",
+        "outOfStock": false
       },
       { 
         "id": "welcome-to-eastwood", 
@@ -50,9 +54,10 @@
         "name": "Welcome to Eastwood", 
         "details": "Eastwood is the ultimate vacation theme park. Its \"wild west\" veneer conceals the techno wizardry of a powerful temporal field. After weeks (or months) at the resort, visitors could re-enter life moments after leaving for vacation, and never miss a day’s work.",
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826930/studio9/welcometoeastwood_wfrnss.webp",
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "driveThruLink": "https://www.drivethrurpg.com/product/356562/Welcome-to-Eastwood",
         "price": 1,
-        "category": ""
+        "category": "",
+        "outOfStock": false
       },
       { 
         "id": "the-towers-of-dr-xill", 
@@ -61,9 +66,10 @@
         "name": "The Towers of Dr.Xill", 
         "details": "Dr. Xillgracone (aka Dr. Xill) was a genius and madman who experimented with the natural order of life on himself and others. Using super-science devices infused with the raw power of fire and ice, he summoned and enslaved elemental creatures to merge with his human subjects.",
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826931/studio9/drxill_oxmvgn.webp",
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "driveThruLink": "https://www.drivethrurpg.com/product/378946/The-Towers-of-Dr-Xill",
         "price": 1,
-        "category": ""
+        "category": "",
+        "outOfStock": false
       },
       { 
         "id": "the-years-between", 
@@ -72,8 +78,9 @@
         "name": "The Years Between", 
         "details": "The Years Between is an alternate method for quickly leveling characters in a fantasy role-playing campaign. This 20pp supplemental booklet is specifically styled for Dungeon Crawl Classics by Goodman Games. However, with mild adaptation it can be used for any fantasy roleplaying system.",
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826931/studio9/yearsbetween_jt3u1y.webp",
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "driveThruLink": "https://www.drivethrurpg.com/product/378942/The-Years-Between",
         "price": 1,
-        "category": ""
+        "category": "",
+        "outOfStock": false
       }
 ]

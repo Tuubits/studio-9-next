@@ -1,12 +1,3 @@
-/* Secondary image imports */
-import blessedisthespot from '../public/secondary/BlessedistheSpot.png';
-import globalcrisis from '../public/secondary/GlobalCrisis.png';
-import herovsguardian from '../public/secondary/HerovsGuardian.png';
-import midnightlegion from '../public/secondary/midnightlegion.png';
-import treasuresandtraps from '../public/secondary/treasuresandtraps.png';
-import villagersandvillains from '../public/secondary/villagersandvillains.png';
-import zanjan from '../public/secondary/Zanjan.png';
-import sweetneighbors from '../public/secondary/SweetNeighborsComeinAllColors.png';
 
 export const primaryFeatures = [
     {
@@ -44,6 +35,16 @@ export const secondaryFeatures = [
         link: '/games/charms-antiracism'
     },
     {
+        title: 'Sweet Neighbors Come in All Colors', 
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751050/studio9/SweetNeighborsComeinAllColors_ye9bpz.png',
+        link: '/books/sweet-neighbors-come-in-all-colors'
+    },
+    {
+        title: 'Zanjan', 
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751051/studio9/Zanjan_jaqhlv.png',
+        link: '/books/zanjan'
+    },
+    {
         title: 'Global Crisis', 
         image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751051/studio9/GlobalCrisis_jlghkg.png',
         link: '/games/global-crisis'
@@ -59,14 +60,9 @@ export const secondaryFeatures = [
         link: '/games/borderlands'
     },
     {
-        title: 'Sweet Neighbors Come in All Colors', 
-        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751050/studio9/SweetNeighborsComeinAllColors_ye9bpz.png',
-        link: '/books/sweet-neighbors-come-in-all-colors'
-    },
-    {
-        title: 'Zanjan', 
-        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751051/studio9/Zanjan_jaqhlv.png',
-        link: '/books/zanjan'
+        title: 'Villagers and Villains: City Builder', 
+        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672448313/studio9/CityBuilder_vishua.png',
+        link: '/games/city-builder'
     },
     {
         title: 'Midnight Legion', 
@@ -77,11 +73,6 @@ export const secondaryFeatures = [
         title: 'Hero versus Guardian: A Game of Dungeon Craft', 
         image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751051/studio9/HerovsGuardian_wskice.png',
         link: '/games/hero-versus-guardian'
-    },
-    {
-        title: 'Villagers and Villains: City Builder', 
-        image: 'https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672448313/studio9/CityBuilder_vishua.png',
-        link: '/games/city-builder'
     },
     {
         title: 'Treasures and Traps', 

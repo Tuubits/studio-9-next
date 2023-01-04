@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import GoldenEraLayout from '../components/goldenEraLayout';
 import modules from '../module_details.json';
@@ -57,13 +58,20 @@ export default function GoldenEraGaming() {
             <div className="card-body">
                 <h2 className="card-title">{feature.title}</h2>
                 <p>{feature.details}</p>
-                <div className="card-actions justify-end">
+                <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
+                <Link href={`${feature.driveThruLink}`} passHref className='w-full lg:w-2/4'>
+                  <button
+                    className={`btn-primary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                  >
+                    Purchase PDF Here
+                  </button>
+                </Link>
                 <button
-              className="w-full items-center rounded-md btn-primary border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2"
-              onClick={()=>{addToCartHandler({feature}); router.push('/cart')}}
-            >
-              Add to cart
-            </button>
+                    className={`${feature.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary'} w-full lg:w-2/4 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                    onClick={()=>{addToCartHandler({feature}); router.push('/cart')}}  
+                >
+                    {feature.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
+                </button>
                 </div>
             </div>
         </div>
@@ -82,13 +90,20 @@ export default function GoldenEraGaming() {
             <div className="card-body">
                 <h2 className="card-title">{i.title}</h2>
                 <p>{i.details}</p>
-                <div className="card-actions justify-end">
+                <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
+                <Link href={`${i.driveThruLink}`} passHref className='w-full lg:w-2/4'>
+                  <button
+                    className={`btn-primary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                  >
+                    Purchase PDF Here
+                  </button>
+                </Link>
                 <button
-              className="w-full items-center rounded-md btn-primary border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2"
-              onClick={()=>{addToCartHandler({i}); router.push('/cart')}}
-            >
-              Add to cart
-            </button>
+                    className={`${i.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary'} w-full lg:w-2/4 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                    onClick={()=>{addToCartHandler({i}); router.push('/cart')}}  
+                >
+                    {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
+                </button>
                 </div>
             </div>
             </div>
@@ -109,13 +124,20 @@ export default function GoldenEraGaming() {
             <div className="card-body">
                 <h2 className="card-title">{i.title}</h2>
                 <p>{i.details}</p>
-                <div className="card-actions justify-end">
+                <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
+                <Link href={`${i.driveThruLink}`} passHref className='w-full'>
+                  <button
+                    className={`btn-primary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                  >
+                    Purchase PDF Here
+                  </button>
+                </Link>
                 <button
-              className="w-full items-center rounded-md btn-primary border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2"
-              onClick={()=>{addToCartHandler({i}); router.push('/cart')}}
-            >
-              Add to cart
-            </button>
+                    className={`${i.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                    onClick={()=>{addToCartHandler({i}); router.push('/cart')}}  
+                >
+                    {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
+                </button>
                 </div>
             </div>
             </div>

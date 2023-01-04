@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import fs from 'fs'
 import path from 'path'
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import 'lightbox.js-react/dist/index.css'
 import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
@@ -44,12 +45,22 @@ function getBookDetails(props){
             </div>
             <div className='col-span-2'>
                 <div className='text-center py-4'>
-            <button
-              className="w-full items-center rounded-md btn-primary border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2"
-              onClick={addToCartHandler}
-            >
-              Add to cart
-            </button>
+                {props.bookDetails.bookLink ? 
+                <Link href={`${props.bookDetails.bookLink}`} passHref>
+                <button
+                className={`${props.bookDetails.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                >
+                PURCHASE HERE
+                </button>
+                </Link>
+                :
+                <button
+                className={`${props.bookDetails.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                onClick={props.bookDetails.outOfStock ? null : addToCartHandler}
+                >
+                {props.bookDetails.outOfStock ? 'Out of Stock': 'Add to cart'}
+                </button>
+                }
             </div>
             <div className='prose lg:prose-xl pl-4 py-4'>
                 <h2>Reviews</h2>

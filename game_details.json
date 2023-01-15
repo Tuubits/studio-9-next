@@ -15,7 +15,8 @@
         "alt": "Charms: Antiracism box contents"
         }
       ],
-      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "videoLink": "",
+      "reviews": "",
       "price": 1,
       "category": "games",
       "outOfStock": false
@@ -34,7 +35,8 @@
         "alt": "Villagers and villains box contents"
         }
       ],
-      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "videoLink": "QLbceHweAi8",
+      "reviews": "",
       "price": 1,
       "category": "games",
       "outOfStock": false
@@ -48,7 +50,8 @@
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672448318/studio9/BorderLandVV_msxv9d.png",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521700/studio9/product/BorderlandVVexp_fj6aln.png",
       "sideImages": [],
-      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "videoLink": "",
+      "reviews": "",
       "price": 1,
       "category": "games",
       "outOfStock": false
@@ -67,7 +70,8 @@
         "alt": "Villagers and villains: City Builder box contents"
         }
       ],
-      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "videoLink": "",
+      "reviews": "",
       "price": 1,
       "category": "games",
       "outOfStock": false
@@ -86,7 +90,8 @@
         "alt": "Treasure and traps box contents"
         }
       ],
-      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "videoLink": "BoqXJbX2XjQ?start=61",
+      "reviews": "",
       "price": 1,
       "category": "games",
       "outOfStock": false
@@ -100,7 +105,8 @@
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672448313/studio9/ExpandedRealm1_vmto3j.png",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521698/studio9/product/ExpandedRealm1_hdtesy.png",
       "sideImages": [],
-      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "videoLink": "",
+      "reviews": "",
       "price": 1,
       "category": "games",
       "outOfStock": false
@@ -114,7 +120,8 @@
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521699/studio9/product/ExpandedREalm2_TT_gkjthh.png",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521699/studio9/product/ExpandedREalm2_TT_gkjthh.png",
       "sideImages": [],
-      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "videoLink": "",
+      "reviews": "",
       "price": 1,
       "category": "games",
       "outOfStock": false
@@ -128,7 +135,8 @@
       "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521700/studio9/product/RandomEncounterTT_ueor4z.png",
       "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521700/studio9/product/RandomEncounterTT_ueor4z.png",
       "sideImages": [],
-      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "videoLink": "",
+      "reviews": "",
       "price": 1,
       "category": "games",
       "outOfStock": false
@@ -147,7 +155,8 @@
         "alt": "Hero versus guardian box contents"
         }
       ],
-      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "videoLink": "IZ8aeqFRmIE",
+      "reviews": "",
       "price": 1,
       "category": "games",
       "outOfStock": false
@@ -175,7 +184,49 @@
           "alt": "Midnight legion book interior"
         }
       ],
-      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit",
+      "videoLink": "8Llgge4G9LI",
+      "reviews": [
+        {
+          "review": "“It’s just an incredible story, an incredible journey that’s going to be different every time. It’s just so much fun.”",
+          "src": "– WDYPTW",
+          "link": ""
+        },
+        {
+          "review": "One of “The Best Games for Solo Players from Gen Con 2016”",
+          "src": "– Nerdy But Flirty",
+          "link": "https://nerdybutflirty.com/2016/08/22/the-best-games-for-solo-and-two-players-from-gen-con-2016/"
+        },
+        {
+          "review": "4.5/5",
+          "src": "– Board Times (Polish)",
+          "link": "http://boardtime.pl/2016/12/midnight-legion-recenzja.html"
+        },
+        {
+          "review": "“Highly advanced game system…a deeper level of character generation.”",
+          "src": "– Gamebook News",
+          "link": ""
+        },
+        {
+          "review": "“Memories are…a great strength of the book.”",
+          "src": "– Lloyd of Gamebooks",
+          "link": "http://www.lloydofgamebooks.com/2015/08/the-midnight-legion-book-1-operation.html?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+LloydOfGamebooks+%28Lloyd+of+Gamebooks%29"
+        },
+        {
+          "review": "“I really recommend it.”",
+          "src": "– slickerdrips (Video)",
+          "link": "https://www.youtube.com/watch?v=8Llgge4G9LI&feature=youtu.be"
+        },
+        {
+          "review": "“The action begins immediately…”",
+          "src": "– Your Turn Go!",
+          "link": ""
+        },
+        {
+          "review": "“An incredible story, an incredible journey…so much fun.”",
+          "src": "– The What Did You Play Last Week Podcast Thing (Podcast)",
+          "link": "http://directory.libsyn.com/episode/index/id/4848080/tdest_id/342801"
+        }
+      ],
       "price": 1,
       "category": "games",
       "outOfStock": false
@@ -196,7 +247,8 @@
         "alt": "Global crisis box contents 1"
         }
       ],
-      "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+      "videoLink": "AK8tyk8W33U",
+      "reviews": "",
       "price": 1,
       "category": "games",
       "outOfStock": true

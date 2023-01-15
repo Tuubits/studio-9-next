@@ -21,6 +21,7 @@
     "next-cloudinary": "^1.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-youtube": "^10.1.0",
     "swell-js": "^3.18.2",
     "theme-change": "^2.2.0",
     "typescript": "4.8.4"

@@ -9,7 +9,7 @@
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1671751050/studio9/BlessedistheSpot_kts37h.png",
         "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521698/studio9/product/BlessedIsSpot_npbw5w.png",
         "sideImages": [],
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "videoLink": "fbM1LbQELGE",
         "price": 1,
         "category": "books",
         "outOfStock": false
@@ -23,7 +23,7 @@
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672448313/studio9/DottieActBook_b1vs8h.png",
         "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672524037/studio9/product/DottieandMeActBook_k3ira1.png",
         "sideImages": [],
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "videoLink": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
         "price": 1,
         "category": "books",
         "outOfStock": false
@@ -38,7 +38,7 @@
         "bookLink": "https://www.amazon.com/Sweet-Neighbors-Colors-Introduction-Bahai/dp/1618511289",
         "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521701/studio9/product/SweetNeighbors_rralpt.png",
         "sideImages": [],
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "videoLink": "f1M_XaqJD8U",
         "price": 1,
         "category": "books",
         "outOfStock": false
@@ -53,7 +53,7 @@
         "bookLink": "https://www.amazon.com/Zanjan-Graphic-Novel-Actual-Events/dp/1931847886",
         "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521698/studio9/product/Zanjan_fcong8.png",
         "sideImages": [],
-        "reviews": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
+        "videoLink": "jEzjOP-mloQ",
         "price": 1,
         "category": "books",
         "outOfStock": false

@@ -8,6 +8,7 @@ import 'lightbox.js-react/dist/index.css'
 import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
 import BookLayout from '../../components/bookLayout';
 import { Store } from '../../utils/Store';
+import YouTube from 'react-youtube';
 
 function getBookDetails(props){
     useEffect(() => {
@@ -25,6 +26,19 @@ function getBookDetails(props){
         router.push('/cart');
     };
 
+    const onPlayerReady = (event) => {
+        // access to player in all event handlers via event.target
+        event.target.pauseVideo();
+    }
+
+    const opts = {
+        width: '100%',
+        playerVars: {
+        // https://developers.google.com/youtube/player_parameters
+        autoplay: 1,
+        },
+    };
+
     return (
         <BookLayout>
         <div>
@@ -37,11 +51,11 @@ function getBookDetails(props){
             />
         </div>
           <div className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
-            {/* <h1 className="text-yellow-600">{props.gameDetails.title}</h1> */}
             <div className="mx-auto grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-6">
             <div className='col-span-4'>
             <p className='prose lg:prose-xl py-2'>{props.bookDetails.details}</p>
             <p className='prose lg:prose-xl py-2'>{props.bookDetails.moreDetails}</p>
+            {props.bookDetails.videoLink ? <YouTube videoId={props.bookDetails.videoLink} opts={opts} onReady={onPlayerReady} /> : null }
             </div>
             <div className='col-span-2'>
                 <div className='text-center py-4'>
@@ -62,10 +76,6 @@ function getBookDetails(props){
                 </button>
                 }
             </div>
-            <div className='prose lg:prose-xl pl-4 py-4'>
-                <h2>Reviews</h2>
-                <p>{props.bookDetails.reviews}</p>
-            </div>
             <div className='pl-4 py-4'>
             <SlideshowLightbox className={`container grid ${ props.bookDetails.sideImages.length < 2 ? 'grid-cols-1' : 'grid-cols-2'} gap-2 mx-auto`} theme='lightbox' lightboxIdentifier="lightbox1" framework="next" images={props.bookDetails.sideImages}>
                     {props.bookDetails.sideImages.map((image, index) => (
@@ -80,6 +90,22 @@ function getBookDetails(props){
                         />
                     ))}
             </SlideshowLightbox>
+            </div>
+            <div className='prose lg:prose-xl pl-4 py-4'>
+            {props.bookDetails.reviews ?
+            <h2>Reviews</h2>
+            : null}
+            {props.bookDetails.reviews ?
+                 props.bookDetails.reviews.map((i, index) => (
+                    <div key={index}>
+                    <p className=' font-bold -mb-10'>{i.review}</p>
+                    {i.link ? 
+                    <p className='font-medium'><a className="text-gray-600" href={i.link}>{i.src}</a></p>
+                    :
+                    <p className='font-medium'>{i.src}</p>
+                    }
+                    </div>
+                )) : null}
             </div>
             </div>
 

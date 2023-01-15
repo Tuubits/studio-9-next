@@ -7,6 +7,7 @@ import 'lightbox.js-react/dist/index.css'
 import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
 import GameLayout from '../../components/gameLayout';
 import { Store } from '../../utils/Store';
+import YouTube from 'react-youtube';
 
 function getGameDetails(props){
     useEffect(() => {
@@ -20,6 +21,19 @@ function getGameDetails(props){
         const quantity = existItem ? existItem.quantity + 1 : 1;
         dispatch({ type: 'CART_ADD_ITEM', payload: { ...props.gameDetails, quantity } });
         router.push('/cart');
+    };
+
+    const onPlayerReady = (event) => {
+        // access to player in all event handlers via event.target
+        event.target.pauseVideo();
+    }
+
+    const opts = {
+        width: '100%',
+        playerVars: {
+        // https://developers.google.com/youtube/player_parameters
+        autoplay: 1,
+        },
     };
 
     return (
@@ -40,6 +54,7 @@ function getGameDetails(props){
             <p className='prose lg:prose-xl py-2'>{props.gameDetails.details}</p>
             <p className='prose lg:prose-xl py-2'>{props.gameDetails.moreDetails}</p>
             <p className='prose lg:prose-xl py-2 italic'>{props.gameDetails.quote}</p>
+            {props.gameDetails.videoLink ? <YouTube videoId={props.gameDetails.videoLink} opts={opts} onReady={onPlayerReady} /> : null }
             </div>
             <div className='col-span-2'>
                 <div className='text-center py-4'>
@@ -49,10 +64,6 @@ function getGameDetails(props){
             >
               {props.gameDetails.outOfStock ? 'Out of Stock': 'Add to cart'}
             </button>
-            </div>
-            <div className='prose lg:prose-xl pl-4 py-4'>
-                <h2>Reviews</h2>
-                <p>{props.gameDetails.reviews}</p>
             </div>
             <div className='pl-4 py-4'>
             <SlideshowLightbox className={`container grid ${ props.gameDetails.sideImages.length < 2 ? 'grid-cols-1' : 'grid-cols-2'} gap-2 mx-auto`} theme='lightbox' lightboxIdentifier="lightbox1" framework="next" images={props.gameDetails.sideImages}>
@@ -68,6 +79,22 @@ function getGameDetails(props){
                         />
                     ))}
             </SlideshowLightbox>
+            </div>
+            <div className='prose lg:prose-xl pl-4 py-4'>
+            {props.gameDetails.reviews ?
+            <h2>Reviews</h2>
+            : null}
+            {props.gameDetails.reviews ?
+                 props.gameDetails.reviews.map((i, index) => (
+                    <div key={index}>
+                    <p className=' font-bold -mb-10'>{i.review}</p>
+                    {i.link ? 
+                    <p className='font-medium'><a className="text-gray-600" href={i.link}>{i.src}</a></p>
+                    :
+                    <p className='font-medium'>{i.src}</p>
+                    }
+                    </div>
+                )) : null}
             </div>
             </div>
 

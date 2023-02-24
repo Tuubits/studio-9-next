@@ -232,7 +232,8 @@
       "outOfStock": false,
       "alternateBuyOptions": [
         {
-          "name": "Add  Original Box Set Book 1"
+          "name": "Add  Original Box Set Book 1",
+          "addToCart": true
         },
         {
           "name": "Purchase Book 1 Box Set PDF or POD",

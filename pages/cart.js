@@ -40,10 +40,12 @@ export default function CartScreen() {
 
   const totalPrice = cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
   function createOrder(cartItems, actions) {
+    const name = state.cart.cartItems.map(i => i.id)
     return actions.order
       .create({
         purchase_units: [
           {
+            description: name[0],
             amount: { value: totalPrice },
           },
         ],

@@ -57,13 +57,23 @@ function getGameDetails(props){
             {props.gameDetails.videoLink ? <YouTube videoId={props.gameDetails.videoLink} opts={opts} onReady={onPlayerReady} /> : null }
             </div>
             <div className='col-span-2'>
-                <div className='text-center py-4'>
+                <div className='text-center py-4 space-y-4'>
+                {props.gameDetails.alternateBuyOptions ? 
+                    (props.gameDetails.alternateBuyOptions.map((i, index) => 
+                    <button
+                    className={`btn-primary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                    >
+                        <a href={i.link} target="_blank" rel="noreferrer">{i.name}</a>
+                    </button>
+                    ))
+                :
                 <button
-              className={`${props.gameDetails.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-              onClick={props.gameDetails.outOfStock ? null : addToCartHandler}
-            >
-              {props.gameDetails.outOfStock ? 'Out of Stock': 'Add to cart'}
-            </button>
+                className={`${props.gameDetails.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                onClick={props.gameDetails.outOfStock ? null : addToCartHandler}
+                >
+                {props.gameDetails.outOfStock ? 'Out of Stock': 'Add to cart'}
+                </button>
+                }
             </div>
             <div className='pl-4 py-4'>
             <SlideshowLightbox className={`container grid ${ props.gameDetails.sideImages.length < 2 ? 'grid-cols-1' : 'grid-cols-2'} gap-2 mx-auto`} theme='lightbox' lightboxIdentifier="lightbox1" framework="next" images={props.gameDetails.sideImages}>
@@ -87,7 +97,7 @@ function getGameDetails(props){
             {props.gameDetails.reviews ?
                  props.gameDetails.reviews.map((i, index) => (
                     <div key={index}>
-                    <p className=' font-bold -mb-10'>{i.review}</p>
+                    <p className=' font-bold'>{i.review}</p>
                     {i.link ? 
                     <p className='font-medium'><a className="text-gray-600" href={i.link}>{i.src}</a></p>
                     :

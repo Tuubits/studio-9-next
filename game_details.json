@@ -229,7 +229,28 @@
       ],
       "price": 1,
       "category": "games",
-      "outOfStock": false
+      "outOfStock": false,
+      "alternateBuyOptions": [
+        {
+          "name": "Add  Original Box Set Book 1"
+        },
+        {
+          "name": "Purchase Book 1 Box Set PDF or POD",
+          "link": "https://www.drivethrurpg.com/product/245646/Midnight-Legion-Book-1-Set?src=hottest_filtered"
+        },
+        {
+          "name": "Purchase Book 2 PDF or POD",
+          "link": "https://www.drivethrurpg.com/product/245653/Midnight-Legion-Book-2-The-World-Reborn?src=hottest_filtered"
+        },
+        {
+          "name": "Purchase Original Book 3",
+          "link": "https://www.amazon.com/Studio-Games-Midnight-Legon-Portal/dp/0998730068"
+        },
+        {
+          "name": "Purchase Book 3 PDF",
+          "link": "https://www.drivethrurpg.com/product/280687/Midnight-Legion-Book-3-Portal-of-Life?src=hottest_filtered"
+        }
+      ]
     },
     { 
       "id": "global-crisis",

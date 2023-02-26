@@ -61,7 +61,7 @@ export default function GoldenEraGaming() {
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
                 <Link href={`${feature.driveThruLink}`} passHref className='w-full lg:w-2/4'>
                   <button
-                    className={`btn-primary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                    className={`btn-secondary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                   >
                     Purchase PDF Here
                   </button>
@@ -93,7 +93,7 @@ export default function GoldenEraGaming() {
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
                 <Link href={`${i.driveThruLink}`} passHref className='w-full lg:w-2/4'>
                   <button
-                    className={`btn-primary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                    className={`btn-secondary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                   >
                     Purchase PDF Here
                   </button>
@@ -127,7 +127,7 @@ export default function GoldenEraGaming() {
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
                 <Link href={`${i.driveThruLink}`} passHref className='w-full'>
                   <button
-                    className={`btn-primary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                    className={`btn-secondary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                   >
                     Purchase PDF Here
                   </button>

@@ -62,7 +62,7 @@ function getBookDetails(props){
                 {props.bookDetails.bookLink ? 
                 <Link href={`${props.bookDetails.bookLink}`} passHref>
                 <button
-                className={`${props.bookDetails.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                className={`${props.bookDetails.outOfStock ? 'btn-disabled text-gray-700' : 'btn-secondary'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                 >
                 PURCHASE HERE
                 </button>

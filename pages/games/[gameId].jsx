@@ -61,7 +61,7 @@ function getGameDetails(props){
                 {props.gameDetails.alternateBuyOptions ? 
                     (props.gameDetails.alternateBuyOptions.map((i, index) => 
                     <button key={index}
-                    className={`btn-primary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                    className={`${i.addToCart ? '' : 'btn-secondary'} btn-primary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                     >
                         {i.addToCart ?
                             <button

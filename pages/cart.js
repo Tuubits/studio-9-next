@@ -42,8 +42,6 @@ export default function CartScreen() {
 console.log('cart item outside of createorder function', cartItems);
   const totalPrice = cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
   function createOrder(data, actions) {
-    const name = state.cart.cartItems.map(i => i.id)
-    console.log('cartItems inside function', cartItems)
     return actions.order.create({
         purchase_units: [{
             amount: { 

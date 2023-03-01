@@ -23,7 +23,16 @@ export default function CartScreen() {
   };
 
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
-
+  const updatedCartItems = cartItems.map((item) => {
+    return {
+      name: item.name,
+      unit_amount: {
+        currency_code: 'USD',
+        value: item.price,
+      },
+      quantity: item.quantity,
+    };
+  })
   useEffect(() => {
     const loadPaypalScript = async () => {
         paypalDispatch({
@@ -41,6 +50,7 @@ export default function CartScreen() {
   // add multiple items to purchase_units in paypal createOrder function
 console.log('cart item outside of createorder function', cartItems);
   const totalPrice = cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
+  console.log('udpated cart items', updatedCartItems);
   function createOrder(data, actions) {
     return actions.order.create({
         purchase_units: [{

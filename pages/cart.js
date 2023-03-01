@@ -38,17 +38,19 @@ export default function CartScreen() {
     loadPaypalScript();
   }, [paypalDispatch]);
 
+  // add multiple items to purchase_units in paypal createOrder function
+console.log('cart item outside of createorder function', cartItems);
   const totalPrice = cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
-  function createOrder(cartItems, actions) {
+  function createOrder(data, actions) {
     const name = state.cart.cartItems.map(i => i.id)
-    return actions.order
-      .create({
-        purchase_units: [
-          {
-            description: name[0],
-            amount: { value: totalPrice },
-          },
-        ],
+    console.log('cartItems inside function', cartItems)
+    return actions.order.create({
+        purchase_units: [{
+            amount: { 
+              value: totalPrice 
+            },
+          items: cartItems
+      }],
       })
       .then((orderID) => {
         return orderID;
@@ -65,7 +67,7 @@ export default function CartScreen() {
           details
         );
         dispatch({ type: 'PAY_SUCCESS', payload: data });
-        console.success('Order is paid successgully');
+        console.success('Order is paid successfully');
       } catch (err) {
         dispatch({ type: 'PAY_FAIL', payload: getError(err) });
         console.error(getError(err));

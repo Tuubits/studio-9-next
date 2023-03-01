@@ -27,15 +27,14 @@ export default function CartScreen() {
 
 
   const updatedCartItems = cartItems.map((item) => {
-    console.log('item', item);
-    return {
+    return ({
       unit_amount: {
         currency_code: 'USD',
         value: item.price,
       },
       quantity: item.quantity,
       name: item.name,
-    };
+    });
   })
 
   useEffect(() => {
@@ -60,7 +59,13 @@ console.log('cart item outside of createorder function', cartItems);
     return actions.order.create({
         purchase_units: [{
             amount: { 
-              value: totalPrice 
+              value: totalPrice,
+              breakdown:{
+                item_total:{
+                    currency_code: 'USD',
+                    value: totalPrice
+                }
+            }
             },
           items: updatedCartItems
       }],

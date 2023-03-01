@@ -10,7 +10,8 @@ import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 export default function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
-  const [isPaid, setIsPaid] = useState(false)
+  const [isPaid, setIsPaid] = useState(false);
+
   const {
     cart: { cartItems },
   } = state;
@@ -23,16 +24,20 @@ export default function CartScreen() {
   };
 
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
+
+
   const updatedCartItems = cartItems.map((item) => {
+    console.log('item', item);
     return {
-      name: item.name,
       unit_amount: {
         currency_code: 'USD',
         value: item.price,
       },
       quantity: item.quantity,
+      name: item.name,
     };
   })
+
   useEffect(() => {
     const loadPaypalScript = async () => {
         paypalDispatch({
@@ -57,7 +62,7 @@ console.log('cart item outside of createorder function', cartItems);
             amount: { 
               value: totalPrice 
             },
-          items: cartItems
+          items: updatedCartItems
       }],
       })
       .then((orderID) => {

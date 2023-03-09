@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,14 +10,24 @@ import separator from '../public/bottom_separator.png';
 import mobileSeparator from '../public/bottom_separatorSMLsize.png';
 
 export default function Home() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(null);
   const router = useRouter();
-  
-  useEffect(() => {
-    console.log('query?', router.query);
-    setQuery(router.query);
-  }, [router.query !== {}]);
 
+  console.log('router check initial', router.components);
+  console.log('router query', router.query.length);
+
+  useEffect(() => {
+    if(router.components) {
+      console.log('router components initial', router.components['/'].initial);
+    }
+    console.log('router query in useEffect?', router.query);
+    if(router.components.initial !== true || router.query.message !== undefined) {
+      setQuery(router.query);
+      console.log('query set after conditional', query);
+    }
+  }, [router.components]);
+
+console.log('query after update', query)
   return (
     <div>
       <Head>
@@ -40,10 +50,10 @@ export default function Home() {
         <p className="prose-xl lg:prose-2xl py-8 px-8 sm:py-12 sm:px-12 lg:px-16 mx-auto text-center w-full sm:w-4/5">
           A family friendly media company • Creating joy since 2005
         </p>
-        {query !== {} ? 
+        {router.query.message !== undefined ? 
           <div>
             <p className="prose-xl lg:prose-2xl py-8 px-8 sm:py-12 sm:px-12 lg:px-16 mx-auto text-center w-full sm:w-4/5">
-            Thank you {query} for ordering with Studio 9 Games/Studio 9 Inc. Your support means we can keep making independent products with all the wonder and magic possible. Please allow time for our gnomes to pack up and send your goods. If you have any questions about your order feel free to contact us at: studio9inc@mac.com
+            Thank you for ordering with Studio 9 Games/Studio 9 Inc. Your support means we can keep making independent products with all the wonder and magic possible. Please allow time for our gnomes to pack up and send your goods. If you have any questions about your order feel free to contact us at: studio9inc@mac.com
             </p>
           </div>
         : null }
@@ -123,7 +133,7 @@ export default function Home() {
       <footer className="footer footer-center pt-2 pb-10 text-base-content rounded">
         <div className="grid grid-flow-col gap-4">
           <a className="prose-xl link link-hover link-success">About us</a> 
-          <a className="prose-xl link link-hover">Contact</a> 
+          <a className="prose-xl link link-hover link-success">Contact</a> 
         </div> 
         <div>
           <div className="grid grid-flow-col gap-4">

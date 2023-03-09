@@ -52,8 +52,8 @@ console.log('query after update', query)
         </p>
         {router.query.message !== undefined ? 
           <div>
-            <p className="prose-xl lg:prose-2xl py-8 px-8 sm:py-12 sm:px-12 lg:px-16 mx-auto text-center w-full sm:w-4/5">
-            Thank you for ordering with Studio 9 Games/Studio 9 Inc. Your support means we can keep making independent products with all the wonder and magic possible. Please allow time for our gnomes to pack up and send your goods. If you have any questions about your order feel free to contact us at: studio9inc@mac.com
+            <p className="prose-xl lg:prose-2xl pb-8 px-8 sm:pb-12 sm:px-12 lg:px-16 mx-auto text-left w-full sm:w-4/5">
+            Thank you {router.query.message}, for ordering with Studio 9 Games/Studio 9 Inc. Your support means we can keep making independent products with all the wonder and magic possible. Please allow time for our gnomes to pack up and send your goods. If you have any questions about your order feel free to contact us at: <a className='link link-hover' href="mailto:studio9inc@mac.com">studio9inc@mac.com</a>
             </p>
           </div>
         : null }
@@ -132,8 +132,8 @@ console.log('query after update', query)
       </div>
       <footer className="footer footer-center pt-2 pb-10 text-base-content rounded">
         <div className="grid grid-flow-col gap-4">
-          <a className="prose-xl link link-hover link-success">About us</a> 
-          <a className="prose-xl link link-hover link-success">Contact</a> 
+          <a className="prose-xl link link-hover">About us</a> 
+          <a className="prose-xl link link-hover">Contact</a> 
         </div> 
         <div>
           <div className="grid grid-flow-col gap-4">

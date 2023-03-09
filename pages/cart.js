@@ -55,7 +55,7 @@ export default function CartScreen() {
 
   useEffect(() => {
     const fetchShippingOptions = async () => {
-      const response = await fetch('https://api.paypal.com/v1/shipping/shipping-calculators/', {
+      const response = await fetch('https://api-m.paypal.com/v1/shipping/shipping-calculators/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

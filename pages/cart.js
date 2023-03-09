@@ -6,12 +6,12 @@ import GoldenEraLayout from '../components/goldenEraLayout';
 import { useRouter } from 'next/router';
 import { Store } from '../utils/Store';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
-import axios from 'axios';
 
 export default function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
-  const [isPaid, setIsPaid] = useState(false);
+  const [isPaid, setIsPaid] = useState(false);  
+  const [info, setInfo] = useState('');
 
   const {
     cart: { cartItems },
@@ -27,7 +27,7 @@ export default function CartScreen() {
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
 
 
-  const updatedCartItems = cartItems.map((item) => {
+  let updatedCartItems = cartItems.map((item) => {
     return ({
       unit_amount: {
         currency_code: 'USD',
@@ -52,10 +52,20 @@ export default function CartScreen() {
     loadPaypalScript();
   }, [paypalDispatch]);
 
+useEffect(() => {
+    if (isPaid) {
+      router.push({
+        pathname:'/',
+        query: { message: info },
+      });
+      updatedCartItems = [];
+    }
+}, [isPaid])
+
   // add multiple items to purchase_units in paypal createOrder function
-console.log('cart item outside of createorder function', cartItems);
+
   const totalPrice = cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
-  console.log('udpated cart items', updatedCartItems);
+
   function createOrder(data, actions) {
     return actions.order.create({
         purchase_units: [{
@@ -84,28 +94,11 @@ console.log('cart item outside of createorder function', cartItems);
     // Capture the payment and update the order status
     return actions.order.capture().then(function(details) {
       // Show a success message to the buyer
-      alert('Transaction completed by ' + details.payer.name.given_name + '!');
+      setIsPaid(true);
+      setInfo(details.payer.name.given_name);
+      // alert('Transaction completed by ' + details.payer.name.given_name + '!');
     });
   };
-  
-  // function onApprove(data, actions) {
-  //   return actions.order.capture().then(async function (details) {
-  //     try {
-  //       dispatch({ type: 'PAY_REQUEST' });
-  //       const { data } = await axios.put(
-  //         `/api/orders/${order._id}/pay`,
-  //         details
-  //       );
-  //       console.log('data?', data);
-  //       console.log('details?', details);
-  //       dispatch({ type: 'PAY_SUCCESS', payload: data });
-  //       console.success('Order is paid successfully');
-  //     } catch (err) {
-  //       dispatch({ type: 'PAY_FAIL', payload: onError(err) });
-  //       console.error(onError(err));
-  //     }
-  //   });
-  // }
 
   return (
     <GoldenEraLayout title="Shopping Cart">

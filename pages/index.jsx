@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { primaryFeatures, secondaryFeatures } from '../components/features';
 import { motion } from 'framer-motion';
 import { CldImage } from 'next-cloudinary';
@@ -8,6 +10,10 @@ import separator from '../public/bottom_separator.png';
 import mobileSeparator from '../public/bottom_separatorSMLsize.png';
 
 export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+    console.log('query?', router.query);
+  }, [router.query !== {}]);
   return (
     <div>
       <Head>

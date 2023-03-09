@@ -52,7 +52,7 @@ console.log('query after update', query)
         </p>
         {router.query.message !== undefined ? 
           <div>
-            <p className="prose-xl lg:prose-2xl pb-8 px-8 sm:pb-12 sm:px-12 lg:px-16 mx-auto text-left w-full sm:w-4/5">
+            <p className="prose-xl lg:prose-2xl pb-8 px-6 sm:pb-12 sm:px-12 lg:px-18 mx-auto text-left w-full sm:w-4/5">
             Thank you {router.query.message}, for ordering with Studio 9 Games/Studio 9 Inc. Your support means we can keep making independent products with all the wonder and magic possible. Please allow time for our gnomes to pack up and send your goods. If you have any questions about your order feel free to contact us at: <a className='link link-hover' href="mailto:studio9inc@mac.com">studio9inc@mac.com</a>
             </p>
           </div>

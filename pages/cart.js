@@ -12,6 +12,7 @@ export default function CartScreen() {
   const { state, dispatch } = useContext(Store);
   const [isPaid, setIsPaid] = useState(false);  
   const [info, setInfo] = useState('');
+  const [shippingOptions, setShippingOptions] = useState([]);
 
   const {
     cart: { cartItems },
@@ -52,6 +53,41 @@ export default function CartScreen() {
     loadPaypalScript();
   }, [paypalDispatch]);
 
+  useEffect(() => {
+    const fetchShippingOptions = async () => {
+      const response = await fetch('https://api.paypal.com/v1/shipping/shipping-calculators/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${process.env.PAYPAL_CLIENT}`,
+        },
+        body: JSON.stringify({
+          shipping_address: {
+            address_line_1: '1234 Main St.',
+            address_line_2: 'Unit 101',
+            admin_area_1: 'CA',
+            admin_area_2: 'San Jose',
+            postal_code: '95131',
+            country_code: 'US',
+          },
+          purchase_units: [
+            {
+              amount: {
+                currency_code: 'USD',
+                value: '100.00',
+              },
+            },
+          ],
+        }),
+      });
+
+      const responseJson = await response.json();
+      setShippingOptions(responseJson.shipping_options);
+    };
+
+    fetchShippingOptions();
+  }, []);
+
 useEffect(() => {
     if (isPaid) {
       router.push({
@@ -75,11 +111,18 @@ useEffect(() => {
                 item_total:{
                     currency_code: 'USD',
                     value: totalPrice
+                },
+                shipping: {
+                  currency_code: 'USD',
+                  value: shippingOptions.find(option => option.selected).amount.value,
                 }
             }
             },
           items: updatedCartItems
       }],
+      application_context: {
+        shipping_preference: 'GET_FROM_FILE',
+      },
       })
       .then((orderID) => {
         return orderID;
@@ -89,6 +132,35 @@ useEffect(() => {
   function onError(err) {
     console.error(err);
   }
+
+  const onShippingChange = (data, actions) => {
+    return actions.order.patch({
+      purchase_units: [
+        {
+          amount: {
+            breakdown: {
+              shipping: {
+                value: data.shipping_option.amount.value,
+              },
+            },
+          },
+          shipping: {
+            name: {
+              full_name: data.shipping_address.recipient_name,
+            },
+            address: {
+              address_line_1: data.shipping_address.address_line_1,
+              address_line_2: data.shipping_address.address_line_2 || '',
+              admin_area_1: data.shipping_address.admin_area_1,
+              admin_area_2: data.shipping_address.admin_area_2 || '',
+              postal_code: data.shipping_address.postal_code,
+              country_code: data.shipping_address.country_code,
+            },
+          },
+        },
+      ],
+    });
+  };
 
   const onApprove = (data, actions) => {
     // Capture the payment and update the order status
@@ -195,6 +267,8 @@ useEffect(() => {
                                 createOrder={createOrder}
                                 onApprove={onApprove}
                                 onError={onError}
+                                onShippingChange={onShippingChange}
+                                shippingOptions={shippingOptions}
                             >
                             </PayPalButtons>
                         </div>

@@ -6,6 +6,7 @@ import GoldenEraLayout from '../components/goldenEraLayout';
 import { useRouter } from 'next/router';
 import { Store } from '../utils/Store';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
+import axios from 'axios';
 
 export default function CartScreen() {
   const router = useRouter();

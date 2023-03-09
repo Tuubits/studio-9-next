@@ -106,7 +106,7 @@ export default function Home() {
       <footer className="footer footer-center pt-2 pb-10 text-base-content rounded">
         <div className="grid grid-flow-col gap-4">
           <a className="prose-xl link link-hover link-warning">About us</a> 
-          <a className="prose-xl link link-hover">Contact</a> 
+          <a className="prose-xl link link-hover link-secondary">Contact</a> 
         </div> 
         <div>
           <div className="grid grid-flow-col gap-4">

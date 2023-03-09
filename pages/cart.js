@@ -75,7 +75,6 @@ console.log('cart item outside of createorder function', cartItems);
       });
   }
 
-
   function onApprove(data, actions) {
     return actions.order.capture().then(async function (details) {
       try {
@@ -84,6 +83,7 @@ console.log('cart item outside of createorder function', cartItems);
           `/api/orders/${order._id}/pay`,
           details
         );
+        console.log('data?', data);
         dispatch({ type: 'PAY_SUCCESS', payload: data });
         console.success('Order is paid successfully');
       } catch (err) {
@@ -189,7 +189,7 @@ console.log('cart item outside of createorder function', cartItems);
                         <div className='w-full'>
                             <PayPalButtons
                                 createOrder={createOrder}
-                                // onApprove={onApprove}
+                                onApprove={onApprove}
                                 onError={onError}
                             >
                             </PayPalButtons>

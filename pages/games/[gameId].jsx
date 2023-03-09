@@ -61,15 +61,13 @@ function getGameDetails(props){
                 {props.gameDetails.alternateBuyOptions ? 
                     (props.gameDetails.alternateBuyOptions.map((i, index) => 
                     <button key={index}
-                    className={`${i.addToCart ? '' : 'btn-secondary'} btn-primary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                        className={`${i.addToCart ? '' : 'btn-secondary'} btn-primary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                        onClick={i.addToCart ? props.gameDetails.outOfStock ? null : addToCartHandler : null}
                     >
                         {i.addToCart ?
-                            <button
-                            className={`${props.gameDetails.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary'} py-0 w-full items-center rounded-md border-2 border-transparent px-6 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                            onClick={props.gameDetails.outOfStock ? null : addToCartHandler}
-                            >
-                            {props.gameDetails.outOfStock ? 'Out of Stock': i.name}
-                            </button>
+                            
+                            props.gameDetails.outOfStock ? 'Out of Stock': i.name
+
                         :
                             <a href={i.link} target="_blank" rel="noreferrer">{i.name}</a>
                         }

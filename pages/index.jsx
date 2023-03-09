@@ -10,10 +10,14 @@ import separator from '../public/bottom_separator.png';
 import mobileSeparator from '../public/bottom_separatorSMLsize.png';
 
 export default function Home() {
+  const [query, setQuery] = useState('');
   const router = useRouter();
+  
   useEffect(() => {
     console.log('query?', router.query);
+    setQuery(router.query);
   }, [router.query !== {}]);
+
   return (
     <div>
       <Head>
@@ -36,6 +40,13 @@ export default function Home() {
         <p className="prose-xl lg:prose-2xl py-8 px-8 sm:py-12 sm:px-12 lg:px-16 mx-auto text-center w-full sm:w-4/5">
           A family friendly media company • Creating joy since 2005
         </p>
+        {query !== {} ? 
+          <div>
+            <p className="prose-xl lg:prose-2xl py-8 px-8 sm:py-12 sm:px-12 lg:px-16 mx-auto text-center w-full sm:w-4/5">
+            Thank you {query} for ordering with Studio 9 Games/Studio 9 Inc. Your support means we can keep making independent products with all the wonder and magic possible. Please allow time for our gnomes to pack up and send your goods. If you have any questions about your order feel free to contact us at: studio9inc@mac.com
+            </p>
+          </div>
+        : null }
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4">
           {primaryFeatures.map((i, index) => (
             <motion.div
@@ -111,7 +122,7 @@ export default function Home() {
       </div>
       <footer className="footer footer-center pt-2 pb-10 text-base-content rounded">
         <div className="grid grid-flow-col gap-4">
-          <a className="prose-xl link link-hover">About us</a> 
+          <a className="prose-xl link link-hover link-success">About us</a> 
           <a className="prose-xl link link-hover">Contact</a> 
         </div> 
         <div>

@@ -80,24 +80,32 @@ console.log('cart item outside of createorder function', cartItems);
     console.error(err);
   }
 
-  function onApprove(data, actions) {
-    return actions.order.capture().then(async function (details) {
-      try {
-        dispatch({ type: 'PAY_REQUEST' });
-        const { data } = await axios.put(
-          `/api/orders/${order._id}/pay`,
-          details
-        );
-        console.log('data?', data);
-        console.log('details?', details);
-        dispatch({ type: 'PAY_SUCCESS', payload: data });
-        console.success('Order is paid successfully');
-      } catch (err) {
-        dispatch({ type: 'PAY_FAIL', payload: onError(err) });
-        console.error(onError(err));
-      }
+  const onApprove = (data, actions) => {
+    // Capture the payment and update the order status
+    return actions.order.capture().then(function(details) {
+      // Show a success message to the buyer
+      alert('Transaction completed by ' + details.payer.name.given_name + '!');
     });
-  }
+  };
+  
+  // function onApprove(data, actions) {
+  //   return actions.order.capture().then(async function (details) {
+  //     try {
+  //       dispatch({ type: 'PAY_REQUEST' });
+  //       const { data } = await axios.put(
+  //         `/api/orders/${order._id}/pay`,
+  //         details
+  //       );
+  //       console.log('data?', data);
+  //       console.log('details?', details);
+  //       dispatch({ type: 'PAY_SUCCESS', payload: data });
+  //       console.success('Order is paid successfully');
+  //     } catch (err) {
+  //       dispatch({ type: 'PAY_FAIL', payload: onError(err) });
+  //       console.error(onError(err));
+  //     }
+  //   });
+  // }
 
   return (
     <GoldenEraLayout title="Shopping Cart">

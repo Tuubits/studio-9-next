@@ -60,18 +60,11 @@ function getGameDetails(props){
                 <div className='text-center py-4 space-y-4'>
                 {props.gameDetails.alternateBuyOptions ? 
                     (props.gameDetails.alternateBuyOptions.map((i, index) => 
-                    <button key={index}
-                        className={`${i.addToCart ? '' : 'btn-secondary'} btn-primary w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                        onClick={i.addToCart ? props.gameDetails.outOfStock ? null : addToCartHandler : null}
+                    <a key={index}
+                        className={`${i.addToCart ? '' : 'btn-secondary'} block px-6 py-3 btn-primary w-full items-center rounded-md border-2 border-transparent text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                        href={i.link} target="_blank" rel="noreferrer"
                     >
-                        {i.addToCart ?
-                            
-                            props.gameDetails.outOfStock ? 'Out of Stock': i.name
-
-                        :
-                            <a href={i.link} target="_blank" rel="noreferrer">{i.name}</a>
-                        }
-                    </button>
+                            {i.name}</a>
                     ))
                 :
                 <button

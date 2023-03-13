@@ -58,15 +58,15 @@ function getBookDetails(props){
             {props.bookDetails.videoLink ? <YouTube videoId={props.bookDetails.videoLink} opts={opts} onReady={onPlayerReady} /> : null }
             </div>
             <div className='col-span-2'>
-                <div className='text-center py-4'>
-                {props.bookDetails.bookLink ? 
-                <Link href={`${props.bookDetails.bookLink}`} passHref>
-                <button
-                className={`${props.bookDetails.outOfStock ? 'btn-disabled text-gray-700' : 'btn-secondary'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                >
-                PURCHASE HERE
-                </button>
-                </Link>
+                <div className='text-center py-4 space-y-4'>
+                {props.bookDetails.alternateBuyOptions ? 
+                    (props.bookDetails.alternateBuyOptions.map((i, index) => 
+                    <a key={index}
+                        className={`${i.addToCart ? '' : 'btn-secondary'} block px-6 py-3 btn-primary w-full items-center rounded-md border-2 border-transparent text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                        href={i.link} target="_blank" rel="noreferrer"
+                    >
+                            {i.name}</a>
+                    ))
                 :
                 <button
                 className={`${props.bookDetails.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}

@@ -12,13 +12,7 @@
         "videoLink": "fbM1LbQELGE",
         "price": 1,
         "category": "books",
-        "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Here",
-            "link": "https://www.shop.studio9inc.com/Blessed-Is-the-Spot-A-First-Prayer-Book-BIS0005.htm"
-          }
-        ]
+        "outOfStock": false
       },
       { 
         "id": "dottie-and-me-activity-book",
@@ -32,13 +26,7 @@
         "videoLink": "Testimonial ipsum dolor sit amet, consectetur adipiscing elit,",
         "price": 1,
         "category": "books",
-        "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Here",
-            "link": "https://www.shop.studio9inc.com/Dottie-and-Me-Celebrate-What-Makes-Us-Great-DNM0007.htm"
-          }
-        ]
+        "outOfStock": false
       },
       { 
         "id": "sweet-neighbors-come-in-all-colors", 

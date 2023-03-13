@@ -6,7 +6,7 @@ import Patreon from '../public/aaron.jpeg';
 export default function Footer() {
     return(
         <div data-theme={'studio9'} >
-        <footer className="footer footer-center pb-10 text-base-content rounded">
+        <footer className="footer footer-center gap-y-6 pb-10 text-base-content rounded">
         <div>
           <p className='prose-xl'>Copyright © {(new Date().getFullYear())} - All right reserved by Studio 9 Inc</p>
         </div>

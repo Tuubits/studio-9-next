@@ -53,7 +53,13 @@
         "videoLink": "f1M_XaqJD8U",
         "price": 1,
         "category": "books",
-        "outOfStock": false
+        "outOfStock": false,
+        "alternateBuyOptions": [
+          {
+            "name": "Purchase Here",
+            "link": "https://www.amazon.com/Sweet-Neighbors-Colors-Introduction-Bahai/dp/1618511289"
+          }
+        ]
       },
       { 
         "id": "zanjan",
@@ -68,7 +74,13 @@
         "videoLink": "jEzjOP-mloQ",
         "price": 1,
         "category": "books",
-        "outOfStock": false
+        "outOfStock": false,
+        "alternateBuyOptions": [
+          {
+            "name": "Purchase Here",
+            "link": "https://www.amazon.com/Zanjan-Graphic-Novel-Actual-Events/dp/1931847886"
+          }
+        ]
       }
     ]
   }

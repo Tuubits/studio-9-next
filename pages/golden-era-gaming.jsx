@@ -59,13 +59,6 @@ export default function GoldenEraGaming() {
                 <h2 className="card-title">{feature.title}</h2>
                 <p>{feature.details}</p>
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
-                <Link href={`${feature.driveThruLink}`} passHref className='w-full lg:w-2/4'>
-                  <button
-                    className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                  >
-                    Purchase PDF Here
-                  </button>
-                </Link>
                 {feature.alternateBuyOptions ?
                   <Link href={`${feature.alternateBuyOptions[0].link}`} passHref className='w-full lg:w-2/4'>
                     <button
@@ -82,6 +75,13 @@ export default function GoldenEraGaming() {
                     {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
                 </button>
                 }
+                <Link href={`${feature.driveThruLink}`} passHref className='w-full lg:w-2/4'>
+                  <button
+                    className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                  >
+                    Purchase PDF Edition
+                  </button>
+                </Link>
                 </div>
             </div>
         </div>
@@ -101,13 +101,6 @@ export default function GoldenEraGaming() {
                 <h2 className="card-title">{i.title}</h2>
                 <p>{i.details}</p>
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
-                <Link href={`${i.driveThruLink}`} passHref className='w-full lg:w-2/4'>
-                  <button
-                    className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                  >
-                    Purchase PDF Here
-                  </button>
-                </Link>
                 {i.alternateBuyOptions ?
                   <Link href={`${i.alternateBuyOptions[0].link}`} passHref className='w-full'>
                     <button
@@ -124,6 +117,13 @@ export default function GoldenEraGaming() {
                     {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
                 </button>
                 }
+                <Link href={`${i.driveThruLink}`} passHref className='w-full lg:w-2/4'>
+                  <button
+                    className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                  >
+                    Purchase PDF Edition
+                  </button>
+                </Link>
                 </div>
             </div>
             </div>
@@ -145,13 +145,6 @@ export default function GoldenEraGaming() {
                 <h2 className="card-title">{i.title}</h2>
                 <p>{i.details}</p>
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
-                <Link href={`${i.driveThruLink}`} passHref className='w-full'>
-                  <button
-                    className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                  >
-                    Purchase PDF Here
-                  </button>
-                </Link>
                 {i.alternateBuyOptions ?
                   <Link href={`${i.alternateBuyOptions[0].link}`} passHref className='w-full'>
                     <button
@@ -168,6 +161,13 @@ export default function GoldenEraGaming() {
                     {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
                 </button>
                 }
+                <Link href={`${i.driveThruLink}`} passHref className='w-full'>
+                  <button
+                    className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                  >
+                    Purchase PDF Edition
+                  </button>
+                </Link>
                 </div>
             </div>
             </div>

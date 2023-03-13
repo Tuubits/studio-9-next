@@ -66,12 +66,22 @@ export default function GoldenEraGaming() {
                     Purchase PDF Here
                   </button>
                 </Link>
-                {/* <button
-                    className={`${feature.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary text-base-100'} w-full lg:w-2/4 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                    onClick={()=>{addToCartHandler({feature}); router.push('/cart')}}  
+                {feature.alternateBuyOptions ?
+                  <Link href={`${feature.alternateBuyOptions[0].link}`} passHref className='w-full lg:w-2/4'>
+                    <button
+                      className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                    >
+                      {feature.alternateBuyOptions[0].name}
+                    </button>
+                  </Link>
+                :
+                <button
+                className={`${i.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary text-base-100'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                onClick={()=>{addToCartHandler({i}); router.push('/cart')}}  
                 >
-                    {feature.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
-                </button> */}
+                    {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
+                </button>
+                }
                 </div>
             </div>
         </div>
@@ -98,12 +108,22 @@ export default function GoldenEraGaming() {
                     Purchase PDF Here
                   </button>
                 </Link>
-                {/* <button
-                    className={`${i.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary text-base-100'} w-full lg:w-2/4 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                    onClick={()=>{addToCartHandler({i}); router.push('/cart')}}  
+                {i.alternateBuyOptions ?
+                  <Link href={`${i.alternateBuyOptions[0].link}`} passHref className='w-full'>
+                    <button
+                      className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                    >
+                      {i.alternateBuyOptions[0].name}
+                    </button>
+                  </Link>
+                :
+                <button
+                className={`${i.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary text-base-100'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                onClick={()=>{addToCartHandler({i}); router.push('/cart')}}  
                 >
                     {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
-                </button> */}
+                </button>
+                }
                 </div>
             </div>
             </div>
@@ -132,12 +152,22 @@ export default function GoldenEraGaming() {
                     Purchase PDF Here
                   </button>
                 </Link>
-                {/* <button
-                    className={`${i.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary text-base-100'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                    onClick={()=>{addToCartHandler({i}); router.push('/cart')}}  
+                {i.alternateBuyOptions ?
+                  <Link href={`${i.alternateBuyOptions[0].link}`} passHref className='w-full'>
+                    <button
+                      className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                    >
+                      {i.alternateBuyOptions[0].name}
+                    </button>
+                  </Link>
+                :
+                <button
+                className={`${i.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary text-base-100'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                onClick={()=>{addToCartHandler({i}); router.push('/cart')}}  
                 >
                     {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
-                </button> */}
+                </button>
+                }
                 </div>
             </div>
             </div>

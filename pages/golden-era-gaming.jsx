@@ -102,7 +102,7 @@ export default function GoldenEraGaming() {
                 <p>{i.details}</p>
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
                 {i.alternateBuyOptions ?
-                  <Link href={`${i.alternateBuyOptions[0].link}`} passHref className='w-full'>
+                  <Link href={`${i.alternateBuyOptions[0].link}`} passHref className='w-full lg:w-2/4'>
                     <button
                       className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                     >

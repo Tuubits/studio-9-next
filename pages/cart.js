@@ -106,7 +106,7 @@ useEffect(() => {
     return actions.order.create({
         purchase_units: [{
             amount: { 
-              value: (totalPrice + shippingCost.toFixed(2)),
+              value: (totalPrice + shippingCost),
               breakdown:{
                 item_total:{
                   currency_code: 'USD',
@@ -114,7 +114,7 @@ useEffect(() => {
                 },
                 shipping: {
                   currency_code: 'USD',
-                  value: shippingCost.toFixed(2),
+                  value: shippingCost,
                 },
             }
             },

@@ -70,7 +70,7 @@ export default function GoldenEraGaming() {
                 :
                 <button
                 className={`btn-primary text-base-100 w-ful lg:w-2/4 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                onClick={()=>{addToCartHandler({i}); router.push('/cart')}}  
+                onClick={()=>{addToCartHandler({feature}); router.push('/cart')}}  
                 >
                      Add Signed Copy to Cart
                 </button>

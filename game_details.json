@@ -20,7 +20,7 @@
       "price": 8.99,
       "category": "games",
       "outOfStock": false,
-      "shippingCost": 16
+      "shippingCost": 8
     },
     { 
       "id": "villagers-and-villains",

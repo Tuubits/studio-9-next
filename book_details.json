@@ -13,12 +13,7 @@
         "price": 1,
         "category": "books",
         "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Here",
-            "link": "https://www.shop.studio9inc.com/Blessed-Is-the-Spot-A-First-Prayer-Book-BIS0005.htm"
-          }
-        ]
+        "shippingCost": 8 
       },
       { 
         "id": "dottie-and-me-activity-book",
@@ -33,12 +28,7 @@
         "price": 1,
         "category": "books",
         "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Here",
-            "link": "https://www.shop.studio9inc.com/Dottie-and-Me-Celebrate-What-Makes-Us-Great-DNM0007.htm"
-          }
-        ]
+        "shippingCost": 8 
       },
       { 
         "id": "sweet-neighbors-come-in-all-colors", 
@@ -54,12 +44,7 @@
         "price": 1,
         "category": "books",
         "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Here",
-            "link": "https://www.amazon.com/Sweet-Neighbors-Colors-Introduction-Bahai/dp/1618511289"
-          }
-        ]
+        "shippingCost": 8
       },
       { 
         "id": "zanjan",
@@ -75,12 +60,7 @@
         "price": 1,
         "category": "books",
         "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Here",
-            "link": "https://www.amazon.com/Zanjan-Graphic-Novel-Actual-Events/dp/1931847886"
-          }
-        ]
+        "shippingCost": 8
       }
     ]
   }

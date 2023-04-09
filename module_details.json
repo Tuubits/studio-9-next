@@ -9,13 +9,7 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/242362/Greenwood-of-the-Fey-Sovereign",
         "price": 1,
         "category": "",
-        "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Print Edition",
-            "link": "https://www.shop.studio9inc.com/DCC-RPG-Module-Product-S9G100XX.htm"
-          }
-        ]
+        "outOfStock": false
       },
       { 
         "id": "reckoning-of-the-gods", 
@@ -27,13 +21,7 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/273519/Reckoning-of-the-Gods--Into-the-Shadow-Realm",
         "price": 1,
         "category": "",
-        "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Print Edition",
-            "link": "https://www.shop.studio9inc.com/DCC-RPG-Module-Product-S9G100XX.htm"
-          }
-        ]
+        "outOfStock": false
       },
       { 
         "id": "strange-night-at-the-pint-and-pony", 
@@ -45,13 +33,7 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/323921/A-Strange-Night-at-the-Pint-n-Pony",
         "price": 1,
         "category": "",
-        "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Print Edition",
-            "link": "https://www.shop.studio9inc.com/DCC-RPG-Module-Product-S9G100XX.htm"
-          }
-        ]
+        "outOfStock": false
       },
       { 
         "id": "101-city-encounters", 
@@ -63,13 +45,7 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/323923/101-City-Encounters",
         "price": 1,
         "category": "",
-        "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Print Edition",
-            "link": "https://www.shop.studio9inc.com/DCC-RPG-Module-Product-S9G100XX.htm"
-          }
-        ]
+        "outOfStock": false
       },
       { 
         "id": "welcome-to-eastwood", 
@@ -81,13 +57,7 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/356562/Welcome-to-Eastwood",
         "price": 1,
         "category": "",
-        "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Print Edition",
-            "link": "https://www.shop.studio9inc.com/DCC-RPG-Module-Product-S9G100XX.htm"
-          }
-        ]
+        "outOfStock": false
       },
       { 
         "id": "the-towers-of-dr-xill", 
@@ -99,13 +69,7 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/378946/The-Towers-of-Dr-Xill",
         "price": 1,
         "category": "",
-        "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Print Edition",
-            "link": "https://goodman-games.com/store/product/the-towers-of-dr-xill-print-pdf/"
-          }
-        ]
+        "outOfStock": false
       },
       { 
         "id": "the-years-between", 
@@ -117,30 +81,6 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/378942/The-Years-Between",
         "price": 1,
         "category": "",
-        "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Print Edition",
-            "link": "https://goodman-games.com/store/product/the-years-between-print-pdf/"
-          }
-        ]
-      },
-      { 
-        "id": "cathedral-of-the-undying", 
-        "title": "Cathedral of the Undying",
-        "slug": "cathedral-of-the-undying", 
-        "name": "Cathedral of the Undying", 
-        "details": "The usual excitement of the Blackmoon celebration is amplified by the appearance of a solar eclipse, bringing a larger than usual host of lunar hermits, fanatics and witches eager to sell forecasts, issue omens, or cast harvest futures. The eager participants relish these sacred days when the world of the dead is said to draw closest to the living and whisper messages from the grave. This 20-page level 5 adventure is created for Dungeon Crawl Classics.",
-        "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1678904391/studio9/Temple_Dead_mobs_FP_b4wwrh.jpg",
-        "driveThruLink": "https://www.drivethrurpg.com/product/378942/The-Years-Between",
-        "price": 1,
-        "category": "",
-        "outOfStock": false,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Print Edition",
-            "link": "https://goodman-games.com/store/product/the-years-between-print-pdf/"
-          }
-        ]
+        "outOfStock": false
       }
 ]

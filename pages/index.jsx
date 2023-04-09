@@ -14,21 +14,12 @@ export default function Home() {
   const [query, setQuery] = useState(null);
   const router = useRouter();
 
-  console.log('router check initial', router.components);
-  console.log('router query', router.query.length);
-
   useEffect(() => {
-    if(router.components) {
-      console.log('router components initial', router.components['/'].initial);
-    }
-    console.log('router query in useEffect?', router.query);
     if(router.components.initial !== true || router.query.message !== undefined) {
       setQuery(router.query);
-      console.log('query set after conditional', query);
     }
   }, [router.components]);
 
-console.log('query after update', query)
   return (
     <div>
       <Head>

@@ -10,33 +10,18 @@ import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 export default function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
-  const [isPaid, setIsPaid] = useState(false);  
-  const [info, setInfo] = useState('');
-
   const {
     cart: { cartItems },
   } = state;
+  const [isPaid, setIsPaid] = useState(false);  
+  const [info, setInfo] = useState('');
+  const [shippingCost, setShippingCost] = useState(0);
+
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
-  const updateCartHandler = (item, qty) => {
-    const quantity = Number(qty);
-    dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
-  };
 
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
-
-
-  let updatedCartItems = cartItems.map((item) => {
-    return ({
-      unit_amount: {
-        currency_code: 'USD',
-        value: item.price,
-      },
-      quantity: item.quantity,
-      name: item.name,
-    });
-  })
 
   useEffect(() => {
     const loadPaypalScript = async () => {
@@ -51,6 +36,57 @@ export default function CartScreen() {
     };
     loadPaypalScript();
   }, [paypalDispatch]);
+
+let updatedCartItems;
+let separateQuantities = [];
+useEffect(() => {
+  cartItems.forEach(item => { 
+    if (item.quantity > 1) {
+    for (let i = 0; i < item.quantity; i++) {
+      separateQuantities.push({...item, quantity: 1});
+    }
+    } else {
+      separateQuantities.push(item);
+    }
+  });
+
+  updatedCartItems = separateQuantities.map((item) => {
+    return ({
+      unit_amount: {
+        currency_code: 'USD',
+        value: item.price,
+      },
+      quantity: item.quantity,
+      name: item.name,
+    });
+  })
+  calculateShipping();
+}, [cartItems])
+
+const calculateShipping = () => {
+  let cost = 0;
+  if(cartItems.length !== 0) {
+  let sortedItems = [...separateQuantities].sort((a, b) => b.shippingCost - a.shippingCost);
+  const sortedItemCount = sortedItems.length;
+  cost = sortedItems[0].shippingCost * sortedItems[0].quantity;
+  setShippingCost(cost);
+  if (sortedItemCount > 1 && sortedItemCount < 3) {
+    cost += sortedItems[1].shippingCost * 0.5
+  }
+  if (sortedItemCount === 3) {
+    cost += sortedItems[1].shippingCost * 0.5 * sortedItems[1].quantity;
+    cost += sortedItems[2].shippingCost * 0.25 * sortedItems[2].quantity;
+  }
+  if (sortedItemCount > 3) {
+    cost += sortedItems[1].shippingCost * 0.5 * sortedItems[1].quantity;
+    cost += sortedItems[2].shippingCost * 0.25 * sortedItems[2].quantity;
+    for(let i = 3; i < sortedItemCount; i++) {
+    cost += sortedItems[i].shippingCost * 0.125 * sortedItems[i].quantity;
+    }
+  }
+  setShippingCost(cost);
+}
+};
 
 useEffect(() => {
     if (isPaid) {
@@ -70,11 +106,15 @@ useEffect(() => {
     return actions.order.create({
         purchase_units: [{
             amount: { 
-              value: totalPrice,
+              value: totalPrice + shippingCost.toFixed(2),
               breakdown:{
                 item_total:{
-                    currency_code: 'USD',
-                    value: totalPrice
+                  currency_code: 'USD',
+                  value: totalPrice
+                },
+                shipping: {
+                  currency_code: 'USD',
+                  value: shippingCost.toFixed(2),
                 },
             }
             },

@@ -19,7 +19,13 @@
       "reviews": "",
       "price": 1,
       "category": "games",
-      "outOfStock": false
+      "outOfStock": false,
+      "alternateBuyOptions": [
+        {
+          "name": "Purchase Here",
+          "link": "https://www.shop.studio9inc.com/Charms-Quests-for-Antiracism-S9G10020.htm"
+        }
+      ]
     },
     { 
       "id": "villagers-and-villains",
@@ -39,7 +45,13 @@
       "reviews": "",
       "price": 1,
       "category": "games",
-      "outOfStock": false
+      "outOfStock": false,
+      "alternateBuyOptions": [
+        {
+          "name": "Purchase Here",
+          "link": "https://www.shop.studio9inc.com/Villagers-and-Villains-S9G10004.htm"
+        }
+      ]
     },
     { 
       "id": "borderlands",
@@ -54,7 +66,13 @@
       "reviews": "",
       "price": 1,
       "category": "games",
-      "outOfStock": false
+      "outOfStock": false,
+      "alternateBuyOptions": [
+        {
+          "name": "Purchase Here",
+          "link": "https://www.shop.studio9inc.com/The-Borderlands-Villagers-and-Villains-S9G10006.htm"
+        }
+      ]
     },
     { 
       "id": "city-builder",
@@ -74,7 +92,13 @@
       "reviews": "",
       "price": 1,
       "category": "games",
-      "outOfStock": false
+      "outOfStock": false,
+      "alternateBuyOptions": [
+        {
+          "name": "Purchase Here",
+          "link": "https://www.shop.studio9inc.com/City-Builder-For-Villagers-Villains-S9G10009.htm"
+        }
+      ]
     },
     { 
       "id": "treasures-and-traps",
@@ -94,7 +118,13 @@
       "reviews": "",
       "price": 1,
       "category": "games",
-      "outOfStock": false
+      "outOfStock": false,
+      "alternateBuyOptions": [
+        {
+          "name": "Purchase Here",
+          "link": "https://www.shop.studio9inc.com/Treasures-and-Traps-S9G10002.htm"
+        }
+      ]
     },
     { 
       "id": "expanded-realms-1",
@@ -109,7 +139,13 @@
       "reviews": "",
       "price": 1,
       "category": "games",
-      "outOfStock": false
+      "outOfStock": false,
+      "alternateBuyOptions": [
+        {
+          "name": "Purchase Here",
+          "link": "https://www.shop.studio9inc.com/Expanded-Realms-1-Treasures-and-Traps-S9G10003.htm"
+        }
+      ]
     },
     { 
       "id": "expanded-realms-2",
@@ -124,7 +160,13 @@
       "reviews": "",
       "price": 1,
       "category": "games",
-      "outOfStock": false
+      "outOfStock": false,
+      "alternateBuyOptions": [
+        {
+          "name": "Purchase Here",
+          "link": "https://www.shop.studio9inc.com/Expanded-Realms-2-Treasures-and-Traps-S9G10007.htm"
+        }
+      ]
     },
     { 
       "id": "random-encounters",
@@ -139,7 +181,13 @@
       "reviews": "",
       "price": 1,
       "category": "games",
-      "outOfStock": false
+      "outOfStock": false,
+      "alternateBuyOptions": [
+        {
+          "name": "Purchase Here",
+          "link": "https://www.shop.studio9inc.com/Random-Encounters-Treasures-and-Traps-S9G10008.htm"
+        }
+      ]
     },
     { 
       "id": "hero-versus-guardian",
@@ -159,7 +207,13 @@
       "reviews": "",
       "price": 1,
       "category": "games",
-      "outOfStock": false
+      "outOfStock": false,
+      "alternateBuyOptions": [
+        {
+          "name": "Purchase Here",
+          "link": "https://www.shop.studio9inc.com/Dungeon-Craft-HERO-VS-GUARDIAN-S9G10005.htm"
+        }
+      ]
     },
     { 
       "id": "midnight-legion",
@@ -232,8 +286,8 @@
       "outOfStock": false,
       "alternateBuyOptions": [
         {
-          "name": "Add Original Box Set Book 1",
-          "addToCart": true
+          "name": "Purchase Original Box Set Book 1",
+          "link": "https://www.shop.studio9inc.com/Midnight-Legion-Box-Set-Book-1-S9G10010.htm"
         },
         {
           "name": "Purchase Book 1 Box Set PDF or POD",

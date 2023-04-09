@@ -21,6 +21,11 @@ export default function CartScreen() {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
 
+  const updateCartHandler = (item, qty) => {
+    const quantity = Number(qty);
+    dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
+  };
+
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
 
   useEffect(() => {
@@ -145,7 +150,9 @@ useEffect(() => {
 
   return (
     <GoldenEraLayout title="Shopping Cart">
-      <h1 className="mb-4 text-xl">Shopping Cart</h1>
+      <Link className='flex flex-wrap' href={'/'}>
+        <button className="btn btn-accent normal-case mb-4 text-xl">Continue Shopping</button>
+      </Link>
       {cartItems.length === 0 ? (
         <div>
           Cart is empty.
@@ -196,8 +203,7 @@ useEffect(() => {
 
                     </td>
                     <td className="p-5 text-right text-xl">
-                        {item.quantity}
-                      {/* <select
+                      <select
                         className='bg-base-100'
                         value={item.quantity}
                         onChange={(e) =>
@@ -209,7 +215,7 @@ useEffect(() => {
                             {x + 1}
                           </option>
                         ))}
-                      </select> */}
+                      </select>
                     </td>
                     <td className="p-5 text-right text-xl">${item.price}</td>
                     <td className="p-5 text-center text-xl">
@@ -227,7 +233,7 @@ useEffect(() => {
               <li>
                 <div className="pb-3 text-xl">
                   Total ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
-                  {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
+                  {cartItems.reduce((a, c) => a + c.quantity * c.price, 0).toFixed(2)}
                 </div>
               </li>
                 {!isPaid && (

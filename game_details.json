@@ -20,7 +20,8 @@
       "price": 8.99,
       "category": "games",
       "outOfStock": false,
-      "shippingCost": 8
+      "shippingCost": 8,
+      "countInStock": 10
     },
     { 
       "id": "villagers-and-villains",
@@ -41,7 +42,8 @@
       "price": 24.95,
       "category": "games",
       "outOfStock": false,
-      "shippingCost": 12
+      "shippingCost": 12,
+      "countInStock": 10
     },
     { 
       "id": "borderlands",
@@ -57,7 +59,8 @@
       "price": 6.95,
       "category": "games",
       "outOfStock": false,
-      "shippingCost": 8
+      "shippingCost": 8,
+      "countInStock": 10
     },
     { 
       "id": "city-builder",
@@ -78,7 +81,8 @@
       "price": 14.95,
       "category": "games",
       "outOfStock": false,
-      "shippingCost": 8
+      "shippingCost": 8,
+      "countInStock": 10
     },
     { 
       "id": "treasures-and-traps",
@@ -99,7 +103,8 @@
       "price": 12.95,
       "category": "games",
       "outOfStock": false,
-      "shippingCost": 8
+      "shippingCost": 8,
+      "countInStock": 10
     },
     { 
       "id": "expanded-realms-1",
@@ -115,7 +120,8 @@
       "price": 5.95,
       "category": "games",
       "outOfStock": false,
-      "shippingCost": 8
+      "shippingCost": 8,
+      "countInStock": 10
     },
     { 
       "id": "expanded-realms-2",
@@ -131,7 +137,8 @@
       "price": 6.95,
       "category": "games",
       "outOfStock": false,
-      "shippingCost": 8
+      "shippingCost": 8,
+      "countInStock": 10
     },
     { 
       "id": "random-encounters",
@@ -147,7 +154,8 @@
       "price": 10.95,
       "category": "games",
       "outOfStock": false,
-      "shippingCost": 8
+      "shippingCost": 8,
+      "countInStock": 10
     },
     { 
       "id": "hero-versus-guardian",
@@ -168,7 +176,8 @@
       "price": 29.95,
       "category": "games",
       "outOfStock": false,
-      "shippingCost": 8
+      "shippingCost": 8,
+      "countInStock": 10
     },
     { 
       "id": "midnight-legion",
@@ -240,6 +249,7 @@
       "category": "games",
       "outOfStock": false,
       "shippingCost": 8,
+      "countInStock": 10,
       "alternateBuyOptions": [
         {
           "name": "Add Original Box Set Book 1",
@@ -284,7 +294,45 @@
       "price": 14.95,
       "category": "games",
       "outOfStock": true,
-      "shippingCost": 8
+      "shippingCost": 8,
+      "countInStock": 10
+    },
+    { 
+      "id": "charms",
+      "slug": "charms", 
+      "title": "Charms",
+      "name": "Charms",
+      "details": "Charms is an enjoyable and engaging, easy to learn game where each player takes a turn as the Quester by asking a question. Everyone else finds their inner sage and tries to write the wisest answer based on the Quester's roll of the charms, where they landed, and what this could mean for the Quester. The Quester then picks the winning answer. The player with the most winning answers wins the game.",
+      "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1681021257/studio9/CHARMS_BOX_b2dl2x.jpg",
+      "sideImages": [
+        {
+        "src": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1681021405/studio9/gameContents2019_bcuhua.jpg",
+        "alt": "Charms contents"
+        }
+      ],
+      "videoLink": "os30LVhMv8k",
+      "reviews": [
+        {
+          "review": "“Charms is a game to build community…it’s thought provoking and fun and could be kind-of life changing…I can guarantee you that it will get people engaged and involved in one another and make them think of strangers as neighbors. It is that powerful.”",
+          "src": "– Susan Garcia Trieschmann, Founder of Curt’s Café",
+          "link": ""
+        },
+        {
+          "review": "“...this is soooo cool fantastic great and amazing. It's like Balderdash and those kinds of make-stuff-up games but instead of being designed for you to show off how smart, funny, clever, or sarcastic you can be, you get to use your heart and mind to connect with your friends and family…”",
+          "src": "– Melissa Sivvy",
+          "link": ""
+        },
+        {
+          "review": "Charms is more than a game, it is a communication tool that can bring families and friends closer together through great conversations! Everyone can appreciate hearing new insights into their own lives - what a fun way to facilitate sharing new perspectives!",
+          "src": "– Ann Knipp, Chicago Kids Media Founder and President",
+          "link": "http://www.chicagokidsmedia.com/"
+        }
+      ],
+      "price": 39.95,
+      "category": "games",
+      "outOfStock": false,
+      "shippingCost": 16,
+      "countInStock": 10
     }
   ]
 }

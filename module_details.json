@@ -9,7 +9,8 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/242362/Greenwood-of-the-Fey-Sovereign",
         "price": 9.99,
         "category": "",
-        "outOfStock": false
+        "outOfStock": false,
+        "countInStock": 10
       },
       { 
         "id": "reckoning-of-the-gods", 
@@ -21,7 +22,8 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/273519/Reckoning-of-the-Gods--Into-the-Shadow-Realm",
         "price": 9.99,
         "category": "",
-        "outOfStock": false
+        "outOfStock": false,
+        "countInStock": 10
       },
       { 
         "id": "strange-night-at-the-pint-and-pony", 
@@ -33,7 +35,8 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/323921/A-Strange-Night-at-the-Pint-n-Pony",
         "price": 9.99,
         "category": "",
-        "outOfStock": false
+        "outOfStock": false,
+        "countInStock": 10
       },
       { 
         "id": "101-city-encounters", 
@@ -45,7 +48,8 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/323923/101-City-Encounters",
         "price": 9.99,
         "category": "",
-        "outOfStock": false
+        "outOfStock": false,
+        "countInStock": 10
       },
       { 
         "id": "welcome-to-eastwood", 
@@ -57,7 +61,8 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/356562/Welcome-to-Eastwood",
         "price": 9.99,
         "category": "",
-        "outOfStock": false
+        "outOfStock": false,
+        "countInStock": 10
       },
       { 
         "id": "the-towers-of-dr-xill", 
@@ -69,7 +74,8 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/378946/The-Towers-of-Dr-Xill",
         "price": 9.99,
         "category": "",
-        "outOfStock": false
+        "outOfStock": false,
+        "countInStock": 10
       },
       { 
         "id": "the-years-between", 
@@ -81,7 +87,8 @@
         "driveThruLink": "https://www.drivethrurpg.com/product/378942/The-Years-Between",
         "price": 9.99,
         "category": "",
-        "outOfStock": false
+        "outOfStock": false,
+        "countInStock": 10
       },
       { 
         "id": "cathedral-of-the-undying", 
@@ -94,6 +101,7 @@
         "price": 9.99,
         "category": "",
         "outOfStock": false,
+        "countInStock": 10,
         "alternateBuyOptions": [
           {
             "name": "Purchase Print Edition",

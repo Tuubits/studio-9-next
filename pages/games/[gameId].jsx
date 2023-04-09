@@ -58,6 +58,7 @@ function getGameDetails(props){
             </div>
             <div className='col-span-2'>
                 <div className='text-center py-4 space-y-4'>
+                <p className='prose lg:prose-xl font-bold'>{props.gameDetails.price ? `$${props.gameDetails.price.toFixed(2)}` : null}</p>
                 {props.gameDetails.alternateBuyOptions ? 
                     (props.gameDetails.alternateBuyOptions.map((i, index) => 
                         i.addToCart ? 
@@ -151,6 +152,7 @@ export async function getStaticPaths() {
             {  params: { gameId: 'hero-versus-guardian' } },
             {  params: { gameId: 'midnight-legion' } },
             {  params: { gameId: 'global-crisis' } },
+            {  params: { gameId: 'charms' } },
         ],
         fallback: false
     }

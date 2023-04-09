@@ -59,6 +59,7 @@ function getBookDetails(props){
             </div>
             <div className='col-span-2'>
                 <div className='text-center py-4 space-y-4'>
+                <p className='prose lg:prose-xl font-bold'>{props.bookDetails.price ? `$${props.bookDetails.price.toFixed(2)}` : null}</p>
                 {props.bookDetails.alternateBuyOptions ? 
                     (props.bookDetails.alternateBuyOptions.map((i, index) => 
                     <a key={index}

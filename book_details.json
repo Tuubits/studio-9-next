@@ -13,7 +13,8 @@
         "price": 14.95,
         "category": "books",
         "outOfStock": false,
-        "shippingCost": 8 
+        "shippingCost": 8,
+        "countInStock": 10 
       },
       { 
         "id": "dottie-and-me-activity-book",
@@ -28,7 +29,8 @@
         "price": 6.50,
         "category": "books",
         "outOfStock": false,
-        "shippingCost": 8 
+        "shippingCost": 8,
+        "countInStock": 10 
       },
       { 
         "id": "sweet-neighbors-come-in-all-colors", 
@@ -41,7 +43,6 @@
         "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521701/studio9/product/SweetNeighbors_rralpt.png",
         "sideImages": [],
         "videoLink": "f1M_XaqJD8U",
-        "price": 1,
         "alternateBuyOptions": [
           {
             "name": "Purchase here",
@@ -50,7 +51,8 @@
         ],
         "category": "books",
         "outOfStock": false,
-        "shippingCost": 8
+        "shippingCost": 8,
+        "countInStock": 10
       },
       { 
         "id": "zanjan",
@@ -63,7 +65,6 @@
         "productImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672521698/studio9/product/Zanjan_fcong8.png",
         "sideImages": [],
         "videoLink": "jEzjOP-mloQ",
-        "price": 1,
         "alternateBuyOptions": [
           {
             "name": "Purchase here",
@@ -72,7 +73,8 @@
         ],
         "category": "books",
         "outOfStock": false,
-        "shippingCost": 8
+        "shippingCost": 8,
+        "countInStock": 10
       }
     ]
   }

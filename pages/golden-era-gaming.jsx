@@ -69,10 +69,10 @@ export default function GoldenEraGaming() {
                   </Link>
                 :
                 <button
-                className={`${i.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary text-base-100'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                className={`btn-primary text-base-100 w-ful lg:w-2/4 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                 onClick={()=>{addToCartHandler({i}); router.push('/cart')}}  
                 >
-                    {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
+                     Add Signed Copy to Cart
                 </button>
                 }
                 <Link href={`${feature.driveThruLink}`} passHref className='w-full lg:w-2/4'>
@@ -111,7 +111,7 @@ export default function GoldenEraGaming() {
                   </Link>
                 :
                 <button
-                className={`${i.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary text-base-100'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                className={`${i.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary text-base-100'} w-full lg:w-2/4 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                 onClick={()=>{addToCartHandler({i}); router.push('/cart')}}  
                 >
                     {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}

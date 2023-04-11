@@ -153,6 +153,7 @@ useEffect(() => {
       <Link className='flex flex-wrap' href={'/'}>
         <button className="btn btn-accent normal-case mb-4 text-xl">Continue Shopping</button>
       </Link>
+      <h1 className='font-bold'>We are unable to fulfill orders outside of the United States.</h1>
       {cartItems.length === 0 ? (
         <div>
           Cart is empty.

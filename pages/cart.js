@@ -44,6 +44,8 @@ export default function CartScreen() {
 
 let updatedCartItems;
 let separateQuantities = [];
+const totalPrice = cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
+
 useEffect(() => {
   cartItems.forEach(item => { 
     if (item.quantity > 1) {
@@ -105,49 +107,50 @@ useEffect(() => {
 
   // add multiple items to purchase_units in paypal createOrder function
 
-  const totalPrice = cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
-
-  function createOrder(data, actions) {
-    return actions.order.create({
-        purchase_units: [{
-            amount: { 
-              value: (totalPrice + shippingCost),
-              breakdown:{
-                item_total:{
-                  currency_code: 'USD',
-                  value: totalPrice
-                },
-                shipping: {
-                  currency_code: 'USD',
-                  value: shippingCost,
-                },
-            }
-            },
-          items: updatedCartItems
-      }],
-      application_context: {
-        shipping_preference: 'GET_FROM_FILE',
-      },
-      })
-      .then((orderID) => {
-        return orderID;
-      });
-  }
-
-  function onError(err) {
-    console.error(err);
-  }
-
-  const onApprove = (data, actions) => {
-    // Capture the payment and update the order status
-    return actions.order.capture().then(function(details) {
-      // Show a success message to the buyer
-      setIsPaid(true);
-      setInfo(details.payer.name.given_name);
-      // alert('Transaction completed by ' + details.payer.name.given_name + '!');
+const createOrder = (data, actions) => {
+  let totalValue = totalPrice + shippingCost;
+  console.log('totalValue: ', totalValue);
+  console.log('totalPrice: ', totalPrice);
+  console.log('shippingCost: ', shippingCost);
+  return actions.order.create({
+      purchase_units: [{
+          amount: { 
+            value: totalValue,
+            breakdown:{
+              item_total:{
+                currency_code: 'USD',
+                value: totalPrice
+              },
+              shipping: {
+                currency_code: 'USD',
+                value: shippingCost,
+              },
+          }
+          },
+        items: updatedCartItems
+    }],
+    application_context: {
+      shipping_preference: 'GET_FROM_FILE',
+    },
+    })
+    .then((orderID) => {
+      return orderID;
     });
-  };
+}
 
+function onError(err) {
+  console.error(err);
+}
+
+const onApprove = (data, actions) => {
+  // Capture the payment and update the order status
+  return actions.order.capture().then(function(details) {
+    // Show a success message to the buyer
+    setIsPaid(true);
+    setInfo(details.payer.name.given_name);
+    // alert('Transaction completed by ' + details.payer.name.given_name + '!');
+  });
+};
   return (
     <GoldenEraLayout title="Shopping Cart">
       <Link className='flex flex-wrap' href={'/'}>
@@ -165,7 +168,7 @@ useEffect(() => {
               <thead className="border-b">
                 <tr>
                   <th className="p-5 text-left">Item</th>
-                  <th className="p-5 text-right">Quantity</th>
+                  {/* <th className="p-5 text-right">Quantity</th> */}
                   <th className="p-5 text-right">Price</th>
                   <th className="p-5">Remove</th>
                 </tr>
@@ -203,7 +206,7 @@ useEffect(() => {
                       }
 
                     </td>
-                    <td className="p-5 text-right text-xl">
+                    {/* <td className="p-5 text-right text-xl">
                       <select
                         className='bg-base-100'
                         value={item.quantity}
@@ -217,7 +220,7 @@ useEffect(() => {
                           </option>
                         ))}
                       </select>
-                    </td>
+                    </td> */}
                     <td className="p-5 text-right text-xl">${item.price}</td>
                     <td className="p-5 text-center text-xl">
                       <button onClick={() => removeItemHandler(item)}>

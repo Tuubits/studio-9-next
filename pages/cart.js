@@ -168,7 +168,7 @@ const onApprove = (data, actions) => {
               <thead className="border-b">
                 <tr>
                   <th className="p-5 text-left">Item</th>
-                  {/* <th className="p-5 text-right">Quantity</th> */}
+                  <th className="p-5 text-right">Quantity</th>
                   <th className="p-5 text-right">Price</th>
                   <th className="p-5">Remove</th>
                 </tr>
@@ -206,8 +206,8 @@ const onApprove = (data, actions) => {
                       }
 
                     </td>
-                    {/* <td className="p-5 text-right text-xl">
-                      <select
+                    <td className="p-5 text-right text-xl">
+                      {/* <select
                         className='bg-base-100'
                         value={item.quantity}
                         onChange={(e) =>
@@ -219,8 +219,9 @@ const onApprove = (data, actions) => {
                             {x + 1}
                           </option>
                         ))}
-                      </select>
-                    </td> */}
+                      </select> */}
+                      {item.quantity}
+                    </td>
                     <td className="p-5 text-right text-xl">${item.price}</td>
                     <td className="p-5 text-center text-xl">
                       <button onClick={() => removeItemHandler(item)}>

@@ -101,12 +101,6 @@
         "price": 9.99,
         "category": "",
         "outOfStock": false,
-        "countInStock": 10,
-        "alternateBuyOptions": [
-          {
-            "name": "Purchase Print Edition",
-            "link": "https://goodman-games.com/store/product/the-years-between-print-pdf/"
-          }
-        ]
+        "countInStock": 10
       }
 ]

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Patreon from '../public/aaron.jpeg';
+import Patreon from '../public/Digital-Patreon-Logo_Black';
 
 export default function Footer() {
     return(

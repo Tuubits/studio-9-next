@@ -165,7 +165,7 @@ const onApprove = (data, actions) => {
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
             <table className="min-w-full ">
-              <thead className="border-b">
+              <thead className="border-b border-stone-700">
                 <tr>
                   <th className="p-5 text-left">Item</th>
                   <th className="p-5 text-right">Quantity</th>
@@ -175,7 +175,7 @@ const onApprove = (data, actions) => {
               </thead>
               <tbody>
                 {cartItems.map((item) => (
-                  <tr key={item.slug} className="border-b">
+                  <tr key={item.slug} className="border-b border-stone-700">
                     <td className="flex items-center">
                       {item.category === "" ?
                       <Link className='flex flex-wrap' href={`/${item.category === "" ? 'golden-era-gaming' : item.slug}`}>

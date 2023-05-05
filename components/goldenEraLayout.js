@@ -16,7 +16,7 @@ export default function GoldenEraLayout({children}) {
     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
   }, [cart.cartItems]);
     return(
-        <div data-theme={'studio9'} className='bg-zinc-400'>
+        <div data-theme={'studio9'} className='bg-zinc-400 min-h-screen'>
           <div className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
         <div className='flex justify-between'>
           <div>
@@ -59,7 +59,9 @@ export default function GoldenEraLayout({children}) {
             sizes="100vw" 
           />
       </div>
+      <div className='mt-auto'>
         <Footer />
+      </div>
       </div>
     </div>
     )

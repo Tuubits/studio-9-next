@@ -12,10 +12,18 @@ export default function CartScreen() {
   const { state, dispatch } = useContext(Store);
   const {
     cart: { cartItems },
+    shipping
   } = state;
   const [isPaid, setIsPaid] = useState(false);  
   const [info, setInfo] = useState('');
-  const [shippingCost, setShippingCost] = useState(0);
+  const [totalValue, setTotalValue] = useState(0);
+
+
+  useEffect(() => {
+    if (state.shipping !== shipping) {
+      setShipping(state.shipping);
+    }
+  }, [state.shipping, shipping]);
 
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
@@ -24,6 +32,11 @@ export default function CartScreen() {
   const updateCartHandler = (item, qty) => {
     const quantity = Number(qty);
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
+    dispatch({ type: 'UPDATE_SHIPPING', payload: shipping });
+  };
+
+  const setShipping = () => {
+    dispatch({ type: 'UPDATE_SHIPPING', payload: shipping });
   };
 
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
@@ -40,60 +53,13 @@ export default function CartScreen() {
         paypalDispatch({ type: 'setLoadingStatus', value: 'pending'});
     };
     loadPaypalScript();
-  }, [paypalDispatch]);
-
-let updatedCartItems;
-let separateQuantities = [];
-const totalPrice = cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
+  }, [paypalDispatch, cartItems]);
 
 useEffect(() => {
-  cartItems.forEach(item => { 
-    if (item.quantity > 1) {
-    for (let i = 0; i < item.quantity; i++) {
-      separateQuantities.push({...item, quantity: 1});
-    }
-    } else {
-      separateQuantities.push(item);
-    }
-  });
-
-  updatedCartItems = separateQuantities.map((item) => {
-    return ({
-      unit_amount: {
-        currency_code: 'USD',
-        value: item.price,
-      },
-      quantity: item.quantity,
-      name: item.name,
-    });
-  })
-  calculateShipping();
+  let total = cartItems.reduce((a, c) => a + c.quantity * c.price, 0).toFixed(2);
+  setTotalValue(total);
+  dispatch({ type: 'UPDATE_SHIPPING', payload: shipping });
 }, [cartItems])
-
-const calculateShipping = () => {
-  let cost = 0;
-  if(cartItems.length !== 0) {
-  let sortedItems = [...separateQuantities].sort((a, b) => b.shippingCost - a.shippingCost);
-  const sortedItemCount = sortedItems.length;
-  cost = sortedItems[0].shippingCost * sortedItems[0].quantity;
-  setShippingCost(cost);
-  if (sortedItemCount > 1 && sortedItemCount < 3) {
-    cost += sortedItems[1].shippingCost * 0.5
-  }
-  if (sortedItemCount === 3) {
-    cost += sortedItems[1].shippingCost * 0.5 * sortedItems[1].quantity;
-    cost += sortedItems[2].shippingCost * 0.25 * sortedItems[2].quantity;
-  }
-  if (sortedItemCount > 3) {
-    cost += sortedItems[1].shippingCost * 0.5 * sortedItems[1].quantity;
-    cost += sortedItems[2].shippingCost * 0.25 * sortedItems[2].quantity;
-    for(let i = 3; i < sortedItemCount; i++) {
-    cost += sortedItems[i].shippingCost * 0.125 * sortedItems[i].quantity;
-    }
-  }
-  setShippingCost(cost);
-}
-};
 
 useEffect(() => {
     if (isPaid) {
@@ -101,38 +67,43 @@ useEffect(() => {
         pathname:'/',
         query: { message: info },
       });
-      updatedCartItems = [];
+      dispatch({ type: 'CART_CLEAR' });
     }
 }, [isPaid])
 
-  // add multiple items to purchase_units in paypal createOrder function
-
-const createOrder = (data, actions) => {
-  let totalValue = totalPrice + shippingCost;
-  console.log('totalValue: ', totalValue);
-  console.log('totalPrice: ', totalPrice);
-  console.log('shippingCost: ', shippingCost);
-  return actions.order.create({
+const createOrder = async (data, actions, extraParams) => {
+    const { shipping } = await extraParams;
+    const total = (Number(totalValue) + Number(shipping)).toFixed(2);
+  return await actions.order.create(
+    {
       purchase_units: [{
           amount: { 
-            value: totalValue,
+            value: total,
             breakdown:{
               item_total:{
                 currency_code: 'USD',
-                value: totalPrice
+                value: totalValue
               },
               shipping: {
                 currency_code: 'USD',
-                value: shippingCost,
+                value: shipping,
               },
           }
           },
-        items: updatedCartItems
+          items: cartItems.map((item) => ({
+            name: item.name,
+            quantity: item.quantity.toString(),
+            unit_amount: {
+              currency_code: "USD",
+              value: item.price.toFixed(2),
+            },
+          })),
     }],
     application_context: {
       shipping_preference: 'GET_FROM_FILE',
     },
-    })
+    }
+  )
     .then((orderID) => {
       return orderID;
     });
@@ -148,9 +119,13 @@ const onApprove = (data, actions) => {
     // Show a success message to the buyer
     setIsPaid(true);
     setInfo(details.payer.name.given_name);
-    // alert('Transaction completed by ' + details.payer.name.given_name + '!');
   });
 };
+
+useEffect(() => {
+  dispatch({ type: 'CALCULATE_SHIPPING' });
+}, [cartItems, dispatch]);
+
   return (
     <GoldenEraLayout title="Shopping Cart">
       <Link className='flex flex-wrap' href={'/'}>
@@ -207,7 +182,7 @@ const onApprove = (data, actions) => {
 
                     </td>
                     <td className="p-5 text-right text-xl">
-                      {/* <select
+                      <select
                         className='bg-base-100'
                         value={item.quantity}
                         onChange={(e) =>
@@ -219,8 +194,8 @@ const onApprove = (data, actions) => {
                             {x + 1}
                           </option>
                         ))}
-                      </select> */}
-                      {item.quantity}
+                      </select>
+                      {/* {item.quantity} */}
                     </td>
                     <td className="p-5 text-right text-xl">${item.price}</td>
                     <td className="p-5 text-center text-xl">
@@ -238,23 +213,26 @@ const onApprove = (data, actions) => {
               <li>
                 <div className="pb-3 text-xl">
                   Total ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
-                  {cartItems.reduce((a, c) => a + c.quantity * c.price, 0).toFixed(2)}
+                  {totalValue}
                 </div>
               </li>
-                {!isPaid && (
-                    <li>
-                        {isPending ? ( <div>Loading...</div>):
-                        <div className='w-full'>
-                            <PayPalButtons
-                                createOrder={createOrder}
-                                onApprove={onApprove}
-                                onError={onError}
-                            >
-                            </PayPalButtons>
-                        </div>
+              <li>
+                  {isPending ? ( <div>Loading...</div>):
+                  <div className='w-full'>
+                      <PayPalButtons
+                        createOrder={(data, actions) => {
+                          return(
+                            createOrder(data, actions, { shipping: state.shipping})
+                          )
                         }
-                    </li>
-                )}
+                        }
+                        onApprove={onApprove}
+                        onError={onError}
+                      >
+                      </PayPalButtons>
+                  </div>
+                  }
+              </li>
             </ul>
           </div>
         </div>

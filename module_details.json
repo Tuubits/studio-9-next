@@ -8,6 +8,7 @@
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1681929225/studio9/Shrine_GWwebCROP_jqhaw3.jpg",
         "driveThruLink": "https://www.drivethrurpg.com/product/242362/Greenwood-of-the-Fey-Sovereign",
         "price": 9.99,
+        "shippingCost": 8,
         "category": "",
         "outOfStock": false,
         "countInStock": 10
@@ -21,6 +22,7 @@
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826930/studio9/reckoningofthegods_gbng4b.webp",
         "driveThruLink": "https://www.drivethrurpg.com/product/273519/Reckoning-of-the-Gods--Into-the-Shadow-Realm",
         "price": 9.99,
+        "shippingCost": 8,
         "category": "",
         "outOfStock": false,
         "countInStock": 10
@@ -34,6 +36,7 @@
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826930/studio9/strangenight_clqbjo.webp",
         "driveThruLink": "https://www.drivethrurpg.com/product/323921/A-Strange-Night-at-the-Pint-n-Pony",
         "price": 9.99,
+        "shippingCost": 8,
         "category": "",
         "outOfStock": false,
         "countInStock": 10
@@ -47,6 +50,7 @@
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826930/studio9/cityencounters_n260vt.webp",
         "driveThruLink": "https://www.drivethrurpg.com/product/323923/101-City-Encounters",
         "price": 9.99,
+        "shippingCost": 8,
         "category": "",
         "outOfStock": false,
         "countInStock": 10
@@ -60,6 +64,7 @@
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826930/studio9/welcometoeastwood_wfrnss.webp",
         "driveThruLink": "https://www.drivethrurpg.com/product/356562/Welcome-to-Eastwood",
         "price": 9.99,
+        "shippingCost": 8,
         "category": "",
         "outOfStock": false,
         "countInStock": 10
@@ -73,6 +78,7 @@
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826931/studio9/drxill_oxmvgn.webp",
         "driveThruLink": "https://www.drivethrurpg.com/product/378946/The-Towers-of-Dr-Xill",
         "price": 9.99,
+        "shippingCost": 8,
         "category": "",
         "outOfStock": false,
         "countInStock": 10
@@ -86,6 +92,7 @@
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1671826931/studio9/yearsbetween_jt3u1y.webp",
         "driveThruLink": "https://www.drivethrurpg.com/product/378942/The-Years-Between",
         "price": 9.99,
+        "shippingCost": 8,
         "category": "",
         "outOfStock": false,
         "countInStock": 10
@@ -99,6 +106,7 @@
         "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1681002049/studio9/Temple_Dead_mobs_FP_b4wwrh_esmzer.jpg",
         "driveThruLink": "https://www.drivethrurpg.com/product/433946/Cathedral-of-the-Undying",
         "price": 9.99,
+        "shippingCost": 8,
         "category": "",
         "outOfStock": false,
         "countInStock": 10

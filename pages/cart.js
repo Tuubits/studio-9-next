@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import { MinusCircleIcon } from '@heroicons/react/24/outline'
 import GoldenEraLayout from '../components/goldenEraLayout';
 import { useRouter } from 'next/router';
@@ -17,6 +17,8 @@ export default function CartScreen() {
   const [isPaid, setIsPaid] = useState(false);  
   const [info, setInfo] = useState('');
   const [totalValue, setTotalValue] = useState(0);
+  const [message, setMessage] = useState('');
+  const formRef= useRef();
 
 
   useEffect(() => {
@@ -71,6 +73,31 @@ useEffect(() => {
     }
 }, [isPaid])
 
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  console.log('handleSubmit called');
+  const myForm = event.target;
+  const formData = new FormData(myForm);
+
+  formData.append('form-name', 'contact'); // This is necessary for Netlify to recognize the form submission
+
+  fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+  })
+  .then(() => console.log("Form successfully submitted"))
+  .catch((error) => alert(error));
+}
+
+const handleButtonClick = () => {
+  if (formRef.current) {
+    console.log('handleButtonClick with formRef.current')
+      formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
+  }
+}
+
 const createOrder = async (data, actions, extraParams) => {
     const { shipping } = await extraParams;
     const total = (Number(totalValue) + Number(shipping)).toFixed(2);
@@ -88,7 +115,6 @@ const createOrder = async (data, actions, extraParams) => {
                 currency_code: 'USD',
                 value: shipping,
               },
-              description: message,
           }
           },
           items: cartItems.map((item) => ({
@@ -208,6 +234,24 @@ useEffect(() => {
                 ))}
               </tbody>
             </table>
+            <div>
+            <form name="contact" method="POST" data-netlify="true" ref={formRef} onSubmit={handleSubmit}>
+            <input type="hidden" name="form-name" value="contact" />
+      <label htmlFor="message" className="block text-xl pt-6 font-bold leading-6 text-gray-900">
+        Add any details you would like us to know about your order:
+      </label>
+      <div className="mt-2">
+        <textarea
+          rows={4}
+          name="message"
+          id="message"
+          className="block w-full md:w-2/3 rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xl sm:leading-6"
+          onChange={(e) => setMessage(e.target.value)}
+          value={message}
+        />
+      </div>
+      </form>
+    </div>
           </div>
           <div className="card p-5">
             <ul>
@@ -220,12 +264,12 @@ useEffect(() => {
               <li>
                   <div className='w-full'>
                       <PayPalButtons
-                        createOrder={(data, actions) => {
+                         createOrder={(data, actions) => {
                           return(
                             createOrder(data, actions, { shipping: state.shipping })
                           )
-                        }
-                        }
+                        }}
+                        onClick={handleButtonClick}
                         onApprove={onApprove}
                         onError={onError}
                       >

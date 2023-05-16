@@ -17,6 +17,7 @@ export default function CartScreen() {
   const [isPaid, setIsPaid] = useState(false);  
   const [info, setInfo] = useState('');
   const [totalValue, setTotalValue] = useState(0);
+  const [message, setMessage] = useState('');
 
 
   useEffect(() => {
@@ -88,6 +89,7 @@ const createOrder = async (data, actions, extraParams) => {
                 currency_code: 'USD',
                 value: shipping,
               },
+              description: message,
           }
           },
           items: cartItems.map((item) => ({
@@ -207,6 +209,22 @@ useEffect(() => {
                 ))}
               </tbody>
             </table>
+            <div>
+      <label htmlFor="comment" className="block text-xl pt-6 font-bold leading-6 text-gray-900">
+        Add any details you would like us to know about your order:
+      </label>
+      <div className="mt-2">
+        <textarea
+          rows={4}
+          name="comment"
+          id="comment"
+          className="block w-full md:w-2/3 rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xl sm:leading-6"
+          defaultValue={''}
+          onChange={(e) => setMessage(e.target.value)}
+          value={message}
+        />
+      </div>
+    </div>
           </div>
           <div className="card p-5">
             <ul>

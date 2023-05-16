@@ -44,11 +44,10 @@ function reducer(state, action) {
         const objArray = createObjectsFromQuantity(obj);
         combinedArray = combinedArray.concat(objArray);
       }
-      console.log('combinedArray: ', combinedArray);
+
       let sortedItems = combinedArray.sort((a, b) => b.shippingCost - a.shippingCost);
-      console.log('sortedItems: ', sortedItems);
+
       const sortedItemCount = sortedItems.length;
-      console.log('sortedItemCount: ', sortedItemCount)
       if(sortedItems.length > 0) {
         cost = sortedItems[0].shippingCost * sortedItems[0].quantity;
       }
@@ -66,8 +65,7 @@ function reducer(state, action) {
         cost += sortedItems[i].shippingCost * 0.125 * sortedItems[i].quantity;
         }
       }
-      console.log('shipping cost in context: ', cost)
-      console.log('quantity in context', state.cart.cartItems[0].quantity)
+
       return { ...state, cart: { ...state.cart }, shipping: cost };
     } else if(state.cart.cartItems.length === 0) {
       return { ...state, cart: { ...state.cart }, shipping: 0 };

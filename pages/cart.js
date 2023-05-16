@@ -17,7 +17,6 @@ export default function CartScreen() {
   const [isPaid, setIsPaid] = useState(false);  
   const [info, setInfo] = useState('');
   const [totalValue, setTotalValue] = useState(0);
-  const [message, setMessage] = useState('');
 
 
   useEffect(() => {
@@ -54,7 +53,7 @@ export default function CartScreen() {
         paypalDispatch({ type: 'setLoadingStatus', value: 'pending'});
     };
     loadPaypalScript();
-  }, [paypalDispatch, cartItems, message]);
+  }, [paypalDispatch, cartItems]);
 
 useEffect(() => {
   let total = cartItems.reduce((a, c) => a + c.quantity * c.price, 0).toFixed(2);
@@ -73,9 +72,8 @@ useEffect(() => {
 }, [isPaid])
 
 const createOrder = async (data, actions, extraParams) => {
-    const { shipping, message } = await extraParams;
+    const { shipping } = await extraParams;
     const total = (Number(totalValue) + Number(shipping)).toFixed(2);
-    console.log('message', message)
   return await actions.order.create(
     {
       purchase_units: [{
@@ -210,22 +208,6 @@ useEffect(() => {
                 ))}
               </tbody>
             </table>
-            <div>
-      <label htmlFor="comment" className="block text-xl pt-6 font-bold leading-6 text-gray-900">
-        Add any details you would like us to know about your order:
-      </label>
-      <div className="mt-2">
-        <textarea
-          rows={4}
-          name="comment"
-          id="comment"
-          className="block w-full md:w-2/3 rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xl sm:leading-6"
-          onChange={(e) => setMessage(e.target.value)}
-          value={message}
-          maxLength={127}
-        />
-      </div>
-    </div>
           </div>
           <div className="card p-5">
             <ul>
@@ -240,7 +222,7 @@ useEffect(() => {
                       <PayPalButtons
                         createOrder={(data, actions) => {
                           return(
-                            createOrder(data, actions, { shipping: state.shipping, message: message})
+                            createOrder(data, actions, { shipping: state.shipping })
                           )
                         }
                         }

@@ -54,7 +54,7 @@ export default function CartScreen() {
         paypalDispatch({ type: 'setLoadingStatus', value: 'pending'});
     };
     loadPaypalScript();
-  }, [paypalDispatch, cartItems]);
+  }, [paypalDispatch, cartItems, message]);
 
 useEffect(() => {
   let total = cartItems.reduce((a, c) => a + c.quantity * c.price, 0).toFixed(2);
@@ -73,8 +73,9 @@ useEffect(() => {
 }, [isPaid])
 
 const createOrder = async (data, actions, extraParams) => {
-    const { shipping } = await extraParams;
+    const { shipping, message } = await extraParams;
     const total = (Number(totalValue) + Number(shipping)).toFixed(2);
+    console.log('message', message)
   return await actions.order.create(
     {
       purchase_units: [{
@@ -219,7 +220,6 @@ useEffect(() => {
           name="comment"
           id="comment"
           className="block w-full md:w-2/3 rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xl sm:leading-6"
-          defaultValue={''}
           onChange={(e) => setMessage(e.target.value)}
           value={message}
         />
@@ -235,12 +235,11 @@ useEffect(() => {
                 </div>
               </li>
               <li>
-                  {isPending ? ( <div>Loading...</div>):
                   <div className='w-full'>
                       <PayPalButtons
                         createOrder={(data, actions) => {
                           return(
-                            createOrder(data, actions, { shipping: state.shipping})
+                            createOrder(data, actions, { shipping: state.shipping, message: message})
                           )
                         }
                         }
@@ -249,7 +248,6 @@ useEffect(() => {
                       >
                       </PayPalButtons>
                   </div>
-                  }
               </li>
             </ul>
           </div>

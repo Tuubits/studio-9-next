@@ -95,7 +95,7 @@ const handleButtonClick = () => {
   if (formRef.current) {
     console.log('handleButtonClick called', formRef, formRef.current)
     console.log('dispatching event', formRef.current.dispatchEvent(new Event('submit')))
-      formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
+      formRef.current.dispatchEvent(new Event('submit'));
   }
 }
 

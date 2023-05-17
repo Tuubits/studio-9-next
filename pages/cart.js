@@ -73,15 +73,15 @@ useEffect(() => {
     }
 }, [isPaid])
 
-
 const handleSubmit = (event) => {
-  event.preventDefault();
-  console.log('handleSubmit called');
+  console.log('handleSubmit called', event);
+  // event.preventDefault();
   const myForm = event.target;
   const formData = new FormData(myForm);
+  console.log('formData', formData);
 
   formData.append('form-name', 'contact'); // This is necessary for Netlify to recognize the form submission
-
+  console.log('formData appended', formData);
   fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -93,7 +93,8 @@ const handleSubmit = (event) => {
 
 const handleButtonClick = () => {
   if (formRef.current) {
-    console.log('handleButtonClick called')
+    console.log('handleButtonClick called', formRef, formRef.current)
+    console.log('dispatching event', formRef.current.dispatchEvent(new Event('submit')))
       formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
   }
 }
@@ -235,21 +236,24 @@ useEffect(() => {
               </tbody>
             </table>
             <div>
-            <form name="contact" method="POST" data-netlify="true" ref={formRef} onSubmit={handleSubmit}>
-            <input type="hidden" name="form-name" value="contact" />
-      <label htmlFor="message" className="block text-xl pt-6 font-bold leading-6 text-gray-900">
-        Add any details you would like us to know about your order:
-      </label>
-      <div className="mt-2">
-        <textarea
-          rows={4}
-          name="message"
-          id="message"
-          className="block w-full md:w-2/3 rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xl sm:leading-6"
-          onChange={(e) => setMessage(e.target.value)}
-          value={message}
-        />
-      </div>
+      <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" ref={formRef} data-netlify-honeypot='field-bot'>
+        <input type="hidden" name="form-name" value="contact" />
+        <div hidden>
+          <label>Do not fill this input<input name='field-bot' /></label>
+        </div>
+        <label htmlFor="message" className="block text-xl pt-6 font-bold leading-6 text-gray-900">
+          Add any details you would like us to know about your order:
+        </label>
+        <div className="mt-2">
+          <textarea
+            rows={4}
+            name="message"
+            id="message"
+            className="block w-full md:w-2/3 rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xl sm:leading-6"
+            onChange={(e) => setMessage(e.target.value)}
+            value={message}
+          />
+        </div>
       </form>
     </div>
           </div>

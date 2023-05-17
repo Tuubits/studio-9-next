@@ -13,6 +13,9 @@ export default function Document() {
           />
       </Head>
       <body>
+      <form name="contact" netlify netlify-honeypot="field-bot" action='/success=true' hidden>
+        <textarea name="message"></textarea>
+      </form>
         <Main />
         <NextScript />
       </body>

@@ -74,11 +74,9 @@ useEffect(() => {
 }, [isPaid])
 
 const handleSubmit = (event) => {
-  console.log('handleSubmit called', event);
-  // event.preventDefault();
   const myForm = event.target;
+
   const formData = new FormData(myForm);
-  console.log('formData', formData);
 
   formData.append('form-name', 'contact'); // This is necessary for Netlify to recognize the form submission
   console.log('formData appended', formData);
@@ -93,13 +91,16 @@ const handleSubmit = (event) => {
 
 const handleButtonClick = () => {
   if (formRef.current) {
-    console.log('handleButtonClick called', formRef, formRef.current)
-    console.log('dispatching event', formRef.current.dispatchEvent(new Event('submit')))
-      formRef.current.dispatchEvent(new Event('submit'));
+      const event = {
+        preventDefault: () => {},
+        target: formRef.current
+      };
+      handleSubmit(event);
   }
 }
 
 const createOrder = async (data, actions, extraParams) => {
+  console.log('formref in createOrder', formRef)
     const { shipping } = await extraParams;
     const total = (Number(totalValue) + Number(shipping)).toFixed(2);
   return await actions.order.create(
@@ -234,7 +235,7 @@ useEffect(() => {
                 ))}
               </tbody>
             </table>
-            {/* <div>
+            <div>
       <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" ref={formRef} data-netlify-honeypot='field-bot'>
         <input type="hidden" name="form-name" value="contact" />
         <div hidden>
@@ -254,7 +255,7 @@ useEffect(() => {
           />
         </div>
       </form>
-    </div> */}
+    </div>
           </div>
           <div className="card p-5">
             <ul>

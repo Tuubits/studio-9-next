@@ -117,7 +117,6 @@ function onError(err) {
 const onApprove = (data, actions) => {
   // Capture the payment and update the order status
   return actions.order.capture().then(function(details) {
-    // Show a success message to the buyer
     setIsPaid(true);
     setInfo(details.payer.name.given_name);
   });

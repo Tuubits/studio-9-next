@@ -235,7 +235,7 @@ useEffect(() => {
                 ))}
               </tbody>
             </table>
-            {/* <div>
+            <div>
       <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" ref={formRef} data-netlify-honeypot='field-bot'>
         <input type="hidden" name="form-name" value="contact" />
         <div hidden>
@@ -255,7 +255,7 @@ useEffect(() => {
           />
         </div>
       </form>
-    </div> */}
+    </div>
           </div>
           <div className="card p-5">
             <ul>

@@ -248,7 +248,7 @@
       "price": 24.95,
       "category": "games",
       "outOfStock": false,
-      "shippingCost": 8,
+      "shippingCost": 16,
       "countInStock": 10,
       "alternateBuyOptions": [
         {

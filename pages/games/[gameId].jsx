@@ -37,7 +37,7 @@ function getGameDetails(props){
     };
 
     return (
-        <GameLayout>
+        <GameLayout title={props.gameDetails.title}>
         <div>
             <Image
                 src={`${props.gameDetails.productImage}`}

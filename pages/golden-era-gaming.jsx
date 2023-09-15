@@ -33,8 +33,9 @@ export default function GoldenEraGaming() {
     };
 
   return (
-    <GoldenEraLayout>
-        <select 
+    <GoldenEraLayout title={'Golden Era Gaming'}>
+        <select
+            aria-label="Select a module"
             className="select select-accent select-lg mt-4 mb-4 w-full max-w-xs"
             onChange={(e)=>{handleChange(e.currentTarget.value)}}
         >

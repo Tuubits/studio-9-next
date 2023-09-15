@@ -40,7 +40,7 @@ function getBookDetails(props){
     };
 
     return (
-        <BookLayout>
+        <BookLayout title={props.bookDetails.title}>
         <div>
             <Image
                 src={`${props.bookDetails.productImage}`}

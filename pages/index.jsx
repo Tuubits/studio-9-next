@@ -21,14 +21,18 @@ export default function Home() {
   }, [router.components]);
 
   return (
-    <div>
+    <div data-theme={'studio9'}>
       <Head>
         <title>Studio 9 Inc</title>
         <meta name="description" content="A family friendly media company • Creating joy since 2005" />
         <link rel="icon" href="/s9incLOGOsml.png" />
       </Head>
-
-      <main data-theme={'light'} className="mx-auto max-w-7xl pt-8 px-4 sm:pt-12 sm:px-6 lg:px-8">
+      <a href="https://dierobot-101hex-onpp.backerkit.com/hosted_preorders">
+          <div className=" p-2 bg-success font-bold text-base w-full text-white text-center">
+            Pre-Order our upcoming DCC/MCC Purple Planet Adventures!
+          </div>
+        </a>
+      <main  className="mx-auto max-w-7xl pt-8 px-4 sm:pt-12 sm:px-6 lg:px-8">
         <div>
           <Image
             src={'https://res.cloudinary.com/rollfunkydice-com/image/upload/q_auto,f_auto/v1672721304/studio9/s9incLOGO_covCLEAR_kwlbz5.png'}

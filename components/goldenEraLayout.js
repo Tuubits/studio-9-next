@@ -22,6 +22,11 @@ export default function GoldenEraLayout({ children, title }) {
         <title>{title}</title>
       </Head>
       <div data-theme={"studio9"} className="bg-zinc-400 min-h-screen">
+        <a href="https://dierobot-101hex-onpp.backerkit.com/hosted_preorders">
+          <div className=" p-2 bg-success font-bold text-base w-full text-white text-center">
+            Pre-Order our upcoming DCC/MCC Purple Planet Adventures!
+          </div>
+        </a>
         <div className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between">
             <div>

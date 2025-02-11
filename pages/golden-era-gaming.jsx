@@ -56,7 +56,7 @@ export default function GoldenEraGaming() {
                         objectFit='cover'
                     />
                 </figure>
-            <div className="card-body">
+            <div className="card-body max-w-[50%] max-sm:max-w-full">
                 <h2 className="card-title">{feature.title}</h2>
                 <p>{feature.details}</p>
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
@@ -98,7 +98,7 @@ export default function GoldenEraGaming() {
                         objectFit='cover'
                     />
                 </figure>
-            <div className="card-body" style={{maxWidth: {sm: '55%', xs: '100%'}}}>
+            <div className="card-body max-w-[50%] max-sm:max-w-full">
                 <h2 className="card-title">{i.title}</h2>
                 <p>{i.details}</p>
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">

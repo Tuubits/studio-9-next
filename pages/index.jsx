@@ -21,15 +21,15 @@ export default function Home() {
   }, [router.components]);
 
   return (
-    <div data-theme={'studio9'}>
+    <div data-theme="studio9">
       <Head>
         <title>Studio 9 Inc</title>
         <meta name="description" content="A family friendly media company • Creating joy since 2005" />
         <link rel="icon" href="/s9incLOGOsml.png" />
       </Head>
-      <a href="https://dierobot-101hex-onpp.backerkit.com/hosted_preorders">
+      <a href="https://www.backerkit.com/c/projects/studio-9-games/into-the-dark">
           <div className=" p-2 bg-success font-bold text-base w-full text-white text-center">
-            Pre-Order our upcoming DCC/MCC Purple Planet Adventures!
+          Pre-Order our upcoming DCC Adventure: Into The Dark!
           </div>
         </a>
       <main  className="mx-auto max-w-7xl pt-8 px-4 sm:pt-12 sm:px-6 lg:px-8">

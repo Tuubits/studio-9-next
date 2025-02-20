@@ -22,9 +22,9 @@ export default function GoldenEraLayout({ children, title }) {
         <title>{title}</title>
       </Head>
       <div data-theme={"studio9"} className="bg-zinc-400 min-h-screen">
-        <a href="https://dierobot-101hex-onpp.backerkit.com/hosted_preorders">
+        <a href="https://www.backerkit.com/c/projects/studio-9-games/into-the-dark">
           <div className=" p-2 bg-success font-bold text-base w-full text-white text-center">
-            Pre-Order our upcoming DCC/MCC Purple Planet Adventures!
+            Pre-Order our upcoming DCC Adventure: Into The Dark!
           </div>
         </a>
         <div className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">

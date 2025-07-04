@@ -1,5 +1,19 @@
 [
       { 
+        "id": "into-the-dark", 
+        "title": "Into the Dark",
+        "slug": "into-the-dark", 
+        "name": "Into the Dark", 
+        "details": "When Earl Wistmor of the purple plains puts out a “call to service,” locals know better than to withhold. You and other peasants are tasked to excavate a plot of land for a new foundation—expanding his keep into a small castle. Work on the project is moving along when suddenly the earth sinks in and foul vapors rise up, revealing forgotten chambers below ground. You have a few hours to clear it out before the foreman pours slag into the hole, sealing you in! This 16-page starting adventure is created for DCC RPG.",
+        "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1751673036/studio9/intothedark_judxir.jpg",
+        "driveThruLink": "https://www.drivethrurpg.com/en/product/524397/into-the-dark?src=hottest_filtered",
+        "price": 9.99,
+        "shippingCost": 8,
+        "category": "",
+        "outOfStock": false,
+        "countInStock": 10
+      },
+      { 
         "id": "die-robot", 
         "title": "Die, Robot!",
         "slug": "die-robot", 

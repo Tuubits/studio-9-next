@@ -8,6 +8,7 @@ import separator from "../public/bottom_separator.png";
 import mobileSeparator from "../public/bottom_separatorSMLsize.png";
 import { Store } from "../utils/Store";
 import Footer from "./footer";
+import MultiLinkBanner from "./mutliBanner";
 
 export default function GoldenEraLayout({ children, title }) {
   const { state } = useContext(Store);
@@ -22,11 +23,7 @@ export default function GoldenEraLayout({ children, title }) {
         <title>{title}</title>
       </Head>
       <div data-theme={"studio9"} className="bg-zinc-400 min-h-screen">
-        <a href="https://www.backerkit.com/c/projects/studio-9-games/into-the-dark">
-          <div className=" p-2 bg-success font-bold text-base w-full text-white text-center">
-            Pre-Order our upcoming DCC Adventure: Into The Dark!
-          </div>
-        </a>
+        <MultiLinkBanner />
         <div className="mx-auto max-w-7xl py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between">
             <div>

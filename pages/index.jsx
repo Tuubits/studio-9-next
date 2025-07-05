@@ -9,6 +9,7 @@ import { CldImage } from 'next-cloudinary';
 import separator from '../public/bottom_separator.png';
 import mobileSeparator from '../public/bottom_separatorSMLsize.png';
 import Footer from '../components/footer';
+import MultiLinkBanner from '../components/mutliBanner';
 
 export default function Home() {
   const [query, setQuery] = useState(null);
@@ -27,11 +28,7 @@ export default function Home() {
         <meta name="description" content="A family friendly media company • Creating joy since 2005" />
         <link rel="icon" href="/s9incLOGOsml.png" />
       </Head>
-      <a href="https://www.backerkit.com/c/projects/studio-9-games/into-the-dark">
-          <div className=" p-2 bg-success font-bold text-base w-full text-white text-center">
-          Pre-Order our upcoming DCC Adventure: Into The Dark!
-          </div>
-        </a>
+      <MultiLinkBanner />
       <main  className="mx-auto max-w-7xl pt-8 px-4 sm:pt-12 sm:px-6 lg:px-8">
         <div>
           <Image

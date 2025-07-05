@@ -47,7 +47,7 @@ export default function GoldenEraGaming() {
       <div>
       {selected === feature.title ? 
             <div key={feature.id} className="card sm:card-side bg-base-100 m-4 sm:m-0 sm:mb-4 shadow-xl">
-                <figure className='relative h-96 sm:w-full'>
+                <figure className='relative h-96 sm:h-auto sm:w-full'>
                     <Image
                         src={`${feature.mainImage}`}
                         className='mt-6 sm:mt-0 rounded'

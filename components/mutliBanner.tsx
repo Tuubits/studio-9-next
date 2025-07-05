@@ -7,8 +7,8 @@ const MultiLinkBanner = () => {
   
   const links = [
     {
-      text: "Check out our upcoming adventures!",
-      url: "https://www.backerkit.com/c/projects/studio-9-games/into-the-dark"
+      text: "Check out our upcoming adventures...",
+      url: undefined
     },
     {
       text: "Riders on the Midnight Storm: Rolling in this Summer",
@@ -49,7 +49,7 @@ const MultiLinkBanner = () => {
           href={links[currentIndex].url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-between p-3 transition-colors active:text-neutral"
+          className="flex items-center justify-between p-3 transition-colors"
         >
           <button
             onClick={goToPrevious}
@@ -97,7 +97,7 @@ const MultiLinkBanner = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 p-3 text-center border-r border-black last:border-r-0 active:text-neutral"
+                className="flex-1 p-3 text-center border-r border-neutral last:border-r-0"
               >
                 <p className="font-bold text-base lg:text-lg">{link.text}</p>
               </a>
@@ -125,8 +125,8 @@ const RotatingTextBanner = () => {
   
   const links = [
     {
-      text: "Check out our upcoming adventures!",
-      url: "https://www.backerkit.com/c/projects/studio-9-games/into-the-dark"
+      text: "Check out our upcoming adventures...",
+      url: undefined
     },
     {
       text: "Riders on the Midnight Storm: Rolling in this Summer",

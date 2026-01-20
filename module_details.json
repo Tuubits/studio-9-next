@@ -1,4 +1,22 @@
 [
+        {
+        "id": "riders-on-the-midnight-storm",
+        "title": "Riders on the Midnight Storm",
+        "slug": "riders-on-the-midnight-storm",
+        "name": "Riders on the Midnight Storm",
+        "details": "In this sequel to INTO THE DARK, Earl Wistmor's son of the purple plains temporarily knights the characters in a desperate attempt to discover the truth behind a sinister series of misfortunes plaguing their county. They must collect information, face horrific fiends, rally despondent nobles, infiltrate strange cults, and navigate crippling political stalemates with the sword or the tongue. Fail, and they will face a rising tide of chaos and destruction in a realm already struggling to survive. As bickering earls squabble, they become increasingly blind to the flood of pillage, blight, and shadow. This  36 page campaign setting and sandbox style adventure is for characters 1st to 3rd level and was created for DCC RPG.",
+        "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/v1768875518/Riders_Frontis_final_Kreader_wxdrbe.jpg",
+        "driveThruLink": "https://www.drivethrurpg.com/en/product/550721/riders-on-the-midnight-storm?src=hottest_filtered&affiliate_id=1639552",
+        "price": 14.99,
+        "shippingCost": 8,
+        "category": "",
+        "outOfStock": false,
+        "countInStock": 10,
+        "signedCopyOptions": [
+          { "name": "Signed Hardcover", "price": 39.99, "shippingCost": 8 },
+          { "name": "Signed Softcover", "price": 14.99, "shippingCost": 8 }
+        ]
+      },
       { 
         "id": "into-the-dark", 
         "title": "Into the Dark",

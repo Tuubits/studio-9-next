@@ -19,17 +19,23 @@ export default function GoldenEraGaming() {
         setSelected(value)
     }
 
-    const addToCartHandler = (mod) => {
-        const existItem = state.cart.cartItems.find((x) => x.slug === mod.slug);
+    const addToCartHandler = (mod, variant = null) => {
+        const baseModule = mod.i || mod.feature || mod;
+        const cartSlug = variant ? `${baseModule.slug}-${variant.name.toLowerCase()}` : baseModule.slug;
+        const existItem = state.cart.cartItems.find((x) => x.slug === cartSlug);
         const quantity = existItem ? existItem.quantity + 1 : 1;
-        if(mod.i) {
-          dispatch({ type: 'CART_ADD_ITEM', payload: { ...mod.i, quantity } });
-        } else if(mod.feature) {
-            dispatch({ type: 'CART_ADD_ITEM', payload: { ...mod.feature, quantity } });
-        } else {
-            dispatch({ type: 'CART_ADD_ITEM', payload: { ...mod, quantity } });
-        }
 
+        const cartItem = variant
+          ? {
+              ...baseModule,
+              slug: cartSlug,
+              name: `${baseModule.name} (${variant.name})`,
+              price: variant.price,
+              shippingCost: variant.shippingCost
+            }
+          : baseModule;
+
+        dispatch({ type: 'CART_ADD_ITEM', payload: { ...cartItem, quantity } });
     };
 
   return (
@@ -68,10 +74,20 @@ export default function GoldenEraGaming() {
                       {feature.alternateBuyOptions[0].name}
                     </button>
                   </Link>
+                : feature.signedCopyOptions ?
+                  feature.signedCopyOptions.map((option, idx) => (
+                    <button
+                      key={idx}
+                      className={`btn-primary text-base-100 w-full lg:w-2/4 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                      onClick={() => { addToCartHandler({ feature }, option); router.push('/cart'); }}
+                    >
+                      Add {option.name} to Cart
+                    </button>
+                  ))
                 :
                 <button
-                className={`btn-primary text-base-100 w-ful lg:w-2/4 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                onClick={()=>{addToCartHandler({feature}); router.push('/cart')}}  
+                className={`btn-primary text-base-100 w-full lg:w-2/4 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                onClick={()=>{addToCartHandler({feature}); router.push('/cart')}}
                 >
                      Add Signed Copy to Cart
                 </button>
@@ -110,10 +126,20 @@ export default function GoldenEraGaming() {
                       {i.alternateBuyOptions[0].name}
                     </button>
                   </Link>
+                : i.signedCopyOptions ?
+                  i.signedCopyOptions.map((option, idx) => (
+                    <button
+                      key={idx}
+                      className={`btn-primary text-base-100 w-full lg:w-2/4 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                      onClick={() => { addToCartHandler({ i }, option); router.push('/cart'); }}
+                    >
+                      Add {option.name} - ${option.price.toFixed(2)}
+                    </button>
+                  ))
                 :
                 <button
                 className={`${i.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary text-base-100'} w-full lg:w-2/4 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                onClick={()=>{addToCartHandler({i}); router.push('/cart')}}  
+                onClick={()=>{addToCartHandler({i}); router.push('/cart')}}
                 >
                     {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
                 </button>
@@ -154,10 +180,20 @@ export default function GoldenEraGaming() {
                       {i.alternateBuyOptions[0].name}
                     </button>
                   </Link>
+                : i.signedCopyOptions ?
+                  i.signedCopyOptions.map((option, idx) => (
+                    <button
+                      key={idx}
+                      className={`btn-primary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                      onClick={() => { addToCartHandler({ i }, option); router.push('/cart'); }}
+                    >
+                      Add {option.name} - ${option.price.toFixed(2)}
+                    </button>
+                  ))
                 :
                 <button
                 className={`${i.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary text-base-100'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                onClick={()=>{addToCartHandler({i}); router.push('/cart')}}  
+                onClick={()=>{addToCartHandler({i}); router.push('/cart')}}
                 >
                     {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
                 </button>

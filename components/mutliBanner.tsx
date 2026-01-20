@@ -11,8 +11,8 @@ const MultiLinkBanner = () => {
       url: undefined
     },
     {
-      text: "Riders on the Midnight Storm: Rolling in this Summer",
-      url: "https://www.backerkit.com/call_to_action/5d338461-3785-4b67-84b3-09c66c0d276f/landing"
+      text: "Castle Whiterock: An Illustrated Journey",
+      url: "https://www.backerkit.com/call_to_action/a28e4b9a-f9b4-488a-8be8-e129f04f7439/landing"
     },
     {
       text: "101 Dungeon Encounters: Adventuring this Fall",
@@ -129,8 +129,8 @@ const RotatingTextBanner = () => {
       url: undefined
     },
     {
-      text: "Riders on the Midnight Storm: Rolling in this Summer",
-      url: "https://www.backerkit.com/call_to_action/5d338461-3785-4b67-84b3-09c66c0d276f/landing"
+      text: "Castle Whiterock: An Illustrated Journey",
+      url: "https://www.backerkit.com/call_to_action/a28e4b9a-f9b4-488a-8be8-e129f04f7439/landing"
     },
     {
       text: "101 Dungeon Encounters: Adventuring this Fall",
@@ -177,8 +177,8 @@ const StackedBanner = () => {
       highlight: true
     },
     {
-      text: "Riders on the Midnight Storm: Rolling in this Summer",
-      url: "https://www.backerkit.com/call_to_action/5d338461-3785-4b67-84b3-09c66c0d276f/landing"
+      text: "Castle Whiterock: An Illustrated Journey",
+      url: "https://www.backerkit.com/call_to_action/a28e4b9a-f9b4-488a-8be8-e129f04f7439/landing"
     },
     {
       text: "101 Dungeon Encounters: Adventuring this Fall",

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Patreon from "../public/patreon.png";
 import Mail from "../public/email.png";
+import LinkedIn from "../public/ln-black.png";
 
 export default function Footer() {
   return (
@@ -71,6 +72,28 @@ export default function Footer() {
               />
             </Link>
             <p className="prose-xl leading-6">Our Partners: </p>
+            <Link
+              aria-label="LinkedIn for Lisa Blecker"
+              href="https://www.linkedin.com/in/lisablecker"
+            >
+              <Image
+                src={LinkedIn}
+                alt="Link to LinkedIn for Lisa Blecker"
+                width={24}
+                height={24}
+              />
+            </Link>
+            <Link
+              aria-label="LinkedIn for Aaron Kreader"
+              href="https://www.linkedin.com/in/c-aaron-kreader/"
+            >
+              <Image
+                src={LinkedIn}
+                alt="Link to LinkedIn for Aaron Kreader"
+                width={24}
+                height={24}
+              />
+            </Link>
             <Link href="https://www.patreon.com/kreader">
               <Image
                 src={Patreon}

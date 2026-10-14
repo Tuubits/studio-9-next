@@ -25,6 +25,7 @@ function getGameDetails(props){
 
     const opts = {
         width: '100%',
+        ...(props.gameDetails.videoStart && { playerVars: { start: props.gameDetails.videoStart } }),
     };
 
     return (

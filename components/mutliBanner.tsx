@@ -7,7 +7,7 @@ const MultiLinkBanner = () => {
   
   const links = [
     {
-      text: "Check out our upcoming adventures...",
+      text: "Check out our NEW adventures...",
       url: undefined
     },
     {
@@ -125,7 +125,7 @@ const RotatingTextBanner = () => {
   
   const links = [
     {
-      text: "Check out our upcoming adventures...",
+      text: "Check out our NEW adventures...",
       url: undefined
     },
     {
@@ -172,7 +172,7 @@ const RotatingTextBanner = () => {
 const StackedBanner = () => {
   const links = [
     {
-      text: "Check out our upcoming adventures!",
+      text: "Check out our NEW adventures!",
       url: "https://www.backerkit.com/c/projects/studio-9-games/into-the-dark",
       highlight: true
     },

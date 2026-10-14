@@ -1,5 +1,40 @@
 [
         {
+        "id": "101-dungeon-encounters",
+        "title": "101 Dungeon Encounters",
+        "slug": "101-dungeon-encounters",
+        "name": "101 Dungeon Encounters",
+        "details": "With this book, you can bring unfinished dungeon passageways to life or make your own mega-dungeon from scratch. Match over 100 unique system-neutral encounters with tables of randomized room designs, adventure hazards, unique treasures, and more to create endless possibilities for underground locations. Built to hone your skills in the art of dungeon crafting. Compatible with the following role-playing systems: 5th Edition (of the world’s most popular RPG), Dungeon Crawl Classics Role-Playing Game, Old-School Essentials, & Shadowdark RPG.",
+        "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1791933228/studio9/101dungeonencounters_dkwk5b.png",
+        "driveThruLink": "https://www.drivethrurpg.com/product/581998/101-dungeon-encounters?affiliate_id=1639552",
+        "category": "",
+        "pdfOnly": true
+      },
+      {
+        "id": "castle-whiterock-an-illustrated-journey",
+        "title": "Castle Whiterock: An Illustrated Journey",
+        "slug": "castle-whiterock-an-illustrated-journey",
+        "name": "Castle Whiterock: An Illustrated Journey",
+        "details": "5e or DCC judges will have added rendered handouts and illustrated scenes to complement the handouts in the main Castle Whiterock adventure! Discover unique notes from the original designer, and storied remembrances of the greatest dungeon story ever told!",
+        "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1791933227/studio9/illustratedjourney_onpzs1.png",
+        "driveThruLink": "https://www.drivethrurpg.com/product/581991/castle-whiterock-an-illustrated-journey?affiliate_id=1639552",
+        "category": "",
+        "group": "Castle Whiterock",
+        "pdfOnly": true
+      },
+      {
+        "id": "the-shard-vault",
+        "title": "The Shard Vault",
+        "slug": "the-shard-vault",
+        "name": "The Shard Vault",
+        "details": "The Shard Vault is a short adventure suitable for four to six 9th level characters using the fifth edition of the world’s most popular role-playing game. The appendix includes game statistics for the Dungeon Crawl Classics Role Playing Game (as a 5th level adventure). This adventure is set in an underground location and makes the perfect one-shot. Although the backstory ties into The Crypt of the Devil Lich, published by Goodman Games, that book is not required to play this adventure.",
+        "mainImage": "https://res.cloudinary.com/rollfunkydice-com/image/upload/f_auto/v1791933231/studio9/theshardvault_sbwthz.jpg",
+        "driveThruLink": "https://www.drivethrurpg.com/product/581997/the-shard-vault?affiliate_id=1639552",
+        "category": "",
+        "group": "Castle Whiterock",
+        "pdfOnly": true
+      },
+      {
         "id": "riders-on-the-midnight-storm",
         "title": "Riders on the Midnight Storm",
         "slug": "riders-on-the-midnight-storm",

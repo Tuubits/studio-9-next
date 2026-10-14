@@ -19,6 +19,8 @@ export default function Footer() {
           <div className="grid grid-flow-col gap-4">
             <Link
               aria-label="twitter handle studio 9 games"
+              target="_blank"
+              rel="noreferrer"
               href="https://www.twitter.com/Studio_9_Games"
             >
               <svg
@@ -33,6 +35,8 @@ export default function Footer() {
             </Link>
             <Link
               aria-label="youtube @ackreader"
+              target="_blank"
+              rel="noreferrer"
               href="https://www.youtube.com/@ackreader"
             >
               <svg
@@ -47,6 +51,8 @@ export default function Footer() {
             </Link>
             <Link
               aria-label="facebook studio 9 inc"
+              target="_blank"
+              rel="noreferrer"
               href="https://www.facebook.com/Studio9Inc"
             >
               <svg
@@ -74,6 +80,8 @@ export default function Footer() {
             <p className="prose-xl leading-6">Our Partners: </p>
             <Link
               aria-label="LinkedIn for Lisa Blecker"
+              target="_blank"
+              rel="noreferrer"
               href="https://www.linkedin.com/in/lisablecker"
             >
               <Image
@@ -85,6 +93,8 @@ export default function Footer() {
             </Link>
             <Link
               aria-label="LinkedIn for Aaron Kreader"
+              target="_blank"
+              rel="noreferrer"
               href="https://www.linkedin.com/in/c-aaron-kreader/"
             >
               <Image
@@ -94,7 +104,7 @@ export default function Footer() {
                 height={24}
               />
             </Link>
-            <Link href="https://www.patreon.com/kreader">
+            <Link target="_blank" rel="noreferrer" href="https://www.patreon.com/kreader">
               <Image
                 src={Patreon}
                 alt="Image of Aaron, linking to his Patreon"
@@ -104,6 +114,8 @@ export default function Footer() {
             </Link>
             <Link
               aria-label="roll funky dice site"
+              target="_blank"
+              rel="noreferrer"
               href="https://www.rollfunkydice.com"
             >
               <svg

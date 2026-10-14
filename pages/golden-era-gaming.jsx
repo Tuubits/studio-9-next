@@ -80,7 +80,7 @@ export default function GoldenEraGaming() {
                 <p>{feature.details}</p>
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
                 {feature.pdfOnly ? null : feature.alternateBuyOptions ?
-                  <Link href={`${feature.alternateBuyOptions[0].link}`} passHref className='w-full lg:w-2/4'>
+                  <Link href={`${feature.alternateBuyOptions[0].link}`} passHref target="_blank" rel="noreferrer" className='w-full lg:w-2/4'>
                     <button
                       className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                     >
@@ -105,7 +105,7 @@ export default function GoldenEraGaming() {
                      Add Signed Copy to Cart
                 </button>
                 }
-                <Link href={`${feature.driveThruLink}`} passHref className='w-full lg:w-2/4'>
+                <Link href={`${feature.driveThruLink}`} passHref target="_blank" rel="noreferrer" className='w-full lg:w-2/4'>
                   <button
                     className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                   >
@@ -132,7 +132,7 @@ export default function GoldenEraGaming() {
                 <p>{i.details}</p>
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
                 {i.pdfOnly ? null : i.alternateBuyOptions ?
-                  <Link href={`${i.alternateBuyOptions[0].link}`} passHref className='w-full lg:w-2/4'>
+                  <Link href={`${i.alternateBuyOptions[0].link}`} passHref target="_blank" rel="noreferrer" className='w-full lg:w-2/4'>
                     <button
                       className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                     >
@@ -157,7 +157,7 @@ export default function GoldenEraGaming() {
                     {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
                 </button>
                 }
-                <Link href={`${i.driveThruLink}`} passHref className='w-full lg:w-2/4'>
+                <Link href={`${i.driveThruLink}`} passHref target="_blank" rel="noreferrer" className='w-full lg:w-2/4'>
                   <button
                     className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                   >
@@ -186,7 +186,7 @@ export default function GoldenEraGaming() {
                 <p>{i.details}</p>
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
                 {i.pdfOnly ? null : i.alternateBuyOptions ?
-                  <Link href={`${i.alternateBuyOptions[0].link}`} passHref className='w-full'>
+                  <Link href={`${i.alternateBuyOptions[0].link}`} passHref target="_blank" rel="noreferrer" className='w-full'>
                     <button
                       className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                     >
@@ -211,7 +211,7 @@ export default function GoldenEraGaming() {
                     {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
                 </button>
                 }
-                <Link href={`${i.driveThruLink}`} passHref className='w-full'>
+                <Link href={`${i.driveThruLink}`} passHref target="_blank" rel="noreferrer" className='w-full'>
                   <button
                     className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                   >

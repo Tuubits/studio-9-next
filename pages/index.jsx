@@ -72,7 +72,7 @@ export default function Home() {
                 },
               }}
             >
-              <Link href={`${i.link}`}>
+              <Link href={`${i.link}`} {...(i.link.startsWith("http") && { target: "_blank", rel: "noreferrer" })}>
                 <CldImage src={i.image} alt={i.title} width={450} height={450} />
               </Link>
             </motion.div>
@@ -100,7 +100,7 @@ export default function Home() {
                 },
               }}
             >
-              <Link href={`${i.link}`}>
+              <Link href={`${i.link}`} {...(i.link.startsWith("http") && { target: "_blank", rel: "noreferrer" })}>
               <Image src={i.image} alt={i.title} width={250} height={250} />
               </Link>
             </motion.div>

@@ -110,7 +110,7 @@ function getGameDetails(props){
                     <div key={index}>
                     <p className=' font-bold'>{i.review}</p>
                     {i.link ? 
-                    <p className='font-medium'><a className="text-gray-600" href={i.link}>{i.src}</a></p>
+                    <p className='font-medium'><a className="text-gray-600" href={i.link} target="_blank" rel="noreferrer">{i.src}</a></p>
                     :
                     <p className='font-medium'>{i.src}</p>
                     }

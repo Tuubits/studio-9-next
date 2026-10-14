@@ -65,7 +65,7 @@ export default function GoldenEraGaming() {
         </select>
       <div>
       {selected === feature.title ? 
-            <div key={feature.id} className="card sm:card-side bg-base-100 m-4 sm:m-0 sm:mb-4 shadow-xl">
+            <div key={feature.id} className="card sm:card-side bg-base-100 mb-4 shadow-xl">
                 <figure className='relative h-96 sm:h-auto sm:w-full'>
                     <Image
                         src={`${feature.mainImage}`}
@@ -117,7 +117,7 @@ export default function GoldenEraGaming() {
         </div>
       :
     modules.filter(j => j.title === selected).map(i => (
-            <div key={i.id} className="card sm:card-side bg-base-100 m-4 sm:m-0 sm:mb-4 shadow-xl">
+            <div key={i.id} className="card sm:card-side bg-base-100 mb-4 shadow-xl">
                 <figure className='relative h-96 sm:w-full'>
                     <Image
                         src={`${i.mainImage}`}
@@ -171,7 +171,7 @@ export default function GoldenEraGaming() {
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
         {modules.filter(j => j.title !== selected).map(i => 
-            <div key={i.id} className="card bg-base-100 max-w-md shadow-xl">
+            <div key={i.id} className="card bg-base-100 sm:max-w-md shadow-xl">
                 <figure className='relative h-96 sm:w-full'>
                     <Image
                         src={`${i.mainImage}`}

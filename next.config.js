@@ -10,6 +10,8 @@ module.exports = {
     return config;
   },
   images: {
+    loader: 'custom',
+    loaderFile: './utils/cloudinaryLoader.js',
     domains: ['placeimg.com', 'source.unsplash.com', 'res.cloudinary.com'],
     formats: ['image/avif', 'image/webp'],
   },

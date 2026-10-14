@@ -23,17 +23,8 @@ function getGameDetails(props){
         router.push('/cart');
     };
 
-    const onPlayerReady = (event) => {
-        // access to player in all event handlers via event.target
-        event.target.pauseVideo();
-    }
-
     const opts = {
         width: '100%',
-        playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 1,
-        },
     };
 
     return (
@@ -54,7 +45,7 @@ function getGameDetails(props){
             <p className='prose lg:prose-xl py-2'>{props.gameDetails.details}</p>
             <p className='prose lg:prose-xl py-2'>{props.gameDetails.moreDetails}</p>
             <p className='prose lg:prose-xl py-2 italic'>{props.gameDetails.quote}</p>
-            {props.gameDetails.videoLink ? <YouTube videoId={props.gameDetails.videoLink} opts={opts} onReady={onPlayerReady} /> : null }
+            {props.gameDetails.videoLink ? <YouTube videoId={props.gameDetails.videoLink} opts={opts} /> : null }
             </div>
             <div className='col-span-2'>
                 <div className='text-center py-4 space-y-4'>

@@ -80,6 +80,11 @@ const allowedConsoleErrors: RegExp[] = [
   // Logged inside the YouTube embed iframe (react-youtube) on pages with a
   // video; YouTube's player probes a browser API the embed is not allowed to use.
   /Permissions policy violation: compute-pressure/,
+  // Without a PayPal client id (e.g. in CI with no secret) the PayPal SDK
+  // request on the cart page is rejected with a 400. Allowed only then.
+  ...(process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || process.env.PAYPAL_CLIENT
+    ? []
+    : [/Failed to load resource: the server responded with a status of 400/, /Failed to load the PayPal JS SDK script/]),
 ];
 
 export function watchPageErrors(page: Page) {

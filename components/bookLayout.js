@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
@@ -12,10 +12,7 @@ import Footer from "./footer";
 export default function BookLayout({ children, title }) {
   const { state } = useContext(Store);
   const { cart } = state;
-  const [cartItemsCount, setCartItemsCount] = useState(0);
-  useEffect(() => {
-    setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
-  }, [cart.cartItems]);
+  const cartItemsCount = cart.cartItems.reduce((a, c) => a + c.quantity, 0);
 
   return (
     <>

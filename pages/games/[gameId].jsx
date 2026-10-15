@@ -1,18 +1,14 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import fs from 'fs'
 import path from 'path'
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import 'lightbox.js-react/dist/index.css'
-import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
+import ImageGallery from '../../components/imageGallery';
 import GameLayout from '../../components/gameLayout';
 import { Store } from '../../utils/Store';
 import YouTube from 'react-youtube';
 
-function getGameDetails(props){
-    useEffect(() => {
-        initLightboxJS(`${process.env.lightbox}`, 'team');
-    });
+function GameDetails(props){
     const router = useRouter();
     const { state, dispatch } = useContext(Store);
 
@@ -55,6 +51,7 @@ function getGameDetails(props){
                     (props.gameDetails.alternateBuyOptions.map((i, index) => 
                         i.addToCart ? 
                         <button
+                        key={index}
                         className={`${props.gameDetails.outOfStock ? 'btn-disabled text-gray-700' : 'btn-secondary'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                         onClick={props.gameDetails.outOfStock ? null : addToCartHandler}
                         >
@@ -79,19 +76,7 @@ function getGameDetails(props){
                 }
             </div>
             <div className='pl-4 py-4'>
-            <SlideshowLightbox className={`container grid ${ props.gameDetails.sideImages.length < 2 ? 'grid-cols-1' : 'grid-cols-2'} gap-2 mx-auto`} theme='lightbox' lightboxIdentifier="lightbox1" framework="next" images={props.gameDetails.sideImages}>
-                    {props.gameDetails.sideImages.map((image, index) => (
-                        <Image
-                            key={index}
-                            src={image.src}
-                            alt={image.alt}
-                            height={300}
-                            width={300}
-                            data-lightboxjs="lightbox1"
-                            quality={80}
-                        />
-                    ))}
-            </SlideshowLightbox>
+            <ImageGallery images={props.gameDetails.sideImages} />
             </div>
             <div className='prose lg:prose-xl pl-4 py-4'>
             {props.gameDetails.reviews ?
@@ -150,4 +135,4 @@ export async function getStaticPaths() {
     }
 }
 
-export default getGameDetails
+export default GameDetails

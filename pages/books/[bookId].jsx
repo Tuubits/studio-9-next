@@ -1,20 +1,14 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import fs from 'fs'
 import path from 'path'
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import 'lightbox.js-react/dist/index.css'
-import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
+import ImageGallery from '../../components/imageGallery';
 import BookLayout from '../../components/bookLayout';
 import { Store } from '../../utils/Store';
 import YouTube from 'react-youtube';
 
-function getBookDetails(props){
-    useEffect(() => {
-        initLightboxJS(`${process.env.lightbox}`, 'team');
-    });
-
+function BookDetails(props){
     const router = useRouter();
     const { state, dispatch } = useContext(Store);
 
@@ -69,19 +63,7 @@ function getBookDetails(props){
                 }
             </div>
             <div className='pl-4 py-4'>
-            <SlideshowLightbox className={`container grid ${ props.bookDetails.sideImages.length < 2 ? 'grid-cols-1' : 'grid-cols-2'} gap-2 mx-auto`} theme='lightbox' lightboxIdentifier="lightbox1" framework="next" images={props.bookDetails.sideImages}>
-                    {props.bookDetails.sideImages.map((image, index) => (
-                        <Image
-                            key={index}
-                            src={image.src}
-                            alt={image.alt}
-                            height={300}
-                            width={300}
-                            data-lightboxjs="lightbox1"
-                            quality={80}
-                        />
-                    ))}
-            </SlideshowLightbox>
+            <ImageGallery images={props.bookDetails.sideImages} />
             </div>
             <div className='prose lg:prose-xl pl-4 py-4'>
             {props.bookDetails.reviews ?
@@ -132,4 +114,4 @@ export async function getStaticPaths() {
     }
 }
 
-export default getBookDetails
+export default BookDetails

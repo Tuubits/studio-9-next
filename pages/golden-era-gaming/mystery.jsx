@@ -11,7 +11,7 @@ export default function MysteryRoomChallenge() {
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch('/', {
+    fetch('/__forms.html', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString(),

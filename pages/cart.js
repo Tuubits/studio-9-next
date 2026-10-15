@@ -12,20 +12,11 @@ export default function CartScreen() {
   const { state, dispatch } = useContext(Store);
   const {
     cart: { cartItems },
-    shipping
   } = state;
   const [isPaid, setIsPaid] = useState(false);  
   const [info, setInfo] = useState('');
-  const [totalValue, setTotalValue] = useState(0);
   const [message, setMessage] = useState('');
   const formRef= useRef();
-
-
-  useEffect(() => {
-    if (state.shipping !== shipping) {
-      setShipping(state.shipping);
-    }
-  }, [state.shipping, shipping]);
 
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
@@ -34,21 +25,16 @@ export default function CartScreen() {
   const updateCartHandler = (item, qty) => {
     const quantity = Number(qty);
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
-    dispatch({ type: 'UPDATE_SHIPPING', payload: shipping });
   };
 
-  const setShipping = () => {
-    dispatch({ type: 'UPDATE_SHIPPING', payload: shipping });
-  };
-
-  const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
+  const [, paypalDispatch] = usePayPalScriptReducer();
 
   useEffect(() => {
     const loadPaypalScript = async () => {
         paypalDispatch({
             type: 'resetOptions',
             value: {
-                'client-id': `${process.env.PAYPAL_CLIENT}`,
+                clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
                 currency: 'USD',
             },
         });
@@ -57,11 +43,7 @@ export default function CartScreen() {
     loadPaypalScript();
   }, [paypalDispatch, cartItems]);
 
-useEffect(() => {
-  let total = cartItems.reduce((a, c) => a + c.quantity * c.price, 0).toFixed(2);
-  setTotalValue(total);
-  dispatch({ type: 'UPDATE_SHIPPING', payload: shipping });
-}, [cartItems])
+const totalValue = cartItems.reduce((a, c) => a + c.quantity * c.price, 0).toFixed(2);
 
 useEffect(() => {
     if (isPaid) {
@@ -80,7 +62,7 @@ const handleSubmit = (event) => {
 
   formData.append('form-name', 'contact'); // This is necessary for Netlify to recognize the form submission
   console.log('formData appended', formData);
-  fetch("/", {
+  fetch("/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
@@ -156,9 +138,9 @@ useEffect(() => {
 
   return (
     <GoldenEraLayout title="Shopping Cart">
-      <Link className='flex flex-wrap' href={'/'}>
-        <button className="btn btn-accent normal-case mb-4 text-xl">Continue Shopping</button>
-      </Link>
+      <div className='flex flex-wrap'>
+        <Link className="btn btn-accent normal-case mb-4 text-xl" href={'/'}>Continue Shopping</Link>
+      </div>
       <h1 className='font-bold text-2xl text-center'>PLEASE NOTE: We are unable to fulfill orders outside of the United States.</h1>
       {cartItems.length === 0 ? (
         <div>

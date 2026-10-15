@@ -36,6 +36,6 @@ These are marked `test.fixme` and are not fixed yet.
 
 ## Tests and CI
 
-- Visual snapshots (`e2e/visual.spec.ts-snapshots/`) are macOS baselines. `visual.spec.ts` is skipped in CI; generate Linux baselines (e.g. in the Playwright Docker image) to run it there.
+- Visual baselines (`e2e/visual.spec.ts-snapshots/`) are local only and gitignored, because screenshots differ between machines. `visual.spec.ts` is skipped in CI and on any checkout without baselines; create them with `npm run test:e2e:update -- e2e/visual.spec.ts` on a known-good build (e.g. `main`) before changing UI code. The Golden Era page screenshot loads 15 large Cloudinary images and can fail on a very slow network; rerun it before treating a diff as real.
 - CI (`.github/workflows/e2e.yml`) reads optional repository secrets `PAYPAL_CLIENT` and `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME`. Without `PAYPAL_CLIENT` the PayPal button test is skipped. Use a sandbox client id there.
 - `npm run lint` runs ESLint directly (flat config in `eslint.config.mjs`). It passes with 6 warnings left in code not touched by this work (unused alternate banner components in `components/mutliBanner.tsx`, effect dependencies in `pages/cart.js`, which Phase 5 rewrites).

@@ -41,3 +41,5 @@ next-env.d.ts
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+# Visual baselines are machine-specific and kept local, not committed
+/e2e/visual.spec.ts-snapshots/

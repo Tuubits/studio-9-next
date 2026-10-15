@@ -43,6 +43,9 @@ export function expectedShipping(lines: { shippingCost: number; quantity: number
   return units.reduce((sum, cost, i) => sum + cost * (rates[i] ?? 0.125), 0);
 }
 
+type CartLine = { slug: string; quantity: number; price: number };
+type Fiber = { return: Fiber | null; memoizedProps?: { value?: { state?: { shipping: number; cart?: { cartItems: CartLine[] } } } } };
+
 // Cart state is in-memory React context with no UI for shipping, so read it
 // from the Store provider through React's internal fiber tree.
 export async function readCartState(page: Page) {
@@ -50,13 +53,13 @@ export async function readCartState(page: Page) {
     const root = document.getElementById('__next')!;
     const start = root.querySelector('*') ?? root;
     const key = Object.keys(start).find((k) => k.startsWith('__reactFiber$'))!;
-    let fiber = (start as any)[key];
+    let fiber: Fiber | null = (start as unknown as Record<string, Fiber>)[key];
     while (fiber) {
       const state = fiber.memoizedProps?.value?.state;
       if (state?.cart) {
         return {
-          shipping: state.shipping as number,
-          items: state.cart.cartItems.map((i: any) => ({ slug: i.slug, quantity: i.quantity, price: i.price })),
+          shipping: state.shipping,
+          items: state.cart.cartItems.map((i) => ({ slug: i.slug, quantity: i.quantity, price: i.price })),
         };
       }
       fiber = fiber.return;
@@ -67,7 +70,7 @@ export async function readCartState(page: Page) {
 
 // Navigate inside the single-page app so the in-memory cart survives.
 export async function clientNavigate(page: Page, url: string) {
-  await page.evaluate((u) => (window as any).next.router.push(u), url);
+  await page.evaluate((u) => (window as unknown as { next: { router: { push(u: string): void } } }).next.router.push(u), url);
   await page.waitForURL((u) => u.pathname === url);
 }
 

@@ -19,7 +19,7 @@ for (const [url, item] of products.filter(([, i]) => sellsDirect(i) && !i.outOfS
   });
 }
 
-for (const [url, item] of products.filter(([, i]) => i.outOfStock)) {
+for (const [url] of products.filter(([, i]) => i.outOfStock)) {
   test(`${url} shows an Out of Stock control`, async ({ page }) => {
     await page.goto(url);
     const button = page.getByRole('button', { name: 'Out of Stock', exact: true });
@@ -57,4 +57,14 @@ test('Midnight Legion external links point to their URLs', async ({ page }) => {
     await expect(link).toHaveAttribute('href', option.link!);
     await expect(link).toHaveAttribute('target', '_blank');
   }
+});
+
+test('clicking a side image opens it in the lightbox', async ({ page }) => {
+  const game = games.find((g) => g.id === 'treasures-and-traps')! as Item & { sideImages: { alt: string }[] };
+  await page.goto(`/games/${game.id}`);
+  await page.getByRole('button', { name: `Enlarge ${game.sideImages[0].alt}` }).click();
+  const lightbox = page.locator('.yarl__root');
+  await expect(lightbox).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(lightbox).toBeHidden();
 });

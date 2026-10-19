@@ -34,7 +34,7 @@ export default function CartScreen() {
         paypalDispatch({
             type: 'resetOptions',
             value: {
-                clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+                clientId: process.env.PAYPAL_CLIENT,
                 currency: 'USD',
             },
         });

@@ -82,7 +82,7 @@ const allowedConsoleErrors: RegExp[] = [
   /Permissions policy violation: compute-pressure/,
   // Without a PayPal client id (e.g. in CI with no secret) the PayPal SDK
   // request on the cart page is rejected with a 400. Allowed only then.
-  ...(process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || process.env.PAYPAL_CLIENT
+  ...(process.env.PAYPAL_CLIENT
     ? []
     : [/Failed to load resource: the server responded with a status of 400/, /Failed to load the PayPal JS SDK script/]),
 ];

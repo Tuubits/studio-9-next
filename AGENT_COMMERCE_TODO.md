@@ -11,7 +11,6 @@ Open items for the owners (Aaron/Lisa) and for later phases. Each phase adds to 
 
 - **Next.js adapter.** Next 13.0 used Netlify's legacy Next runtime; Next 13.5+ uses the current adapter (OpenNext). It is zero-config (no `netlify.toml` needed). Netlify recommends not pinning its version. Confirm the deploy preview builds and the site works there.
 - **Netlify Forms moved.** The current adapter only detects forms in static HTML, so the `contact` and `mystery-room-challenge` forms are now defined in `public/__forms.html` and the pages POST to `/__forms.html`. Netlify fails the build with "@netlify/plugin-nextjs@5 requires migration steps to support Netlify Forms" if this is missing. **Test both forms on the deploy preview** (submit the mystery form; click a PayPal button in the cart with a note to send the `contact` form) and check the submissions appear in Netlify's Forms tab.
-- **PayPal client id env var.** The code now reads `NEXT_PUBLIC_PAYPAL_CLIENT_ID` and falls back to the old `PAYPAL_CLIENT`, so nothing breaks before the rename. Rename the Netlify variable when convenient, then remove the fallback in `next.config.js`.
 - **Lightbox license.** `lightbox.js-react` was replaced by `yet-another-react-lightbox` (MIT, no key) because it has no working React 19 release. The lightbox.js license key is no longer used; cancel that subscription if there is one.
 
 ## Deferred upgrades

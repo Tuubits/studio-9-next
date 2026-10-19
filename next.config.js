@@ -12,8 +12,7 @@ module.exports = {
     qualities: [75, 80],
   },
   env: {
-    // PAYPAL_CLIENT is the old name for the PayPal client id. Fall back to it
-    // until the Netlify env var is renamed to NEXT_PUBLIC_PAYPAL_CLIENT_ID.
-    NEXT_PUBLIC_PAYPAL_CLIENT_ID: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || process.env.PAYPAL_CLIENT,
+    // The PayPal client id is public; expose it to the browser.
+    PAYPAL_CLIENT: process.env.PAYPAL_CLIENT,
   },
 };

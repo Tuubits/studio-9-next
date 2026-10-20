@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
-import fs from 'fs'
-import path from 'path'
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import ImageGallery from '../../components/imageGallery';
 import GameLayout from '../../components/gameLayout';
 import { Store } from '../../utils/Store';
+import { getProductsByCategory, getSourceRecord } from '../../lib/catalog';
 import YouTube from 'react-youtube';
 
 function GameDetails(props){
@@ -102,35 +101,17 @@ function GameDetails(props){
     )
 }
 
-export async function getStaticProps(context) {
-    const { params } = context
-    const gameId = params.gameId
-    const fileToRead = path.join(process.cwd(), 'game_details.json')
-    const data = JSON.parse(await fs.readFileSync(fileToRead))
-    const game = data.games.find(game => game.id === gameId)
+export async function getStaticProps({ params }) {
     return {
         props: {
-            gameDetails: game
+            gameDetails: getSourceRecord('games', params.gameId)
         },
     };
 }
 
 export async function getStaticPaths() {
     return {
-        paths: [
-            {  params: { gameId: 'charms-antiracism' } },
-            {  params: { gameId: 'villagers-and-villains' } },
-            {  params: { gameId: 'borderlands' } },
-            {  params: { gameId: 'city-builder' } },
-            {  params: { gameId: 'treasures-and-traps' } },
-            {  params: { gameId: 'random-encounters' } },
-            {  params: { gameId: 'expanded-realms-1' } },
-            {  params: { gameId: 'expanded-realms-2' } },
-            {  params: { gameId: 'hero-versus-guardian' } },
-            {  params: { gameId: 'midnight-legion' } },
-            {  params: { gameId: 'global-crisis' } },
-            {  params: { gameId: 'charms' } },
-        ],
+        paths: getProductsByCategory('games').map((p) => ({ params: { gameId: p.id } })),
         fallback: false
     }
 }

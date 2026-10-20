@@ -162,8 +162,7 @@ useEffect(() => {
                 {cartItems.map((item) => (
                   <tr key={item.slug} className="border-b border-stone-700">
                     <td className="flex items-center">
-                      {item.category === "" ?
-                      <Link className='flex flex-wrap' href={`/${item.category === "" ? 'golden-era-gaming' : item.slug}`}>
+                      <Link className='flex flex-wrap' href={item.path ?? `/${item.category}/${item.slug}`}>
                           <Image
                             src={`${item.mainImage}`}
                             alt={item.name}
@@ -175,20 +174,6 @@ useEffect(() => {
                           {item.name}
                           </div>
                       </Link>
-                      :
-                      <Link className='flex flex-wrap' href={`/${item.category}/${item.slug}`}>
-                          <Image
-                            src={`${item.mainImage}`}
-                            alt={item.name}
-                            width={100}
-                            height={100}
-                          ></Image>
-                          &nbsp;
-                          <div className='text-2xl mt-auto mb-auto sm:ml-4'>
-                          {item.name}
-                          </div>
-                      </Link>
-                      }
 
                     </td>
                     <td className="p-5 text-right text-xl">

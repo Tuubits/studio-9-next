@@ -1,22 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
-
 module.exports = {
-  webpack: (config, { isServer }) => {
-    if (!isServer) config.resolve.fallback.fs = false;
-    return config;
-  },
+  reactStrictMode: true,
+  // A stray package-lock.json higher up the file tree confuses root detection.
+  turbopack: { root: __dirname },
   images: {
     loader: 'custom',
     loaderFile: './utils/cloudinaryLoader.js',
-    domains: ['placeimg.com', 'source.unsplash.com', 'res.cloudinary.com'],
+    remotePatterns: [{ protocol: 'https', hostname: 'res.cloudinary.com' }],
     formats: ['image/avif', 'image/webp'],
+    // The lightbox thumbnails request quality 80; Next 16 only allows 75 by default.
+    qualities: [75, 80],
   },
   env: {
-    lightbox: 'E20B-8C81-0A08-930B',
-    PAYPAL_CLIENT: `${process.env.PAYPAL_CLIENT}`
+    // The PayPal client id is public; expose it to the browser.
+    PAYPAL_CLIENT: process.env.PAYPAL_CLIENT,
   },
 };

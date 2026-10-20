@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -13,7 +13,7 @@ export default function GoldenEraGaming() {
 
     const feature = modules[0]
     // Consecutive modules sharing a `group` are collected into one dropdown optgroup
-    const [options, setOptions] = useState(modules.reduce((acc, i) => {
+    const [options] = useState(modules.reduce((acc, i) => {
         const last = acc[acc.length - 1]
         if (i.group && last && last.group === i.group) {
             last.titles.push(i.title)
@@ -71,8 +71,9 @@ export default function GoldenEraGaming() {
                         src={`${feature.mainImage}`}
                         className='mt-6 sm:mt-0 rounded'
                         alt={feature.title}
-                        layout={'fill'}
-                        objectFit='cover'
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        sizes="(min-width: 640px) 50vw, 100vw"
                     />
                 </figure>
             <div className="card-body max-w-[50%] max-sm:max-w-full">
@@ -80,12 +81,8 @@ export default function GoldenEraGaming() {
                 <p>{feature.details}</p>
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
                 {feature.pdfOnly ? null : feature.alternateBuyOptions ?
-                  <Link href={`${feature.alternateBuyOptions[0].link}`} passHref target="_blank" rel="noreferrer" className='w-full lg:w-2/4'>
-                    <button
-                      className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                    >
-                      {feature.alternateBuyOptions[0].name}
-                    </button>
+                  <Link href={`${feature.alternateBuyOptions[0].link}`} target="_blank" rel="noreferrer" className={`w-full lg:w-2/4 block text-center btn-secondary text-base-100 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}>
+                    {feature.alternateBuyOptions[0].name}
                   </Link>
                 : feature.signedCopyOptions ?
                   feature.signedCopyOptions.map((option, idx) => (
@@ -105,12 +102,8 @@ export default function GoldenEraGaming() {
                      Add Signed Copy to Cart
                 </button>
                 }
-                <Link href={`${feature.driveThruLink}`} passHref target="_blank" rel="noreferrer" className='w-full lg:w-2/4'>
-                  <button
-                    className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                  >
-                    Purchase PDF Edition
-                  </button>
+                <Link href={`${feature.driveThruLink}`} target="_blank" rel="noreferrer" className={`w-full lg:w-2/4 block text-center btn-secondary text-base-100 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}>
+                  Purchase PDF Edition
                 </Link>
                 </div>
             </div>
@@ -123,8 +116,9 @@ export default function GoldenEraGaming() {
                         src={`${i.mainImage}`}
                         className='mt-6 sm:mt-0 rounded'
                         alt={i.title}
-                        layout={'fill'}
-                        objectFit='cover'
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        sizes="(min-width: 640px) 50vw, 100vw"
                     />
                 </figure>
             <div className="card-body max-w-[50%] max-sm:max-w-full">
@@ -132,12 +126,8 @@ export default function GoldenEraGaming() {
                 <p>{i.details}</p>
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
                 {i.pdfOnly ? null : i.alternateBuyOptions ?
-                  <Link href={`${i.alternateBuyOptions[0].link}`} passHref target="_blank" rel="noreferrer" className='w-full lg:w-2/4'>
-                    <button
-                      className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                    >
-                      {i.alternateBuyOptions[0].name}
-                    </button>
+                  <Link href={`${i.alternateBuyOptions[0].link}`} target="_blank" rel="noreferrer" className={`w-full lg:w-2/4 block text-center btn-secondary text-base-100 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}>
+                    {i.alternateBuyOptions[0].name}
                   </Link>
                 : i.signedCopyOptions ?
                   i.signedCopyOptions.map((option, idx) => (
@@ -157,12 +147,8 @@ export default function GoldenEraGaming() {
                     {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
                 </button>
                 }
-                <Link href={`${i.driveThruLink}`} passHref target="_blank" rel="noreferrer" className='w-full lg:w-2/4'>
-                  <button
-                    className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                  >
-                    Purchase PDF Edition
-                  </button>
+                <Link href={`${i.driveThruLink}`} target="_blank" rel="noreferrer" className={`w-full lg:w-2/4 block text-center btn-secondary text-base-100 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}>
+                  Purchase PDF Edition
                 </Link>
                 </div>
             </div>
@@ -177,8 +163,9 @@ export default function GoldenEraGaming() {
                         src={`${i.mainImage}`}
                         className='mt-6 sm:mt-0 rounded'
                         alt={i.title}
-                        layout={'fill'}
-                        objectFit='cover'
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                 </figure>
             <div className="card-body">
@@ -186,12 +173,8 @@ export default function GoldenEraGaming() {
                 <p>{i.details}</p>
                 <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
                 {i.pdfOnly ? null : i.alternateBuyOptions ?
-                  <Link href={`${i.alternateBuyOptions[0].link}`} passHref target="_blank" rel="noreferrer" className='w-full'>
-                    <button
-                      className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                    >
-                      {i.alternateBuyOptions[0].name}
-                    </button>
+                  <Link href={`${i.alternateBuyOptions[0].link}`} target="_blank" rel="noreferrer" className={`w-full block text-center btn-secondary text-base-100 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}>
+                    {i.alternateBuyOptions[0].name}
                   </Link>
                 : i.signedCopyOptions ?
                   i.signedCopyOptions.map((option, idx) => (
@@ -211,12 +194,8 @@ export default function GoldenEraGaming() {
                     {i.outOfStock ? 'Signed Copies Out of Stock': 'Add Signed Copy to Cart'}
                 </button>
                 }
-                <Link href={`${i.driveThruLink}`} passHref target="_blank" rel="noreferrer" className='w-full'>
-                  <button
-                    className={`btn-secondary text-base-100 w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
-                  >
-                    Purchase PDF Edition
-                  </button>
+                <Link href={`${i.driveThruLink}`} target="_blank" rel="noreferrer" className={`w-full block text-center btn-secondary text-base-100 items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}>
+                  Purchase PDF Edition
                 </Link>
                 </div>
             </div>

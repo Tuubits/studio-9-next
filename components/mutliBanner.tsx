@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const MultiLinkBanner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,12 +29,12 @@ const MultiLinkBanner = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const goToPrevious = (e:any) => {
+  const goToPrevious = (e: React.MouseEvent) => {
     e.preventDefault();
     setCurrentIndex((prev) => (prev - 1 + links.length) % links.length);
   };
 
-  const goToNext = (e:any) => {
+  const goToNext = (e: React.MouseEvent) => {
     e.preventDefault();
     setCurrentIndex((prev) => (prev + 1) % links.length);
   };

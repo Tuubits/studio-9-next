@@ -70,3 +70,17 @@ test('side card images fill the card height on wide screens', async ({ page }, t
     expect(Math.abs(cardBox.height - figureBox.height), mod.id).toBeLessThanOrEqual(1);
   }
 });
+
+// On mobile a leftover top margin pushed the image down, leaving a white
+// strip above it and cropping its bottom.
+test('card images fill their frame on every screen size', async ({ page }) => {
+  for (const path of ['/golden-era-gaming', ...modules.map((m) => `/golden-era-gaming/${m.id}`)]) {
+    await page.goto(path);
+    for (const figure of await page.locator('.card figure').all()) {
+      const figureBox = (await figure.boundingBox())!;
+      const imageBox = (await figure.locator('img').boundingBox())!;
+      expect(Math.abs(imageBox.y - figureBox.y), path).toBeLessThanOrEqual(1);
+      expect(Math.abs(imageBox.height - figureBox.height), path).toBeLessThanOrEqual(1);
+    }
+  }
+});

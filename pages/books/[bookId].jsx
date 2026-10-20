@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
-import fs from 'fs'
-import path from 'path'
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import ImageGallery from '../../components/imageGallery';
 import BookLayout from '../../components/bookLayout';
 import { Store } from '../../utils/Store';
+import { getProductsByCategory, getSourceRecord } from '../../lib/catalog';
 import YouTube from 'react-youtube';
 
 function BookDetails(props){
@@ -89,27 +88,17 @@ function BookDetails(props){
     )
 }
 
-export async function getStaticProps(context) {
-    const { params } = context
-    const bookId = params.bookId
-    const fileToRead = path.join(process.cwd(), 'book_details.json')
-    const data = JSON.parse(await fs.readFileSync(fileToRead))
-    const book = data.books.find(book => book.id === bookId)
+export async function getStaticProps({ params }) {
     return {
         props: {
-            bookDetails: book
+            bookDetails: getSourceRecord('books', params.bookId)
         },
     };
 }
 
 export async function getStaticPaths() {
     return {
-        paths: [
-            {  params: { bookId: 'dottie-and-me-activity-book' } },
-            {  params: { bookId: 'blessed-is-the-spot' } },
-            {  params: { bookId: 'sweet-neighbors-come-in-all-colors' } },
-            {  params: { bookId: 'zanjan' } },
-        ],
+        paths: getProductsByCategory('books').map((p) => ({ params: { bookId: p.id } })),
         fallback: false
     }
 }

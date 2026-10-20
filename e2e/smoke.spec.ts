@@ -1,11 +1,12 @@
 import { test, expect } from '@playwright/test';
-import { games, books, watchPageErrors } from './helpers';
+import { games, books, modules, watchPageErrors } from './helpers';
 
 const pages = [
   '/',
   ...games.map((g) => `/games/${g.id}`),
   ...books.map((b) => `/books/${b.id}`),
   '/golden-era-gaming',
+  ...modules.map((m) => `/golden-era-gaming/${m.id}`),
   '/golden-era-gaming/mystery',
   '/cart',
 ];

@@ -27,6 +27,14 @@ for (const mod of modules) {
   });
 }
 
+for (const mod of modules) {
+  test(`${mod.title} title links to its module page`, async ({ page }) => {
+    await page.goto('/golden-era-gaming');
+    const heading = page.getByRole('heading', { name: mod.title, exact: true });
+    await expect(heading.getByRole('link')).toHaveAttribute('href', `/golden-era-gaming/${mod.id}`);
+  });
+}
+
 test('Add Signed Copy to Cart adds the module at its price', async ({ page }) => {
   const mod = modules.find((m) => !m.pdfOnly && !m.outOfStock && !m.signedCopyOptions && !m.alternateBuyOptions)!;
   await page.goto('/golden-era-gaming');
@@ -59,9 +67,9 @@ test('signed hardcover and softcover variants add separately', async ({ page }) 
   }
 });
 
-// Known bug: variant cart ids are built from the variant name with a space,
-// e.g. "riders-on-the-midnight-storm-signed hardcover". Fixed in Phase 2.
-test.fixme('variant cart ids contain no spaces', async ({ page }) => {
+// Variant cart ids used to be built from the variant name with a space,
+// e.g. "riders-on-the-midnight-storm-signed hardcover".
+test('variant cart ids contain no spaces', async ({ page }) => {
   const mod = modules.find((m) => m.signedCopyOptions?.length)!;
   const variant = mod.signedCopyOptions![0];
   await page.goto('/golden-era-gaming');

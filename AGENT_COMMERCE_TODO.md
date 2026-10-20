@@ -25,7 +25,21 @@ These are marked `test.fixme` and are not fixed yet.
 
 - **Dottie and Me Activity Book video.** `videoLink` in `book_details.json` holds placeholder text ("Testimonial ipsum dolor sit amet…") instead of a YouTube video id, so the page throws "Invalid video id" in the browser. Owners: supply the real video id, or remove the field. Test: `e2e/smoke.spec.ts`.
 - **Out of Stock button is not really disabled.** On Global Crisis it is only styled as disabled (daisyUI `btn-disabled`) and has no `disabled` attribute, so screen readers and shopping agents see an enabled button. To be fixed in Phase 1 or 7. Test: `e2e/product.spec.ts`.
-- **Golden Era variant cart ids contain a space** (e.g. `riders-on-the-midnight-storm-signed hardcover`). Fixed in Phase 2. Test: `e2e/golden-era.spec.ts`.
+
+## Product identifiers (optional)
+
+Barcodes help shopping feeds and AI agents match products across stores, but nothing is required. If a box or book has a barcode, its number is the UPC or ISBN; send it and it goes in the JSON data. If there is no barcode, leave it: the feeds will say the product has no GTIN, which small publishers are allowed to do. Do not buy barcodes for this.
+
+- **ISBNs found automatically (please verify):** Zanjan → 978-1-931847-88-9 and Sweet Neighbors Come in All Colors → 978-1-61851-128-7, both read from their Amazon links in `book_details.json`.
+- **Games with no identifier yet:** Charms: Antiracism, Villagers and Villains, Villagers and Villains: Borderlands, Villagers and Villains: City Builder, Treasures and Traps, Treasures and Traps: Expanded Realms, Treasures and Traps: Expanded Realms 2, Treasures and Traps: Random Encounters, Hero versus Guardian, Midnight Legion, Global Crisis, Charms.
+- **Books with no identifier yet:** Blessed is the Spot, Dottie and Me Activity Book.
+- **Physical Golden Era modules with no identifier yet:** Riders on the Midnight Storm, Into the Dark, Die, Robot!, 101 Hex Encounters, Greenwood of the Fey Sovereign, Reckoning of the Gods, A Strange Night at the Pint 'n' Pony, 101 City Encounters, Welcome to Eastwood, The Towers of Dr.Xill, The Years Between, Cathedral of the Undying.
+- MPN (manufacturer part number) is left empty; the catalog uses each product id as its SKU.
+- Player counts, ages and page counts are not in the data (`attributes` in `lib/catalog.ts` are null). Optional for feeds.
+
+## Golden Era: switching a module to PDF-only
+
+Set `"pdfOnly": true` and `"price": null` on the module in `module_details.json` (you can also delete `signedCopyOptions`), then rebuild. The module page, the Golden Era page and the cart follow automatically; later phases' structured data, feeds and order APIs do too. Physical modules today: Riders on the Midnight Storm, Into the Dark, Die, Robot!, 101 Hex Encounters, Greenwood of the Fey Sovereign, Reckoning of the Gods, A Strange Night at the Pint 'n' Pony, 101 City Encounters, Welcome to Eastwood, The Towers of Dr.Xill, The Years Between, Cathedral of the Undying.
 
 ## Observations
 

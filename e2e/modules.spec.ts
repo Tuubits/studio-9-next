@@ -57,3 +57,16 @@ for (const mod of modules.filter((m) => !m.pdfOnly && m.signedCopyOptions?.lengt
     });
   }
 }
+
+// Side-by-side cards used to leave a white strip under the image when the
+// description was taller than the image's fixed height.
+test('side card images fill the card height on wide screens', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'chromium-desktop', 'Cards stack vertically on mobile');
+  for (const mod of modules) {
+    await page.goto(`/golden-era-gaming/${mod.id}`);
+    const card = page.locator('.card').first();
+    const cardBox = (await card.boundingBox())!;
+    const figureBox = (await card.locator('figure').boundingBox())!;
+    expect(Math.abs(cardBox.height - figureBox.height), mod.id).toBeLessThanOrEqual(1);
+  }
+});

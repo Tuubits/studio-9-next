@@ -8,7 +8,7 @@ const buttonClasses = 'items-center rounded-md border-2 border-transparent px-6 
 
 // A Golden Era module from lib/catalog.ts, as a side-by-side card (the
 // selected module, and the module's own page) or a grid card.
-export default function ModuleCard({ product, layout = 'side', featured = false, headingLevel = 'h2', linkTitle = true }) {
+export default function ModuleCard({ product, layout = 'side', headingLevel = 'h2', linkTitle = true }) {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const side = layout === 'side';
@@ -40,7 +40,9 @@ export default function ModuleCard({ product, layout = 'side', featured = false,
 
   return (
     <div className={side ? 'card sm:card-side bg-base-100 mb-4 shadow-xl' : 'card bg-base-100 sm:max-w-md shadow-xl'}>
-      <figure className={`relative h-96 ${featured ? 'sm:h-auto ' : ''}sm:w-full`}>
+      {/* Side cards: on wider screens the image stretches to the card's height,
+          so long descriptions don't leave a gap under it. */}
+      <figure className={`relative h-96 ${side ? 'sm:h-auto ' : ''}sm:w-full`}>
         <Image
           src={product.image}
           className='mt-6 sm:mt-0 rounded'

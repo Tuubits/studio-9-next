@@ -25,7 +25,7 @@ export default function GoldenEraGaming({ modules, options }) {
         </select>
       <div>
         {modules.filter(m => m.name === selected).map(m => (
-            <ModuleCard key={m.id} product={m} featured={m.id === feature.id} />
+            <ModuleCard key={m.id} product={m} />
         ))}
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>

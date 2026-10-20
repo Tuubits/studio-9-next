@@ -4,7 +4,8 @@ import { useRouter } from 'next/router';
 import ImageGallery from '../../components/imageGallery';
 import GameLayout from '../../components/gameLayout';
 import { Store } from '../../utils/Store';
-import { getProductsByCategory, getSourceRecord } from '../../lib/catalog';
+import { getProduct, getProductsByCategory, getSourceRecord } from '../../lib/catalog';
+import JsonLd, { productJsonLd } from '../../components/JsonLd';
 import YouTube from 'react-youtube';
 
 function GameDetails(props){
@@ -24,7 +25,8 @@ function GameDetails(props){
     };
 
     return (
-        <GameLayout title={props.gameDetails.title}>
+        <GameLayout title={props.gameDetails.title} seo={{ description: props.product.description, path: props.product.path, image: props.product.image, type: 'product' }}>
+        <JsonLd id="product-jsonld" data={productJsonLd(props.product)} />
         <div>
             <Image
                 src={`${props.gameDetails.productImage}`}
@@ -104,7 +106,8 @@ function GameDetails(props){
 export async function getStaticProps({ params }) {
     return {
         props: {
-            gameDetails: getSourceRecord('games', params.gameId)
+            gameDetails: getSourceRecord('games', params.gameId),
+            product: getProduct(params.gameId),
         },
     };
 }

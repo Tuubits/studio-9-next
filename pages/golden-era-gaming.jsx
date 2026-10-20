@@ -8,7 +8,14 @@ export default function GoldenEraGaming({ modules, options }) {
     const [selected, setSelected] = useState(feature.name)
 
   return (
-    <GoldenEraLayout title={'Golden Era Gaming'}>
+    <GoldenEraLayout
+      title={'Golden Era Gaming'}
+      seo={{
+        description: 'Golden Era Gaming adventures from Studio 9 Games for DCC RPG and 5th edition: signed print copies and PDF editions.',
+        path: '/golden-era-gaming',
+        image: modules[0].image,
+      }}
+    >
         <select
             aria-label="Select a module"
             className="select select-accent select-lg mt-4 mb-4 w-full max-w-xs"

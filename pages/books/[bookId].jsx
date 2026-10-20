@@ -4,7 +4,8 @@ import { useRouter } from 'next/router';
 import ImageGallery from '../../components/imageGallery';
 import BookLayout from '../../components/bookLayout';
 import { Store } from '../../utils/Store';
-import { getProductsByCategory, getSourceRecord } from '../../lib/catalog';
+import { getProduct, getProductsByCategory, getSourceRecord } from '../../lib/catalog';
+import JsonLd, { productJsonLd } from '../../components/JsonLd';
 import YouTube from 'react-youtube';
 
 function BookDetails(props){
@@ -24,7 +25,8 @@ function BookDetails(props){
     };
 
     return (
-        <BookLayout title={props.bookDetails.title}>
+        <BookLayout title={props.bookDetails.title} seo={{ description: props.product.description, path: props.product.path, image: props.product.image, type: 'product' }}>
+        <JsonLd id="product-jsonld" data={productJsonLd(props.product)} />
         <div>
             <Image
                 src={`${props.bookDetails.productImage}`}
@@ -91,7 +93,8 @@ function BookDetails(props){
 export async function getStaticProps({ params }) {
     return {
         props: {
-            bookDetails: getSourceRecord('books', params.bookId)
+            bookDetails: getSourceRecord('books', params.bookId),
+            product: getProduct(params.bookId),
         },
     };
 }

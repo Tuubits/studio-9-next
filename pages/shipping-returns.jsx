@@ -1,11 +1,11 @@
 import React from 'react';
-import GoldenEraLayout from '../components/goldenEraLayout';
+import BookLayout from '../components/bookLayout';
 
 // TODO: owner to confirm. Every policy statement marked "to be confirmed"
 // below is a placeholder until Aaron and Lisa supply the real policy.
 export default function ShippingReturns() {
   return (
-    <GoldenEraLayout
+    <BookLayout
       title="Shipping & Returns | Studio 9 Inc"
       seo={{
         description: 'Shipping and returns for Studio 9 Inc and Studio 9 Games: we ship physical orders within the United States only. PDF editions are sold through DriveThruRPG.',
@@ -30,6 +30,6 @@ export default function ShippingReturns() {
         <h2>Contact</h2>
         <p>Questions about an order? Email <a href="mailto:info@studio9inc.com">info@studio9inc.com</a>.</p>
       </div>
-    </GoldenEraLayout>
+    </BookLayout>
   );
 }

@@ -45,7 +45,7 @@ export default function ModuleCard({ product, layout = 'side', headingLevel = 'h
       <figure className={`relative h-96 ${side ? 'sm:h-auto ' : ''}sm:w-full`}>
         <Image
           src={product.image}
-          className='mt-6 sm:mt-0 rounded'
+          className='rounded'
           alt={product.name}
           fill
           style={{ objectFit: 'cover' }}

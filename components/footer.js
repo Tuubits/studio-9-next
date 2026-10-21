@@ -133,6 +133,11 @@ export default function Footer() {
             </Link>
           </div>
         </div>
+        <div>
+          <Link className="link link-hover prose-lg" href="/shipping-returns">
+            Shipping &amp; Returns
+          </Link>
+        </div>
       </footer>
     </div>
   );

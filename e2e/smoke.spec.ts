@@ -9,6 +9,7 @@ const pages = [
   ...modules.map((m) => `/golden-era-gaming/${m.id}`),
   '/golden-era-gaming/mystery',
   '/cart',
+  '/shipping-returns',
 ];
 
 // Pages with a known bug that throws in the browser. The page still gets the

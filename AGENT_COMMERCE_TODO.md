@@ -41,6 +41,19 @@ Barcodes help shopping feeds and AI agents match products across stores, but not
 
 Set `"pdfOnly": true` and `"price": null` on the module in `module_details.json` (you can also delete `signedCopyOptions`), then rebuild. The module page, the Golden Era page and the cart follow automatically; later phases' structured data, feeds and order APIs do too. Physical modules today: Riders on the Midnight Storm, Into the Dark, Die, Robot!, 101 Hex Encounters, Greenwood of the Fey Sovereign, Reckoning of the Gods, A Strange Night at the Pint 'n' Pony, 101 City Encounters, Welcome to Eastwood, The Towers of Dr.Xill, The Years Between, Cathedral of the Undying.
 
+## Shipping & returns policy (Phase 3)
+
+`/shipping-returns` has the owners' return policy: defective items only, within 14 days of receipt, with photos; help with USPS claims and replacement at cost for damaged or lost orders. The structured data in `lib/structuredData.ts` matches it (14-day window, damaged items only); keep the two in sync if the policy changes.
+
+Still to supply:
+
+- Typical time to ship (handling days), optional; the page leaves it out for now. If added, it can also go in the shipping details in `lib/structuredData.ts`.
+- Who pays to send a defective item back, if it has to be sent back at all. Not stated, so the structured data leaves return fees out.
+
+- **Contact email mismatch:** the footer and the new page use info@studio9inc.com, but the order thank-you message on the home page says studio9inc@mac.com. Which should customers use?
+- **Reviews:** the structured data has no ratings or reviews, because the existing reviews are press quotes without ratings. If real customer ratings are collected later, they can be added.
+- **Manual check:** paste a few product URLs into Google's Rich Results Test (https://search.google.com/test/rich-results) after deploying. Amazon-only books and PDF-only modules have no price of ours, so they will not get price snippets; that is expected.
+
 ## Observations
 
 - The cart page never shows the shipping charge; shoppers only see it in the PayPal window. The tests read shipping from the cart's React state. Consider showing it on the cart page (a visible change, so not in this work without approval).

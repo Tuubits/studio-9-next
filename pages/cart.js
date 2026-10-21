@@ -137,7 +137,7 @@ useEffect(() => {
 }, [cartItems, dispatch]);
 
   return (
-    <GoldenEraLayout title="Shopping Cart">
+    <GoldenEraLayout title="Shopping Cart" seo={{ path: '/cart', noindex: true }}>
       <div className='flex flex-wrap'>
         <Link className="btn btn-accent normal-case mb-4 text-xl" href={'/'}>Continue Shopping</Link>
       </div>

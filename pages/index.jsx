@@ -9,15 +9,17 @@ import separator from '../public/bottom_separator.png';
 import mobileSeparator from '../public/bottom_separatorSMLsize.png';
 import Footer from '../components/footer';
 import MultiLinkBanner from '../components/mutliBanner';
+import SeoHead from '../components/SeoHead';
+import JsonLd, { organizationJsonLd } from '../components/JsonLd';
 
 export default function Home() {
   const router = useRouter();
 
   return (
     <div data-theme="studio9">
+      <SeoHead title="Studio 9 Inc" path="/" />
+      <JsonLd id="organization-jsonld" data={organizationJsonLd()} />
       <Head>
-        <title>Studio 9 Inc</title>
-        <meta name="description" content="A family friendly media company • Creating joy since 2005" />
         <link rel="icon" href="/s9incLOGOsml.png" />
       </Head>
       <MultiLinkBanner />

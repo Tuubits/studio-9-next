@@ -1,7 +1,6 @@
 import React from 'react';
 import BookLayout from '../components/bookLayout';
 
-// TODO: owner to confirm the handling time, the one placeholder left below.
 export default function ShippingReturns() {
   return (
     <BookLayout
@@ -17,7 +16,6 @@ export default function ShippingReturns() {
         <h2>Shipping</h2>
         <p>We ship physical orders (games, books and signed Golden Era Gaming modules) <strong>within the United States only</strong>. We are unable to fulfill orders outside of the United States.</p>
         <p>Shipping is charged per order at checkout: the item with the highest shipping cost is charged in full, the second item at 50%, the third at 25%, and each additional item at 12.5%.</p>
-        <p>Orders usually ship within [to be confirmed] business days.</p>
 
         <h2>Returns</h2>
         <p>Once an order is placed, returns are only possible within <strong>14 days of receipt</strong>, if the product is found defective. Send us pictures and a note describing the defect.</p>

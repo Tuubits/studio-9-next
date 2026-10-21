@@ -47,7 +47,7 @@ Set `"pdfOnly": true` and `"price": null` on the module in `module_details.json`
 
 Still to supply:
 
-- Typical time to ship (handling days); the page shows "[to be confirmed]".
+- Typical time to ship (handling days), optional; the page leaves it out for now. If added, it can also go in the shipping details in `lib/structuredData.ts`.
 - Who pays to send a defective item back, if it has to be sent back at all. Not stated, so the structured data leaves return fees out.
 
 - **Contact email mismatch:** the footer and the new page use info@studio9inc.com, but the order thank-you message on the home page says studio9inc@mac.com. Which should customers use?

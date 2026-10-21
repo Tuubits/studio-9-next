@@ -136,6 +136,6 @@ test('the shipping and returns page loads and is linked from the footer', async 
   await expect(page.getByText(/within the United States only/)).toBeVisible();
   await expect(page.getByText(/sold and delivered by DriveThruRPG/)).toBeVisible();
   await expect(page.getByText(/within 14 days of receipt, if the product is found defective/)).toBeVisible();
-  await expect(page.getByText(/To be confirmed: how many days/)).toHaveCount(0);
+  await expect(page.getByText(/to be confirmed/i)).toHaveCount(0);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://studio9inc.com/shipping-returns');
 });

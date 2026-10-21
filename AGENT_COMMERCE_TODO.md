@@ -43,14 +43,12 @@ Set `"pdfOnly": true` and `"price": null` on the module in `module_details.json`
 
 ## Shipping & returns policy (Phase 3)
 
-`/shipping-returns` is live with placeholders marked "[to be confirmed]" (see `pages/shipping-returns.jsx`). Owners, please supply:
+`/shipping-returns` has the owners' return policy: defective items only, within 14 days of receipt, with photos; help with USPS claims and replacement at cost for damaged or lost orders. The structured data in `lib/structuredData.ts` matches it (14-day window, damaged items only); keep the two in sync if the policy changes.
 
-- How many days customers have to return an item, and whether it must be unopened.
-- Who pays return shipping.
-- What happens with damaged or lost shipments.
-- Typical time to ship (handling days).
+Still to supply:
 
-Once decided, also add `returnPolicyCategory` and the return window to the return policy in `lib/structuredData.ts`; Google's merchant listings expect them.
+- Typical time to ship (handling days); the page shows "[to be confirmed]".
+- Who pays to send a defective item back, if it has to be sent back at all. Not stated, so the structured data leaves return fees out.
 
 - **Contact email mismatch:** the footer and the new page use info@studio9inc.com, but the order thank-you message on the home page says studio9inc@mac.com. Which should customers use?
 - **Reviews:** the structured data has no ratings or reviews, because the existing reviews are press quotes without ratings. If real customer ratings are collected later, they can be added.

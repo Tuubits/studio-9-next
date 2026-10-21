@@ -1,14 +1,13 @@
 import React from 'react';
 import BookLayout from '../components/bookLayout';
 
-// TODO: owner to confirm. Every policy statement marked "to be confirmed"
-// below is a placeholder until Aaron and Lisa supply the real policy.
+// TODO: owner to confirm the handling time, the one placeholder left below.
 export default function ShippingReturns() {
   return (
     <BookLayout
       title="Shipping & Returns | Studio 9 Inc"
       seo={{
-        description: 'Shipping and returns for Studio 9 Inc and Studio 9 Games: we ship physical orders within the United States only. PDF editions are sold through DriveThruRPG.',
+        description: 'Shipping and returns for Studio 9 Inc and Studio 9 Games: we ship physical orders within the United States only and accept returns of defective items within 14 days. PDF editions are sold through DriveThruRPG.',
         path: '/shipping-returns',
       }}
     >
@@ -21,8 +20,8 @@ export default function ShippingReturns() {
         <p>Orders usually ship within [to be confirmed] business days.</p>
 
         <h2>Returns</h2>
-        <p>[To be confirmed: how many days customers have to request a return, whether items must be unopened, and who pays return shipping.]</p>
-        <p>If your order arrives damaged or doesn&apos;t arrive, contact us and we will make it right. [To be confirmed.]</p>
+        <p>Once an order is placed, returns are only possible within <strong>14 days of receipt</strong>, if the product is found defective. Send us pictures and a note describing the defect.</p>
+        <p>If your order arrives damaged or doesn&apos;t arrive, contact us and we will make every effort to help you get a refund from USPS by providing a receipt of purchase. In addition, send us pictures of the damage and we will help you replace your items at cost.</p>
 
         <h2>PDF editions</h2>
         <p>PDF editions of Golden Era Gaming modules are sold and delivered by DriveThruRPG. For downloads, refunds or other help with a PDF purchase, please contact DriveThruRPG.</p>

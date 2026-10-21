@@ -13,7 +13,7 @@ type Offer = {
   availability?: string;
   seller: { name: string };
   shippingDetails?: { shippingRate: { value: string }; shippingDestination: { addressCountry: string } };
-  hasMerchantReturnPolicy?: { url: string };
+  hasMerchantReturnPolicy?: { url: string; returnPolicyCategory: string; merchantReturnDays: number };
 };
 type JsonLdProduct = { '@type': string | string[]; name: string; url: string; image: string[]; isbn?: string; offers: Offer[] };
 
@@ -48,7 +48,11 @@ for (const product of getAllProducts()) {
         expect(o.priceCurrency).toBe('USD');
         expect(o.availability).toBe(product.availability === 'in_stock' ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock');
         expect(o.shippingDetails!.shippingDestination.addressCountry).toBe('US');
-        expect(o.hasMerchantReturnPolicy!.url).toBe('https://studio9inc.com/shipping-returns');
+        expect(o.hasMerchantReturnPolicy).toMatchObject({
+          url: 'https://studio9inc.com/shipping-returns',
+          returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+          merchantReturnDays: 14,
+        });
       }
     } else {
       // Not sold here (Amazon-only books, PDF-only modules): no offer of ours.
@@ -131,5 +135,7 @@ test('the shipping and returns page loads and is linked from the footer', async 
   await expect(page.getByRole('heading', { level: 1, name: 'Shipping & Returns' })).toBeVisible();
   await expect(page.getByText(/within the United States only/)).toBeVisible();
   await expect(page.getByText(/sold and delivered by DriveThruRPG/)).toBeVisible();
+  await expect(page.getByText(/within 14 days of receipt, if the product is found defective/)).toBeVisible();
+  await expect(page.getByText(/To be confirmed: how many days/)).toHaveCount(0);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://studio9inc.com/shipping-returns');
 });

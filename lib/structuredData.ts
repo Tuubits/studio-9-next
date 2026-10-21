@@ -18,11 +18,13 @@ const shippingDetails = (cost: number) => ({
   shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'US' },
 });
 
-// TODO: owner to confirm the return policy; add returnPolicyCategory (and
-// the return window) here once it is decided.
+// Matches /shipping-returns: defective items only, within 14 days of receipt.
 const returnPolicy = {
   '@type': 'MerchantReturnPolicy',
   applicableCountry: 'US',
+  returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+  merchantReturnDays: 14,
+  itemCondition: 'https://schema.org/DamagedCondition',
   url: SITE_URL + RETURNS_PATH,
 };
 

@@ -1,6 +1,6 @@
-import gameData from '../game_details.json';
-import bookData from '../book_details.json';
-import moduleData from '../module_details.json';
+import gameData from '../game_details.json' with { type: 'json' };
+import bookData from '../book_details.json' with { type: 'json' };
+import moduleData from '../module_details.json' with { type: 'json' };
 
 // One normalized view of every product, built from the three JSON files.
 // Pages, feeds and the order APIs read products through here so they agree

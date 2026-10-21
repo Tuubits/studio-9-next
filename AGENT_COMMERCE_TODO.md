@@ -28,7 +28,7 @@ These are marked `test.fixme` and are not fixed yet.
 
 ## Product identifiers (optional)
 
-Barcodes help shopping feeds and AI agents match products across stores, but nothing is required. If a box or book has a barcode, its number is the UPC or ISBN; send it and it goes in the JSON data. If there is no barcode, leave it: the feeds will say the product has no GTIN, which small publishers are allowed to do. Do not buy barcodes for this.
+Barcodes help shopping feeds and AI agents match products across stores, but nothing is required. If a box or book has a barcode, its number is the UPC or ISBN; send it and it goes in the JSON data. If there is no barcode, leave it: the feeds leave the GTIN empty, which is allowed (the build prints a reminder, not an error). Do not buy barcodes for this.
 
 - **ISBNs found automatically (please verify):** Zanjan → 978-1-931847-88-9 and Sweet Neighbors Come in All Colors → 978-1-61851-128-7, both read from their Amazon links in `book_details.json`.
 - **Games with no identifier yet:** Charms: Antiracism, Villagers and Villains, Villagers and Villains: Borderlands, Villagers and Villains: City Builder, Treasures and Traps, Treasures and Traps: Expanded Realms, Treasures and Traps: Expanded Realms 2, Treasures and Traps: Random Encounters, Hero versus Guardian, Midnight Legion, Global Crisis, Charms.
@@ -53,6 +53,24 @@ Still to supply:
 - **Contact email mismatch:** the footer and the new page use info@studio9inc.com, but the order thank-you message on the home page says studio9inc@mac.com. Which should customers use?
 - **Reviews:** the structured data has no ratings or reviews, because the existing reviews are press quotes without ratings. If real customer ratings are collected later, they can be added.
 - **Manual check:** paste a few product URLs into Google's Rich Results Test (https://search.google.com/test/rich-results) after deploying. Amazon-only books and PDF-only modules have no price of ours, so they will not get price snippets; that is expected.
+
+## Feeds, sitemap and robots.txt (Phase 4)
+
+`npm run build` (and `npm run dev`) first runs `scripts/build-feeds.mjs`, which writes these from the catalog into `public/` (generated, not committed):
+
+- `/feeds/paypal-store-sync.tsv`: PayPal Store Sync feed, one row per physical item we sell (each variant is a row, with the same id the cart uses).
+- `/feeds/google.xml`: the same items as a Google Merchant Center feed; Microsoft Merchant Center and Perplexity accept it too.
+- `/sitemap.xml`: every public page, including PDF-only modules (the cart is left out).
+- `/robots.txt`: allows all crawlers and names the AI ones; points to the sitemap.
+
+What is left out of the feeds, on purpose:
+
+- **PDF-only modules:** sold on DriveThruRPG, so there is nothing to check out here. They are still in the sitemap and have product data on their pages.
+- **Amazon-only books (Zanjan, Sweet Neighbors):** we have no price of our own to list, and feeds require one. Same as above: sitemap and page data only.
+
+The build stops if a feed row is missing a required field. Needs Node 22.18 or newer (the script reads the TypeScript catalog directly).
+
+When the accounts exist: submit `https://studio9inc.com/feeds/google.xml` in Merchant Center, and give PayPal `https://studio9inc.com/feeds/paypal-store-sync.tsv` during Store Sync onboarding.
 
 ## Observations
 

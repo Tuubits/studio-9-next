@@ -19,7 +19,7 @@ jobs:
         env:
           CI: true
           # Optional: without it the PayPal button test is skipped.
-          PAYPAL_CLIENT: ${{ secrets.PAYPAL_CLIENT }}
+          Paypal_Client_2026: ${{ secrets.PAYPAL_CLIENT }}
           # Public value (it appears in every image URL); the build needs it.
           NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: rollfunkydice-com
       - uses: actions/upload-artifact@v4

@@ -82,7 +82,7 @@ const allowedConsoleErrors: RegExp[] = [
   /Permissions policy violation: compute-pressure/,
   // Without a PayPal client id (e.g. in CI with no secret) the PayPal SDK
   // request on the cart page is rejected with a 400. Allowed only then.
-  ...(process.env.PAYPAL_CLIENT
+  ...(process.env.Paypal_Client_2026
     ? []
     : [/Failed to load resource: the server responded with a status of 400/, /Failed to load the PayPal JS SDK script/]),
 ];
@@ -115,3 +115,6 @@ export async function waitForImages(page: Page) {
     timeout: 30_000,
   });
 }
+
+// The local PayPal API stand-in (e2e/paypal-mock.mjs); see playwright.config.ts.
+export const PAYPAL_MOCK = 'http://localhost:4010';

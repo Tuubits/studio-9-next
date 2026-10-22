@@ -6,6 +6,11 @@ try {
   process.loadEnvFile?.('.env');
 } catch {}
 
+// Tests run their own server on its own port, never a reused dev server: its
+// PayPal calls must go to the local mock, not to PayPal with real credentials.
+const PORT = 3100;
+const PAYPAL_MOCK = 'http://localhost:4010'; // also in e2e/helpers.ts
+
 export default defineConfig({
   testDir: 'e2e',
   fullyParallel: true,
@@ -13,7 +18,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   reporter: process.env.CI ? [['html', { open: 'never' }], ['github']] : [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL: `http://localhost:${PORT}`,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
@@ -24,10 +29,22 @@ export default defineConfig({
     { name: 'chromium-desktop', use: { ...devices['Desktop Chrome'] } },
     { name: 'chromium-mobile', use: { ...devices['Pixel 7'] } },
   ],
-  webServer: {
-    command: 'npm run build && npm run start',
-    url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI,
-    timeout: 300_000,
-  },
+  webServer: [
+    {
+      command: 'node e2e/paypal-mock.mjs',
+      url: `${PAYPAL_MOCK}/__mock/health`,
+      reuseExistingServer: false,
+    },
+    {
+      command: `npm run build && npm run start -- -p ${PORT}`,
+      url: `http://localhost:${PORT}`,
+      reuseExistingServer: false,
+      timeout: 300_000,
+      env: {
+        PAYPAL_API_BASE: PAYPAL_MOCK,
+        PAYPAL_SECRET: 'mock-secret',
+        PAYPAL_CLIENT: process.env.PAYPAL_CLIENT || 'mock-client',
+      },
+    },
+  ],
 });

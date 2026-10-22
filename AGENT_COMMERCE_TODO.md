@@ -72,6 +72,26 @@ The build stops if a feed row is missing a required field. Needs Node 22.18 or n
 
 When the accounts exist: submit `https://studio9inc.com/feeds/google.xml` in Merchant Center, and give PayPal `https://studio9inc.com/feeds/paypal-store-sync.tsv` during Store Sync onboarding.
 
+## Server-side PayPal orders (Phase 5)
+
+The cart no longer tells PayPal what to charge. It sends item ids and quantities to `/api/orders`, which prices the order from the catalog (`lib/orders.ts`) and creates it with PayPal. After the buyer approves, `/api/orders/[id]/capture` checks that the order still matches the catalog and captures it. The shipping formula lives in one place, `lib/shipping.ts`, used by both the cart and the server. The order notes sent to Netlify Forms now include the PayPal order id (`orderId`).
+
+**Before merging, set these in Netlify** (Site configuration > Environment variables). Without them, checkout on the live site stops working:
+
+| Variable | Production | Deploy previews |
+| --- | --- | --- |
+| `PAYPAL_CLIENT` | live client id (already set) | sandbox client id |
+| `PAYPAL_SECRET` | live secret, same PayPal app as the client id | sandbox secret |
+| `PAYPAL_API_BASE` | `https://api-m.paypal.com` | `https://api-m.sandbox.paypal.com` (or leave unset) |
+
+The client id, secret and API base must all come from the same environment (live or sandbox), or PayPal rejects the login. The secret is in the PayPal Developer Dashboard under Apps & Credentials, on the same app as the client id. Mark `PAYPAL_SECRET` as secret in Netlify.
+
+**Test on the deploy preview with sandbox credentials before merging:** add items, pay with a sandbox buyer account, and check that the order and amounts appear in the sandbox merchant account and the order notes arrive in Netlify Forms with the order id. Also try a Golden Era module variant and a mix of items to check shipping.
+
+API routes run as Netlify Functions through the Next adapter; no extra config is needed.
+
+Automated tests never reach PayPal: they run the site on port 3100 against a local mock (`e2e/paypal-mock.mjs`) and replace the PayPal button script with a stand-in.
+
 ## Observations
 
 - The cart page never shows the shipping charge; shoppers only see it in the PayPal window. The tests read shipping from the cart's React state. Consider showing it on the cart page (a visible change, so not in this work without approval).

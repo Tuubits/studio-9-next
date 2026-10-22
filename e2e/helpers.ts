@@ -115,3 +115,6 @@ export async function waitForImages(page: Page) {
     timeout: 30_000,
   });
 }
+
+// The local PayPal API stand-in (e2e/paypal-mock.mjs); see playwright.config.ts.
+export const PAYPAL_MOCK = 'http://localhost:4010';

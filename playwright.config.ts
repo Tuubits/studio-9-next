@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 // Next.js reads .env itself; load it here too so tests can tell whether
-// PAYPAL_CLIENT is configured (it is not in CI unless a secret is added).
+// the PayPal client id (Paypal_Client_2026) is configured (it is not in CI unless a secret is added).
 try {
   process.loadEnvFile?.('.env');
 } catch {}
@@ -42,8 +42,8 @@ export default defineConfig({
       timeout: 300_000,
       env: {
         PAYPAL_API_BASE: PAYPAL_MOCK,
-        PAYPAL_SECRET: 'mock-secret',
-        PAYPAL_CLIENT: process.env.PAYPAL_CLIENT || 'mock-client',
+        Paypal_secret_2026: 'mock-secret',
+        Paypal_Client_2026: process.env.Paypal_Client_2026 || 'mock-client',
       },
     },
   ],

@@ -81,7 +81,7 @@ test('the US-only notice is visible', async ({ page }) => {
 
 // Only checks that the buttons render. Never click through to a payment.
 test('the PayPal buttons render', async ({ page }) => {
-  test.skip(!process.env.PAYPAL_CLIENT, 'PAYPAL_CLIENT is not set, so the PayPal SDK cannot load');
+  test.skip(!process.env.Paypal_Client_2026, 'Paypal_Client_2026 is not set, so the PayPal SDK cannot load');
   await addItems(page, [low]);
   await expect(page.locator('iframe[title="PayPal"]').first()).toBeVisible({ timeout: 30_000 });
 });

@@ -61,6 +61,6 @@ test('filled cart', async ({ page }) => {
   await page.getByRole('button', { name: addToCartLabel(game), exact: true }).click();
   await expect(page).toHaveURL('/cart');
   // The PayPal buttons set the height of the order summary; wait for them.
-  if (process.env.PAYPAL_CLIENT) await expect(page.locator('iframe[title="PayPal"]').first()).toBeVisible({ timeout: 30_000 });
+  if (process.env.Paypal_Client_2026) await expect(page.locator('iframe[title="PayPal"]').first()).toBeVisible({ timeout: 30_000 });
   await snapshot(page, 'cart-filled.png');
 });

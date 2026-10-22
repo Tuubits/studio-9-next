@@ -76,15 +76,16 @@ When the accounts exist: submit `https://studio9inc.com/feeds/google.xml` in Mer
 
 The cart no longer tells PayPal what to charge. It sends item ids and quantities to `/api/orders`, which prices the order from the catalog (`lib/orders.ts`) and creates it with PayPal. After the buyer approves, `/api/orders/[id]/capture` checks that the order still matches the catalog and captures it. The shipping formula lives in one place, `lib/shipping.ts`, used by both the cart and the server. The order notes sent to Netlify Forms now include the PayPal order id (`orderId`).
 
-**Before merging, set these in Netlify** (Site configuration > Environment variables). Without them, checkout on the live site stops working:
+**Netlify environment variables** (Site configuration > Environment variables), each with a value per deploy context. The client created new PayPal apps (live and sandbox) for these:
 
-| Variable | Production | Deploy previews |
-| --- | --- | --- |
-| `PAYPAL_CLIENT` | live client id (already set) | sandbox client id |
-| `PAYPAL_SECRET` | live secret, same PayPal app as the client id | sandbox secret |
-| `PAYPAL_API_BASE` | `https://api-m.paypal.com` | `https://api-m.sandbox.paypal.com` (or leave unset) |
+| Variable | Production | Deploy previews | Secret? |
+| --- | --- | --- | --- |
+| `Paypal_Client_2026` | live client id | sandbox client id | No: it is public and built into the page, and Netlify's secrets scan would fail the build |
+| `Paypal_secret_2026` | live secret, same app as the live client id | sandbox secret, same app as the sandbox client id | Yes |
+| `PAYPAL_API_BASE` | `https://api-m.paypal.com` | `https://api-m.sandbox.paypal.com` | No |
+| `STORE_SYNC_ENABLED` | `false` until Store Sync is approved (Phase 6) | `false` | No |
 
-The client id, secret and API base must all come from the same environment (live or sandbox), or PayPal rejects the login. The secret is in the PayPal Developer Dashboard under Apps & Credentials, on the same app as the client id. Mark `PAYPAL_SECRET` as secret in Netlify.
+Names are case-sensitive and must match exactly. The code reads only these names; the old `PAYPAL_CLIENT` variable in Netlify is still used by the live site until this PR merges, and can be deleted after that. The client id, secret and API base in each context must come from the same environment (live or sandbox), or PayPal rejects the login.
 
 **Test on the deploy preview with sandbox credentials before merging:** add items, pay with a sandbox buyer account, and check that the order and amounts appear in the sandbox merchant account and the order notes arrive in Netlify Forms with the order id. Also try a Golden Era module variant and a mix of items to check shipping.
 
@@ -101,5 +102,5 @@ Automated tests never reach PayPal: they run the site on port 3100 against a loc
 ## Tests and CI
 
 - Visual baselines (`e2e/visual.spec.ts-snapshots/`) are local only and gitignored, because screenshots differ between machines. `visual.spec.ts` is skipped in CI and on any checkout without baselines; create them with `npm run test:e2e:update -- e2e/visual.spec.ts` on a known-good build (e.g. `main`) before changing UI code. The Golden Era page screenshot loads 15 large Cloudinary images and can fail on a very slow network; rerun it before treating a diff as real.
-- CI (`.github/workflows/e2e.yml`) reads an optional repository secret `PAYPAL_CLIENT`; without it the PayPal button test is skipped. Use a sandbox client id there. The Cloudinary cloud name is public and set in the workflow.
+- CI (`.github/workflows/e2e.yml`) reads an optional repository secret `PAYPAL_CLIENT` (passed to the tests as `Paypal_Client_2026`); without it the PayPal button test is skipped. Use a sandbox client id there. The Cloudinary cloud name is public and set in the workflow.
 - `npm run lint` runs ESLint directly (flat config in `eslint.config.mjs`). It passes with 6 warnings left in code not touched by this work (unused alternate banner components in `components/mutliBanner.tsx`, effect dependencies in `pages/cart.js`, which Phase 5 rewrites).

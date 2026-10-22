@@ -1,5 +1,5 @@
 // Server-only PayPal Orders v2 client. Never import this from a page or
-// component: it reads PAYPAL_SECRET.
+// component: it reads the PayPal secret.
 //
 // PAYPAL_API_BASE picks the environment: sandbox by default, and it must be
 // https://api-m.paypal.com in production. The client id and secret must come
@@ -18,9 +18,10 @@ export class PayPalError extends Error {
 }
 
 function config() {
-  const clientId = process.env.PAYPAL_CLIENT;
-  const secret = process.env.PAYPAL_SECRET;
-  if (!clientId || !secret) throw new PayPalError('PayPal is not configured (PAYPAL_CLIENT and PAYPAL_SECRET)', 503);
+  // Names as set in Netlify; the client id and secret come from the same PayPal app.
+  const clientId = process.env.Paypal_Client_2026;
+  const secret = process.env.Paypal_secret_2026;
+  if (!clientId || !secret) throw new PayPalError('PayPal is not configured (Paypal_Client_2026 and Paypal_secret_2026)', 503);
   return { clientId, secret, base: (process.env.PAYPAL_API_BASE || SANDBOX).replace(/\/$/, '') };
 }
 

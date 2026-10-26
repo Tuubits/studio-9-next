@@ -10,7 +10,7 @@ Open items for the owners (Aaron/Lisa) and for later phases. Each phase adds to 
 ## Netlify changes needed before deploying Phase 1
 
 - **Next.js adapter.** Next 13.0 used Netlify's legacy Next runtime; Next 13.5+ uses the current adapter (OpenNext). It is zero-config (no `netlify.toml` needed). Netlify recommends not pinning its version. Confirm the deploy preview builds and the site works there.
-- **Netlify Forms moved.** The current adapter only detects forms in static HTML, so the `contact` and `mystery-room-challenge` forms are now defined in `public/__forms.html` and the pages POST to `/__forms.html`. Netlify fails the build with "@netlify/plugin-nextjs@5 requires migration steps to support Netlify Forms" if this is missing. **Test both forms on the deploy preview** (submit the mystery form; click a PayPal button in the cart with a note to send the `contact` form) and check the submissions appear in Netlify's Forms tab.
+- **Netlify Forms moved.** The current adapter only detects forms in static HTML, so the `mystery-room-challenge` form is now defined in `public/__forms.html` and the pages POST to `/__forms.html`. Netlify fails the build with "@netlify/plugin-nextjs@5 requires migration steps to support Netlify Forms" if this is missing. **Test it on the deploy preview** (submit the mystery form) and check the submission appears in Netlify's Forms tab. (Cart notes used to go to a `contact` form here; since Phase 5 they go to PayPal with the order.)
 - **Lightbox license.** `lightbox.js-react` was replaced by `yet-another-react-lightbox` (MIT, no key) because it has no working React 19 release. The lightbox.js license key is no longer used; cancel that subscription if there is one.
 
 ## Deferred upgrades
@@ -74,7 +74,7 @@ When the accounts exist: submit `https://studio9inc.com/feeds/google.xml` in Mer
 
 ## Server-side PayPal orders (Phase 5)
 
-The cart no longer tells PayPal what to charge. It sends item ids and quantities to `/api/orders`, which prices the order from the catalog (`lib/orders.ts`) and creates it with PayPal. After the buyer approves, `/api/orders/[id]/capture` checks that the order still matches the catalog and captures it. The shipping formula lives in one place, `lib/shipping.ts`, used by both the cart and the server. The order notes sent to Netlify Forms now include the PayPal order id (`orderId`).
+The cart no longer tells PayPal what to charge. It sends item ids and quantities to `/api/orders`, which prices the order from the catalog (`lib/orders.ts`) and creates it with PayPal. After the buyer approves, `/api/orders/[id]/capture` checks that the order still matches the catalog and captures it. The shipping formula lives in one place, `lib/shipping.ts`, used by both the cart and the server. The buyer's note from the cart no longer goes to Netlify Forms: it is sent with the order and saved as the PayPal order's purchase description (`lib/orderNote.ts`), so it shows with the order in PayPal. PayPal keeps 127 characters, so the box stops there and shows a count.
 
 **Netlify environment variables** (Site configuration > Environment variables), each with a value per deploy context. The client created new PayPal apps (live and sandbox) for these:
 
@@ -87,7 +87,7 @@ The cart no longer tells PayPal what to charge. It sends item ids and quantities
 
 Names are case-sensitive and must match exactly. The code reads only these names; the old `PAYPAL_CLIENT` variable in Netlify is still used by the live site until this PR merges, and can be deleted after that. The client id, secret and API base in each context must come from the same environment (live or sandbox), or PayPal rejects the login.
 
-**Test on the deploy preview with sandbox credentials before merging:** add items, pay with a sandbox buyer account, and check that the order and amounts appear in the sandbox merchant account and the order notes arrive in Netlify Forms with the order id. Also try a Golden Era module variant and a mix of items to check shipping.
+**Test on the deploy preview with sandbox credentials before merging:** add items, pay with a sandbox buyer account, and check that the order and amounts appear in the sandbox merchant account and the note typed in the cart shows on the order in the sandbox merchant account (as the order's description). Also try a Golden Era module variant and a mix of items to check shipping.
 
 API routes run as Netlify Functions through the Next adapter; no extra config is needed.
 

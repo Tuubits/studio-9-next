@@ -1,4 +1,5 @@
 import { getProduct, getSellableItem } from './catalog';
+import { cleanNote } from './orderNote';
 import { shippingFor } from './shipping';
 import type { Money, Order, OrderRequest } from './paypal';
 
@@ -47,12 +48,14 @@ export function buildOrder(body: unknown): { order: OrderRequest } | { error: st
 
   const itemTotal = lines.reduce((sum, { item, quantity }) => sum + cents(item.price) * quantity, 0);
   const shipping = cents(shippingFor(lines.map(({ item, quantity }) => ({ shippingCost: item.shippingCost, quantity }))));
+  const note = cleanNote((body as { note?: unknown }).note);
   return {
     order: {
       intent: 'CAPTURE',
       purchase_units: [
         {
           amount: { ...usd(itemTotal + shipping), breakdown: { item_total: usd(itemTotal), shipping: usd(shipping) } },
+          ...(note ? { description: note } : {}),
           items: lines.map(({ item, quantity }) => ({
             name: item.name.slice(0, 127),
             sku: item.id,

@@ -71,6 +71,7 @@ export type OrderRequest = {
   intent: 'CAPTURE';
   purchase_units: {
     amount: Money & { breakdown: { item_total: Money; shipping: Money } };
+    description?: string;
     items: { name: string; sku: string; quantity: string; unit_amount: Money; category: 'PHYSICAL_GOODS' }[];
   }[];
   application_context: { shipping_preference: 'GET_FROM_FILE' };

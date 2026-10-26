@@ -6,7 +6,7 @@ import { test, expect } from '@playwright/test';
 test('the static forms file registers every Netlify form', async ({ page }) => {
   const response = await page.goto('/__forms.html');
   expect(response?.status()).toBe(200);
-  // Cart notes go to PayPal with the order, not to Netlify.
+  // The cart no longer takes order notes.
   await expect(page.locator('form[name="contact"]')).toHaveCount(0);
   const mystery = page.locator('form[name="mystery-room-challenge"][data-netlify="true"]');
   for (const field of ['answer', 'email']) await expect(mystery.locator(`[name="${field}"]`)).toHaveCount(1);

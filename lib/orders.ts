@@ -1,5 +1,4 @@
 import { getProduct, getSellableItem } from './catalog';
-import { cleanNote } from './orderNote';
 import { shippingFor } from './shipping';
 import type { Money, Order, OrderRequest } from './paypal';
 
@@ -48,23 +47,18 @@ export function buildOrder(body: unknown): { order: OrderRequest } | { error: st
 
   const itemTotal = lines.reduce((sum, { item, quantity }) => sum + cents(item.price) * quantity, 0);
   const shipping = cents(shippingFor(lines.map(({ item, quantity }) => ({ shippingCost: item.shippingCost, quantity }))));
-  const note = cleanNote((body as { note?: unknown }).note);
   return {
     order: {
       intent: 'CAPTURE',
       purchase_units: [
         {
           amount: { ...usd(itemTotal + shipping), breakdown: { item_total: usd(itemTotal), shipping: usd(shipping) } },
-          // TEMPORARY: the note goes in three fields until a sandbox order shows
-          // which one PayPal displays to the seller; then keep only that one.
-          ...(note ? { description: note, custom_id: note } : {}),
-          items: lines.map(({ item, quantity }, index) => ({
+          items: lines.map(({ item, quantity }) => ({
             name: item.name.slice(0, 127),
             sku: item.id,
             quantity: String(quantity),
             unit_amount: usd(cents(item.price)),
             category: 'PHYSICAL_GOODS',
-            ...(note && index === 0 ? { description: `Buyer note: ${note}` } : {}),
           })),
         },
       ],

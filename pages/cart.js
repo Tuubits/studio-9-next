@@ -6,7 +6,6 @@ import GoldenEraLayout from '../components/goldenEraLayout';
 import { useRouter } from 'next/router';
 import { Store } from '../utils/Store';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
-import { MAX_NOTE_LENGTH } from '../lib/orderNote';
 
 export default function CartScreen() {
   const router = useRouter();
@@ -16,7 +15,6 @@ export default function CartScreen() {
   } = state;
   const [isPaid, setIsPaid] = useState(false);  
   const [info, setInfo] = useState('');
-  const [message, setMessage] = useState('');
   const [error, setError] = useState(null);
 
   const removeItemHandler = (item) => {
@@ -56,17 +54,13 @@ useEffect(() => {
     }
 }, [isPaid])
 
-// The server prices the order from the catalog; send only ids, quantities and
-// the buyer's note, which goes to PayPal with the order.
+// The server prices the order from the catalog; send only ids and quantities.
 const createOrder = async () => {
   setError(null);
   const response = await fetch('/api/orders', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      items: cartItems.map((item) => ({ id: item.slug, quantity: item.quantity })),
-      note: message,
-    }),
+    body: JSON.stringify({ items: cartItems.map((item) => ({ id: item.slug, quantity: item.quantity })) }),
   });
   const data = await response.json().catch(() => ({}));
   if (!response.ok) {
@@ -179,26 +173,10 @@ useEffect(() => {
               </tbody>
             </table>
             <div>
-      <form onSubmit={(e) => e.preventDefault()}>
-        <label htmlFor="message" className="block text-xl pt-6 font-bold leading-6 text-gray-900">
-          Add any details you would like us to know about your order:
-        </label>
-        <div className="mt-2">
-          <textarea
-            rows={4}
-            name="message"
-            id="message"
-            className="block w-full md:w-2/3 rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xl sm:leading-6"
-            maxLength={MAX_NOTE_LENGTH}
-            aria-describedby="message-limit"
-            onChange={(e) => setMessage(e.target.value)}
-            value={message}
-          />
-          <p id="message-limit" className="mt-1 text-sm text-gray-800">
-            {message.length}/{MAX_NOTE_LENGTH} characters. Your note is sent to us with your PayPal order.
-          </p>
-        </div>
-      </form>
+      <p className="pt-6 text-xl leading-6 text-gray-900">
+        Feel free to reach out to us with any comments about your order at{' '}
+        <a className="link" href="mailto:info@studio9inc.com">info@studio9inc.com</a>.
+      </p>
     </div>
           </div>
           <div className="card p-5">

@@ -1,6 +1,5 @@
 import { test, expect, type APIRequestContext, type Page } from '@playwright/test';
 import { getAllProducts, getSellableItem, getSellableItems } from '../lib/catalog';
-import { MAX_NOTE_LENGTH } from '../lib/orderNote';
 import { PAYPAL_MOCK, expectedShipping } from './helpers';
 
 // Every PayPal call here goes to the local mock (e2e/paypal-mock.mjs).
@@ -9,10 +8,8 @@ import { PAYPAL_MOCK, expectedShipping } from './helpers';
 type MockOrder = {
   request: {
     purchase_units: {
-      description?: string;
-      custom_id?: string;
       amount: { value: string; breakdown: { item_total: { value: string }; shipping: { value: string } } };
-      items: { sku: string; quantity: string; unit_amount: { value: string }; description?: string }[];
+      items: { sku: string; quantity: string; unit_amount: { value: string } }[];
     }[];
     application_context: { shipping_preference: string };
   };
@@ -30,8 +27,8 @@ const outOfStock = getSellableItems().find((i) => !i.inStock)!;
 const amazonOnly = getAllProducts().find((p) => p.format === 'physical' && !p.sellDirect)!;
 const digital = getAllProducts().find((p) => p.format === 'digital')!;
 
-async function createOrder(request: APIRequestContext, items: object[], extra: object = {}) {
-  const response = await request.post('/api/orders', { data: { items, ...extra } });
+async function createOrder(request: APIRequestContext, items: object[]) {
+  const response = await request.post('/api/orders', { data: { items } });
   return { status: response.status(), body: await response.json() };
 }
 
@@ -158,26 +155,6 @@ test.describe('order API', () => {
     expect((await mockOrder(request, body.id)).captures).toBe(0);
   });
 
-  test('the buyer note becomes the PayPal purchase description', async ({ request }) => {
-    const items = [{ id: inStock[0].id, quantity: 1 }];
-    const description = async (note: unknown) => {
-      const { status, body } = await createOrder(request, items, { note });
-      expect(status).toBe(201);
-      return (await mockOrder(request, body.id)).request.purchase_units[0].description;
-    };
-    expect(await description('Please gift wrap')).toBe('Please gift wrap');
-    expect(await description('  Line one\n\tline two  ')).toBe('Line one line two');
-    expect(await description('x'.repeat(200))).toBe('x'.repeat(MAX_NOTE_LENGTH));
-    expect(await description('   ')).toBeUndefined();
-    expect(await description({ text: 'not a string' })).toBeUndefined();
-  });
-
-  test('a note does not stop the order from being captured', async ({ request }) => {
-    const { body } = await createOrder(request, [{ id: inStock[0].id, quantity: 1 }], { note: 'Sign it to Sam' });
-    const response = await request.post(`/api/orders/${body.id}/capture`);
-    expect(response.status()).toBe(200);
-  });
-
   test('capture rejects a malformed order id', async ({ request }) => {
     expect((await request.post('/api/orders/not%20an%20id/capture')).status()).toBe(400);
   });
@@ -234,36 +211,31 @@ test.describe('cart checkout', () => {
     const formPosts = await useFakePayPal(page);
     const product = getAllProducts().find((p) => p.sellDirect && p.availability === 'in_stock' && !p.variants.length)!;
     await addToCart(page, product.path);
-    await page.getByLabel(/details you would like us to know/).fill('Please gift wrap');
 
     const orderRequest = page.waitForRequest((r) => r.url().endsWith('/api/orders') && r.method() === 'POST');
     const orderResponse = page.waitForResponse((r) => r.url().endsWith('/api/orders') && r.request().method() === 'POST');
     await page.getByRole('button', { name: 'Pay with mock PayPal' }).click();
-    expect((await orderRequest).postDataJSON()).toEqual({ items: [{ id: product.id, quantity: 1 }], note: 'Please gift wrap' });
+    expect((await orderRequest).postDataJSON()).toEqual({ items: [{ id: product.id, quantity: 1 }] });
     const { id } = await (await orderResponse).json();
 
     await expect(page).toHaveURL(/\/\?message=Test$/);
     await expect(page.getByText(/Thank you Test, for ordering/)).toBeVisible();
 
-    // The note travels with the PayPal order; nothing goes to Netlify Forms.
     const order = await mockOrder(request, id);
     expect(order.status).toBe('COMPLETED');
     expect(order.request.purchase_units[0].items.map((i) => i.sku)).toEqual([product.id]);
-    const unit = order.request.purchase_units[0];
-    expect(unit.description).toBe('Please gift wrap');
-    expect(unit.custom_id).toBe('Please gift wrap');
-    expect(unit.items[0].description).toBe('Buyer note: Please gift wrap');
+    // The cart takes no order notes, so nothing goes to Netlify Forms.
     expect(formPosts).toEqual([]);
   });
 
-  test('the note box stops at PayPal’s limit and shows the count', async ({ page }) => {
+  test('the cart invites comments by email instead of a notes box', async ({ page }) => {
     await useFakePayPal(page);
     const product = getAllProducts().find((p) => p.sellDirect && p.availability === 'in_stock' && !p.variants.length)!;
     await addToCart(page, product.path);
-    const box = page.getByLabel(/details you would like us to know/);
-    await box.fill('x'.repeat(MAX_NOTE_LENGTH + 20));
-    await expect(box).toHaveValue('x'.repeat(MAX_NOTE_LENGTH));
-    await expect(page.getByText(`${MAX_NOTE_LENGTH}/${MAX_NOTE_LENGTH} characters`)).toBeVisible();
+    const invite = page.locator('p', { hasText: 'Feel free to reach out to us with any comments about your order' });
+    await expect(invite).toBeVisible();
+    await expect(invite.getByRole('link', { name: 'info@studio9inc.com' })).toHaveAttribute('href', 'mailto:info@studio9inc.com');
+    await expect(page.locator('textarea')).toHaveCount(0);
   });
 
   test('an item that can no longer be ordered is explained and removed from the cart', async ({ page }) => {

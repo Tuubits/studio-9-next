@@ -55,13 +55,16 @@ export function buildOrder(body: unknown): { order: OrderRequest } | { error: st
       purchase_units: [
         {
           amount: { ...usd(itemTotal + shipping), breakdown: { item_total: usd(itemTotal), shipping: usd(shipping) } },
-          ...(note ? { description: note } : {}),
-          items: lines.map(({ item, quantity }) => ({
+          // TEMPORARY: the note goes in three fields until a sandbox order shows
+          // which one PayPal displays to the seller; then keep only that one.
+          ...(note ? { description: note, custom_id: note } : {}),
+          items: lines.map(({ item, quantity }, index) => ({
             name: item.name.slice(0, 127),
             sku: item.id,
             quantity: String(quantity),
             unit_amount: usd(cents(item.price)),
             category: 'PHYSICAL_GOODS',
+            ...(note && index === 0 ? { description: `Buyer note: ${note}` } : {}),
           })),
         },
       ],

@@ -10,8 +10,9 @@ type MockOrder = {
   request: {
     purchase_units: {
       description?: string;
+      custom_id?: string;
       amount: { value: string; breakdown: { item_total: { value: string }; shipping: { value: string } } };
-      items: { sku: string; quantity: string; unit_amount: { value: string } }[];
+      items: { sku: string; quantity: string; unit_amount: { value: string }; description?: string }[];
     }[];
     application_context: { shipping_preference: string };
   };
@@ -248,7 +249,10 @@ test.describe('cart checkout', () => {
     const order = await mockOrder(request, id);
     expect(order.status).toBe('COMPLETED');
     expect(order.request.purchase_units[0].items.map((i) => i.sku)).toEqual([product.id]);
-    expect(order.request.purchase_units[0].description).toBe('Please gift wrap');
+    const unit = order.request.purchase_units[0];
+    expect(unit.description).toBe('Please gift wrap');
+    expect(unit.custom_id).toBe('Please gift wrap');
+    expect(unit.items[0].description).toBe('Buyer note: Please gift wrap');
     expect(formPosts).toEqual([]);
   });
 

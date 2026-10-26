@@ -72,7 +72,8 @@ export type OrderRequest = {
   purchase_units: {
     amount: Money & { breakdown: { item_total: Money; shipping: Money } };
     description?: string;
-    items: { name: string; sku: string; quantity: string; unit_amount: Money; category: 'PHYSICAL_GOODS' }[];
+    custom_id?: string;
+    items: { name: string; sku: string; quantity: string; unit_amount: Money; category: 'PHYSICAL_GOODS'; description?: string }[];
   }[];
   application_context: { shipping_preference: 'GET_FROM_FILE' };
 };

@@ -174,8 +174,7 @@ useEffect(() => {
             </table>
             <div>
       <p className="pt-6 text-xl leading-6 text-gray-900">
-        Feel free to reach out to us with any comments about your order at{' '}
-        <a className="link" href="mailto:info@studio9inc.com">info@studio9inc.com</a>.
+        Feel free to reach out to us with any comments about your order.
       </p>
     </div>
           </div>

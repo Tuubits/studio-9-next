@@ -50,7 +50,7 @@ Still to supply:
 - Typical time to ship (handling days), optional; the page leaves it out for now. If added, it can also go in the shipping details in `lib/structuredData.ts`.
 - Who pays to send a defective item back, if it has to be sent back at all. Not stated, so the structured data leaves return fees out.
 
-- **Contact email mismatch:** the footer and the new page use info@studio9inc.com, but the order thank-you message on the home page says studio9inc@mac.com. Which should customers use?
+- ~~**Contact email mismatch**~~ Resolved: the order thank-you message now uses info@studio9inc.com, like the footer and the Shipping & Returns page.
 - **Reviews:** the structured data has no ratings or reviews, because the existing reviews are press quotes without ratings. If real customer ratings are collected later, they can be added.
 - **Manual check:** paste a few product URLs into Google's Rich Results Test (https://search.google.com/test/rich-results) after deploying. Amazon-only books and PDF-only modules have no price of ours, so they will not get price snippets; that is expected.
 
@@ -74,7 +74,7 @@ When the accounts exist: submit `https://studio9inc.com/feeds/google.xml` in Mer
 
 ## Server-side PayPal orders (Phase 5)
 
-The cart no longer tells PayPal what to charge. It sends item ids and quantities to `/api/orders`, which prices the order from the catalog (`lib/orders.ts`) and creates it with PayPal. After the buyer approves, `/api/orders/[id]/capture` checks that the order still matches the catalog and captures it. The shipping formula lives in one place, `lib/shipping.ts`, used by both the cart and the server. The cart no longer has a notes box. PayPal's current checkout gives sites no way to fill the seller's "Instructions to Merchant" field, and a sandbox test showed notes sent in other order fields don't appear on the seller's order page either. The cart now asks buyers to email info@studio9inc.com with any comments about their order.
+The cart no longer tells PayPal what to charge. It sends item ids and quantities to `/api/orders`, which prices the order from the catalog (`lib/orders.ts`) and creates it with PayPal. After the buyer approves, `/api/orders/[id]/capture` checks that the order still matches the catalog and captures it. The shipping formula lives in one place, `lib/shipping.ts`, used by both the cart and the server. The cart no longer has a notes box. PayPal's current checkout gives sites no way to fill the seller's "Instructions to Merchant" field, and a sandbox test showed notes sent in other order fields don't appear on the seller's order page either. The cart now invites buyers to reach out with any comments about their order.
 
 **Netlify environment variables** (Site configuration > Environment variables), each with a value per deploy context. The client created new PayPal apps (live and sandbox) for these:
 

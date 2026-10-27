@@ -220,6 +220,8 @@ test.describe('cart checkout', () => {
 
     await expect(page).toHaveURL(/\/\?message=Test$/);
     await expect(page.getByText(/Thank you Test, for ordering/)).toBeVisible();
+    await expect(page.getByRole('link', { name: 'info@studio9inc.com' }).first()).toHaveAttribute('href', 'mailto:info@studio9inc.com');
+    await expect(page.locator('a[href="mailto:studio9inc@mac.com"]')).toHaveCount(0);
 
     const order = await mockOrder(request, id);
     expect(order.status).toBe('COMPLETED');
@@ -228,13 +230,11 @@ test.describe('cart checkout', () => {
     expect(formPosts).toEqual([]);
   });
 
-  test('the cart invites comments by email instead of a notes box', async ({ page }) => {
+  test('the cart invites comments instead of a notes box', async ({ page }) => {
     await useFakePayPal(page);
     const product = getAllProducts().find((p) => p.sellDirect && p.availability === 'in_stock' && !p.variants.length)!;
     await addToCart(page, product.path);
-    const invite = page.locator('p', { hasText: 'Feel free to reach out to us with any comments about your order' });
-    await expect(invite).toBeVisible();
-    await expect(invite.getByRole('link', { name: 'info@studio9inc.com' })).toHaveAttribute('href', 'mailto:info@studio9inc.com');
+    await expect(page.getByText('Feel free to reach out to us with any comments about your order.')).toBeVisible();
     await expect(page.locator('textarea')).toHaveCount(0);
   });
 

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { MinusCircleIcon } from '@heroicons/react/24/outline'
 import GoldenEraLayout from '../components/goldenEraLayout';
 import { useRouter } from 'next/router';
@@ -16,6 +16,27 @@ export default function CartScreen() {
   const [isPaid, setIsPaid] = useState(false);  
   const [info, setInfo] = useState('');
   const [error, setError] = useState(null);
+  const handledAdd = useRef(null);
+
+  // /cart?add=<id>:<qty>[,<id>:<qty>] adds those items (after the saved cart
+  // has loaded), then the query is removed so a reload doesn't add them again.
+  const { add } = router.query;
+  useEffect(() => {
+    if (!router.isReady || !state.hydrated || typeof add !== 'string' || handledAdd.current === add) return;
+    handledAdd.current = add;
+    import('../lib/cartItems').then(({ itemsFromAddParam }) => {
+      dispatch({ type: 'CART_ADD_ITEMS', payload: itemsFromAddParam(add) });
+      router.replace('/cart', undefined, { shallow: true });
+    });
+  }, [router, router.isReady, state.hydrated, add, dispatch]);
+
+  // Once shown, the note about removed items goes away when the shopper moves on.
+  useEffect(() => {
+    // (Not on the shallow replace that removes ?add=.)
+    const clear = (url, { shallow }) => { if (!shallow) dispatch({ type: 'CART_NOTICE_CLEAR' }); };
+    router.events.on('routeChangeStart', clear);
+    return () => router.events.off('routeChangeStart', clear);
+  }, [router.events, dispatch]);
 
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
@@ -112,7 +133,17 @@ useEffect(() => {
           {error.details.length ? <ul className="list-disc pl-6">{error.details.map((d) => <li key={d}>{d}</li>)}</ul> : null}
         </div>
       ) : null}
-      {cartItems.length === 0 ? (
+      {state.cartNotice.length ? (
+        <div role="status" className="alert alert-warning my-4 block text-xl">
+          <p>We took {state.cartNotice.length === 1 ? 'an item' : 'some items'} out of your saved cart:</p>
+          <ul className="list-disc pl-6">
+            {state.cartNotice.map((d) => <li key={d.name}>{d.name} {d.reason}.</li>)}
+          </ul>
+        </div>
+      ) : null}
+      {!state.hydrated ? (
+        <div>Loading your cart…</div>
+      ) : cartItems.length === 0 ? (
         <div>
           Cart is empty.
         </div>

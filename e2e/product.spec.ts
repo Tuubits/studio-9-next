@@ -38,12 +38,21 @@ for (const [url] of products.filter(([, i]) => i.outOfStock)) {
   });
 }
 
+// Outbound buy links are named with the store they open (Phase 7), e.g.
+// "Purchase here on Amazon".
+const STORES: [RegExp, string][] = [[/(^|\.)amazon\./, 'Amazon'], [/(^|\.)drivethrurpg\.com$/, 'DriveThruRPG']];
+const linkName = (option: { name: string; link?: string }) => {
+  const host = new URL(option.link!).hostname;
+  const store = STORES.find(([pattern]) => pattern.test(host))![1];
+  return `${option.name} on ${store}`;
+};
+
 // Books sold only through an external store (Amazon) have no price.
 for (const book of books.filter((b) => b.price == null)) {
   test(`/books/${book.id} links out and has no add-to-cart`, async ({ page }) => {
     await page.goto(`/books/${book.id}`);
     for (const option of book.alternateBuyOptions!) {
-      await expect(page.getByRole('link', { name: option.name, exact: true })).toHaveAttribute('href', option.link!);
+      await expect(page.getByRole('link', { name: linkName(option), exact: true })).toHaveAttribute('href', option.link!);
     }
     await expect(page.getByRole('button', { name: /add to cart/i })).toHaveCount(0);
   });
@@ -53,7 +62,7 @@ test('Midnight Legion external links point to their URLs', async ({ page }) => {
   const game = games.find((g) => g.id === 'midnight-legion')!;
   await page.goto('/games/midnight-legion');
   for (const option of game.alternateBuyOptions!.filter((o) => o.link)) {
-    const link = page.getByRole('link', { name: option.name, exact: true });
+    const link = page.getByRole('link', { name: linkName(option), exact: true });
     await expect(link).toHaveAttribute('href', option.link!);
     await expect(link).toHaveAttribute('target', '_blank');
   }

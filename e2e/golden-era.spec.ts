@@ -15,7 +15,7 @@ for (const mod of modules) {
     await selectModule(page, mod.title);
     const card = moduleCard(page, mod.title);
     await expect(card).toHaveCount(1);
-    await expect(card.getByRole('link', { name: 'Purchase PDF Edition' })).toHaveAttribute('href', mod.driveThruLink!);
+    await expect(card.getByRole('link', { name: 'Purchase PDF Edition on DriveThruRPG', exact: true })).toHaveAttribute('href', mod.driveThruLink!);
 
     const addButtons = card.getByRole('button', { name: /^Add /i });
     if (mod.pdfOnly) {

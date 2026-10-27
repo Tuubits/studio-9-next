@@ -59,7 +59,7 @@ export default function ModuleCard({ product, layout = 'side', headingLevel = 'h
         <p>{product.description}</p>
         <div className="btn-group btn-group-vertical lg:btn-group-horizontal card-actions justify-end">
           {product.format === 'digital' ? null : !product.sellDirect && storeOffer ?
-            <Link href={storeOffer.url} target="_blank" rel="noreferrer" className={`${width} block text-center btn-secondary text-base-100 ${buttonClasses}`}>
+            <Link href={storeOffer.url} target="_blank" rel="noreferrer" aria-label={`${storeOffer.label} on ${storeOffer.seller}`} className={`${width} block text-center btn-secondary text-base-100 ${buttonClasses}`}>
               {storeOffer.label}
             </Link>
           : product.variants.length ?
@@ -82,7 +82,7 @@ export default function ModuleCard({ product, layout = 'side', headingLevel = 'h
             </button>
           }
           {pdfOffer ?
-            <Link href={pdfOffer.url} target="_blank" rel="noreferrer" className={`${width} block text-center btn-secondary text-base-100 ${buttonClasses}`}>
+            <Link href={pdfOffer.url} target="_blank" rel="noreferrer" aria-label={`${pdfOffer.label} on ${pdfOffer.seller}`} className={`${width} block text-center btn-secondary text-base-100 ${buttonClasses}`}>
               {pdfOffer.label}
             </Link>
           : null}

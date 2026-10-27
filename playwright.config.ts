@@ -44,6 +44,10 @@ export default defineConfig({
         PAYPAL_API_BASE: PAYPAL_MOCK,
         Paypal_secret_2026: 'mock-secret',
         Paypal_Client_2026: process.env.Paypal_Client_2026 || 'mock-client',
+        // The Store Sync cart API is on in tests, with the mock's signing keys.
+        // (e2e/merchant-cart.spec.ts checks the switched-off 404 by calling the handlers.)
+        STORE_SYNC_ENABLED: 'true',
+        PAYPAL_JWKS_URL: `${PAYPAL_MOCK}/__mock/jwks`,
       },
     },
   ],

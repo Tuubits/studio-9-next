@@ -1,6 +1,6 @@
 import { getProduct, getSellableItem } from './catalog';
 import { shippingFor } from './shipping';
-import type { Money, Order, OrderRequest } from './paypal';
+import type { Money, Order, OrderRequest, Shipping } from './paypal';
 
 // Builds PayPal orders from the catalog. The browser sends only item ids and
 // quantities; every price and the shipping come from here.
@@ -21,7 +21,11 @@ function rejectionReason(id: string) {
 }
 
 // Accepts a request body and returns either the order or what was wrong.
-export function buildOrder(body: unknown): { order: OrderRequest } | { error: string; rejected: Rejection[] } {
+// With a shipping address (Store Sync), PayPal ships to that address.
+export function buildOrder(
+  body: unknown,
+  shipTo?: Shipping,
+): { order: OrderRequest } | { error: string; rejected: Rejection[] } {
   const input = (body as { items?: unknown })?.items;
   if (!Array.isArray(input) || input.length === 0) return { error: 'The cart is empty.', rejected: [] };
 
@@ -60,9 +64,10 @@ export function buildOrder(body: unknown): { order: OrderRequest } | { error: st
             unit_amount: usd(cents(item.price)),
             category: 'PHYSICAL_GOODS',
           })),
+          ...(shipTo ? { shipping: shipTo } : {}),
         },
       ],
-      application_context: { shipping_preference: 'GET_FROM_FILE' },
+      application_context: { shipping_preference: shipTo ? 'SET_PROVIDED_ADDRESS' : 'GET_FROM_FILE' },
     },
   };
 }

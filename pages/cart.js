@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { MinusCircleIcon } from '@heroicons/react/24/outline'
 import GoldenEraLayout from '../components/goldenEraLayout';
 import { useRouter } from 'next/router';
@@ -15,8 +15,7 @@ export default function CartScreen() {
   } = state;
   const [isPaid, setIsPaid] = useState(false);  
   const [info, setInfo] = useState('');
-  const [message, setMessage] = useState('');
-  const formRef= useRef();
+  const [error, setError] = useState(null);
 
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
@@ -55,81 +54,46 @@ useEffect(() => {
     }
 }, [isPaid])
 
-const handleSubmit = (event) => {
-  const myForm = event.target;
-
-  const formData = new FormData(myForm);
-
-  formData.append('form-name', 'contact'); // This is necessary for Netlify to recognize the form submission
-  console.log('formData appended', formData);
-  fetch("/__forms.html", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-  })
-  .then(() => console.log("Form successfully submitted"))
-  .catch((error) => alert(error));
-}
-
-const handleButtonClick = () => {
-  if (formRef.current) {
-      const event = {
-        preventDefault: () => {},
-        target: formRef.current
-      };
-      handleSubmit(event);
-  }
-}
-
-const createOrder = async (data, actions, extraParams) => {
-  console.log('formref in createOrder', formRef)
-    const { shipping } = await extraParams;
-    const total = (Number(totalValue) + Number(shipping)).toFixed(2);
-  return await actions.order.create(
-    {
-      purchase_units: [{
-          amount: { 
-            value: total,
-            breakdown:{
-              item_total:{
-                currency_code: 'USD',
-                value: totalValue
-              },
-              shipping: {
-                currency_code: 'USD',
-                value: shipping,
-              },
-          }
-          },
-          items: cartItems.map((item) => ({
-            name: item.name,
-            quantity: item.quantity.toString(),
-            unit_amount: {
-              currency_code: "USD",
-              value: item.price.toFixed(2),
-            },
-          })),
-    }],
-    application_context: {
-      shipping_preference: 'GET_FROM_FILE',
-    },
-    }
-  )
-    .then((orderID) => {
-      return orderID;
+// The server prices the order from the catalog; send only ids and quantities.
+const createOrder = async () => {
+  setError(null);
+  const response = await fetch('/api/orders', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ items: cartItems.map((item) => ({ id: item.slug, quantity: item.quantity })) }),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    // Take items that can't be ordered (e.g. a module now sold only as a PDF) out of the cart.
+    const rejected = (data.rejected ?? []).map((r) => {
+      const item = cartItems.find((i) => i.slug === r.id);
+      if (item) dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
+      return `${item?.name ?? r.id}: ${r.reason}`;
     });
+    setError({
+      text: data.error ?? 'We couldn’t start the PayPal checkout. Please try again.',
+      details: rejected.length ? [...rejected, 'We removed these from your cart.'] : [],
+    });
+    throw new Error(data.error ?? `Creating the order failed (${response.status})`);
+  }
+  return data.id;
 }
 
 function onError(err) {
   console.error(err);
+  setError((current) => current ?? { text: 'Something went wrong with PayPal. Please try again.', details: [] });
 }
 
-const onApprove = (data, actions) => {
-  // Capture the payment and update the order status
-  return actions.order.capture().then(function(details) {
-    setIsPaid(true);
-    setInfo(details.payer.name.given_name);
-  });
+const onApprove = async (data, actions) => {
+  const response = await fetch(`/api/orders/${encodeURIComponent(data.orderID)}/capture`, { method: 'POST' });
+  const result = await response.json().catch(() => ({}));
+  if (result.restart) return actions.restart();
+  if (!response.ok) {
+    setError({ text: result.error ?? 'We couldn’t confirm your payment.', details: [] });
+    return;
+  }
+  setInfo(result.payerName ?? '');
+  setIsPaid(true);
 };
 
 useEffect(() => {
@@ -142,6 +106,12 @@ useEffect(() => {
         <Link className="btn btn-accent normal-case mb-4 text-xl" href={'/'}>Continue Shopping</Link>
       </div>
       <h1 className='font-bold text-2xl text-center'>PLEASE NOTE: We are unable to fulfill orders outside of the United States.</h1>
+      {error ? (
+        <div role="alert" className="alert alert-error my-4 block text-xl">
+          <p>{error.text}</p>
+          {error.details.length ? <ul className="list-disc pl-6">{error.details.map((d) => <li key={d}>{d}</li>)}</ul> : null}
+        </div>
+      ) : null}
       {cartItems.length === 0 ? (
         <div>
           Cart is empty.
@@ -203,25 +173,9 @@ useEffect(() => {
               </tbody>
             </table>
             <div>
-      <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" ref={formRef} data-netlify-honeypot='field-bot'>
-        <input type="hidden" name="form-name" value="contact" />
-        <div hidden>
-          <label>Do not fill this input<input name='field-bot' /></label>
-        </div>
-        <label htmlFor="message" className="block text-xl pt-6 font-bold leading-6 text-gray-900">
-          Add any details you would like us to know about your order:
-        </label>
-        <div className="mt-2">
-          <textarea
-            rows={4}
-            name="message"
-            id="message"
-            className="block w-full md:w-2/3 rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xl sm:leading-6"
-            onChange={(e) => setMessage(e.target.value)}
-            value={message}
-          />
-        </div>
-      </form>
+      <p className="pt-6 text-xl leading-6 text-gray-900">
+        Feel free to reach out to us with any comments about your order.
+      </p>
     </div>
           </div>
           <div className="card p-5">
@@ -235,12 +189,7 @@ useEffect(() => {
               <li>
                   <div className='w-full'>
                       <PayPalButtons
-                         createOrder={(data, actions) => {
-                          return(
-                            createOrder(data, actions, { shipping: state.shipping })
-                          )
-                        }}
-                        onClick={handleButtonClick}
+                        createOrder={createOrder}
                         onApprove={onApprove}
                         onError={onError}
                       >

@@ -13,6 +13,7 @@ module.exports = {
   },
   env: {
     // The PayPal client id is public; expose it to the browser.
-    PAYPAL_CLIENT: process.env.PAYPAL_CLIENT,
+    // Netlify and .env call it Paypal_Client_2026; the code reads PAYPAL_CLIENT.
+    PAYPAL_CLIENT: process.env.Paypal_Client_2026,
   },
 };

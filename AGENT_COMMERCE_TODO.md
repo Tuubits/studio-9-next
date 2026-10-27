@@ -10,7 +10,7 @@ Open items for the owners (Aaron/Lisa) and for later phases. Each phase adds to 
 ## Netlify changes needed before deploying Phase 1
 
 - **Next.js adapter.** Next 13.0 used Netlify's legacy Next runtime; Next 13.5+ uses the current adapter (OpenNext). It is zero-config (no `netlify.toml` needed). Netlify recommends not pinning its version. Confirm the deploy preview builds and the site works there.
-- **Netlify Forms moved.** The current adapter only detects forms in static HTML, so the `contact` and `mystery-room-challenge` forms are now defined in `public/__forms.html` and the pages POST to `/__forms.html`. Netlify fails the build with "@netlify/plugin-nextjs@5 requires migration steps to support Netlify Forms" if this is missing. **Test both forms on the deploy preview** (submit the mystery form; click a PayPal button in the cart with a note to send the `contact` form) and check the submissions appear in Netlify's Forms tab.
+- **Netlify Forms moved.** The current adapter only detects forms in static HTML, so the `mystery-room-challenge` form is now defined in `public/__forms.html` and the pages POST to `/__forms.html`. Netlify fails the build with "@netlify/plugin-nextjs@5 requires migration steps to support Netlify Forms" if this is missing. **Test it on the deploy preview** (submit the mystery form) and check the submission appears in Netlify's Forms tab. (The cart's notes box, which used the `contact` form, was removed in Phase 5.)
 - **Lightbox license.** `lightbox.js-react` was replaced by `yet-another-react-lightbox` (MIT, no key) because it has no working React 19 release. The lightbox.js license key is no longer used; cancel that subscription if there is one.
 
 ## Deferred upgrades
@@ -50,7 +50,7 @@ Still to supply:
 - Typical time to ship (handling days), optional; the page leaves it out for now. If added, it can also go in the shipping details in `lib/structuredData.ts`.
 - Who pays to send a defective item back, if it has to be sent back at all. Not stated, so the structured data leaves return fees out.
 
-- **Contact email mismatch:** the footer and the new page use info@studio9inc.com, but the order thank-you message on the home page says studio9inc@mac.com. Which should customers use?
+- ~~**Contact email mismatch**~~ Resolved: the order thank-you message now uses info@studio9inc.com, like the footer and the Shipping & Returns page.
 - **Reviews:** the structured data has no ratings or reviews, because the existing reviews are press quotes without ratings. If real customer ratings are collected later, they can be added.
 - **Manual check:** paste a few product URLs into Google's Rich Results Test (https://search.google.com/test/rich-results) after deploying. Amazon-only books and PDF-only modules have no price of ours, so they will not get price snippets; that is expected.
 
@@ -72,6 +72,27 @@ The build stops if a feed row is missing a required field. Needs Node 22.18 or n
 
 When the accounts exist: submit `https://studio9inc.com/feeds/google.xml` in Merchant Center, and give PayPal `https://studio9inc.com/feeds/paypal-store-sync.tsv` during Store Sync onboarding.
 
+## Server-side PayPal orders (Phase 5)
+
+The cart no longer tells PayPal what to charge. It sends item ids and quantities to `/api/orders`, which prices the order from the catalog (`lib/orders.ts`) and creates it with PayPal. After the buyer approves, `/api/orders/[id]/capture` checks that the order still matches the catalog and captures it. The shipping formula lives in one place, `lib/shipping.ts`, used by both the cart and the server. The cart no longer has a notes box. PayPal's current checkout gives sites no way to fill the seller's "Instructions to Merchant" field, and a sandbox test showed notes sent in other order fields don't appear on the seller's order page either. The cart now invites buyers to reach out with any comments about their order.
+
+**Netlify environment variables** (Site configuration > Environment variables), each with a value per deploy context. The client created new PayPal apps (live and sandbox) for these:
+
+| Variable | Production | Deploy previews | Secret? |
+| --- | --- | --- | --- |
+| `Paypal_Client_2026` | live client id | sandbox client id | No: it is public and built into the page, and Netlify's secrets scan would fail the build |
+| `Paypal_secret_2026` | live secret, same app as the live client id | sandbox secret, same app as the sandbox client id | Yes |
+| `PAYPAL_API_BASE` | `https://api-m.paypal.com` | `https://api-m.sandbox.paypal.com` | No |
+| `STORE_SYNC_ENABLED` | `false` until Store Sync is approved (Phase 6) | `false` | No |
+
+Names are case-sensitive and must match exactly. The code reads only these names; the old `PAYPAL_CLIENT` variable in Netlify is still used by the live site until this PR merges, and can be deleted after that. The client id, secret and API base in each context must come from the same environment (live or sandbox), or PayPal rejects the login.
+
+**Test on the deploy preview with sandbox credentials before merging:** add items, pay with a sandbox buyer account, and check that the order and amounts appear in the sandbox merchant account. Also try a Golden Era module variant and a mix of items to check shipping.
+
+API routes run as Netlify Functions through the Next adapter; no extra config is needed.
+
+Automated tests never reach PayPal: they run the site on port 3100 against a local mock (`e2e/paypal-mock.mjs`) and replace the PayPal button script with a stand-in.
+
 ## Observations
 
 - The cart page never shows the shipping charge; shoppers only see it in the PayPal window. The tests read shipping from the cart's React state. Consider showing it on the cart page (a visible change, so not in this work without approval).
@@ -81,5 +102,5 @@ When the accounts exist: submit `https://studio9inc.com/feeds/google.xml` in Mer
 ## Tests and CI
 
 - Visual baselines (`e2e/visual.spec.ts-snapshots/`) are local only and gitignored, because screenshots differ between machines. `visual.spec.ts` is skipped in CI and on any checkout without baselines; create them with `npm run test:e2e:update -- e2e/visual.spec.ts` on a known-good build (e.g. `main`) before changing UI code. The Golden Era page screenshot loads 15 large Cloudinary images and can fail on a very slow network; rerun it before treating a diff as real.
-- CI (`.github/workflows/e2e.yml`) reads an optional repository secret `PAYPAL_CLIENT`; without it the PayPal button test is skipped. Use a sandbox client id there. The Cloudinary cloud name is public and set in the workflow.
+- CI (`.github/workflows/e2e.yml`) reads an optional repository secret `PAYPAL_CLIENT` (passed to the tests as `Paypal_Client_2026`); without it the PayPal button test is skipped. Use a sandbox client id there. The Cloudinary cloud name is public and set in the workflow.
 - `npm run lint` runs ESLint directly (flat config in `eslint.config.mjs`). It passes with 6 warnings left in code not touched by this work (unused alternate banner components in `components/mutliBanner.tsx`, effect dependencies in `pages/cart.js`, which Phase 5 rewrites).

@@ -85,13 +85,44 @@ The cart no longer tells PayPal what to charge. It sends item ids and quantities
 | `PAYPAL_API_BASE` | `https://api-m.paypal.com` | `https://api-m.sandbox.paypal.com` | No |
 | `STORE_SYNC_ENABLED` | `false` until Store Sync is approved (Phase 6) | `false` | No |
 
-Names are case-sensitive and must match exactly. The code reads only these names; the old `PAYPAL_CLIENT` variable in Netlify is still used by the live site until this PR merges, and can be deleted after that. The client id, secret and API base in each context must come from the same environment (live or sandbox), or PayPal rejects the login.
+Names are case-sensitive and must match exactly. The code reads only these names. The old `PAYPAL_CLIENT` variable is no longer used and should be deleted: its stale value in Netlify's build cache failed the first production build after this phase merged (fixed with "Clear cache and deploy site"). The client id, secret and API base in each context must come from the same environment (live or sandbox), or PayPal rejects the login.
 
 **Test on the deploy preview with sandbox credentials before merging:** add items, pay with a sandbox buyer account, and check that the order and amounts appear in the sandbox merchant account. Also try a Golden Era module variant and a mix of items to check shipping.
 
 API routes run as Netlify Functions through the Next adapter; no extra config is needed.
 
 Automated tests never reach PayPal: they run the site on port 3100 against a local mock (`e2e/paypal-mock.mjs`) and replace the PayPal button script with a stand-in.
+
+## Store Sync cart API (Phase 6)
+
+Built and tested, but **switched off**: every route returns 404 unless `STORE_SYNC_ENABLED` is exactly `true`. Turn it on only after PayPal approves Store Sync and onboarding confirms the details below.
+
+- `POST /api/merchant-cart` creates a cart; `PUT /api/merchant-cart/{id}` replaces the whole cart; `POST /api/merchant-cart/{id}/checkout` captures payment. Code: `lib/merchantCart.ts`, `lib/storeSync.ts`, `pages/api/merchant-cart/`.
+- Prices and shipping come from the catalog, like website orders. The cart id and `payment_method.token` are the PayPal order id, so there is no database. If an order has expired when the cart is updated, a new order (and cart id) is returned.
+- Problems come back as `validation_issues` (cart `status: INCOMPLETE`): unknown item, out of stock, not sold on this site, PDF-only module, more than 10 of an item, non-US address. A cart with nothing buyable is a 422 with the issues in `details[].business_context`. Checkout needs a US shipping address and an order that matches today's catalog.
+- Every request must carry `Authorization: Bearer <JWT>` signed by PayPal. The site checks the signature against the keys at `PAYPAL_JWKS_URL`, the expiry, and (if set) the issuer and audience. No new dependency: Node's built-in crypto.
+- Store Sync orders carry the shopper's shipping address and items, so they appear in the PayPal account like any other sale. The plan's Netlify `agent-order` notification form was **not** built: order details now live in PayPal rather than Netlify (see the notes decision in Phase 5).
+
+**To confirm at Store Sync onboarding** (PayPal's Store Sync API docs are no longer public; the docs links in the plan now redirect to an overview page, and the full schema is shared during onboarding):
+
+1. The exact request and response field names: `variant_id`, `shipping_address` fields, `totals`, `payment_method`, `payment_confirmation`, and the `validation_issues` codes. The ones used here follow what PayPal published earlier.
+2. The JWKS URL, and the token issuer and audience.
+3. The base URL PayPal should call (e.g. `https://studio9inc.com/api/merchant-cart`).
+
+**Netlify variables for Store Sync** (`PAYPAL_JWKS_URL` already exists in Netlify):
+
+| Variable | Value | Secret? |
+| --- | --- | --- |
+| `STORE_SYNC_ENABLED` | `false` now; `true` once approved and confirmed | No |
+| `PAYPAL_JWKS_URL` | from PayPal onboarding | No |
+| `PAYPAL_JWT_ISSUER` | optional, from PayPal onboarding | No |
+| `PAYPAL_JWT_AUDIENCE` | optional, from PayPal onboarding | No |
+
+## Browser shoppers and agents (Phase 7)
+
+- **Saved cart:** the cart is saved in the browser (`localStorage`, key `studio9-cart`, ids, quantities and names only) and survives reloads. On load, each line is rebuilt from the catalog at today's price; anything that can no longer be bought here (out of stock, PDF-only, no longer sold) is removed and the cart page says what was removed and why.
+- **Add links:** `/cart?add=<id>:<qty>[,<id>:<qty>]` adds items (quantity defaults to 1, up to 10 each), then removes the query so a reload doesn't add them again. Ids that can't be bought here are skipped. Ids are the cart ids from the feeds, e.g. `/cart?add=treasures-and-traps:2,borderlands:1`; module variants use their variant id.
+- **Clearer controls:** outbound buy links name their store (e.g. "Purchase PDF Edition on DriveThruRPG", "Purchase here on Amazon"); out-of-stock buttons are really disabled; the mobile banner's arrow buttons are no longer inside its link, and its first line (which links nowhere) is no longer an empty link.
 
 ## Observations
 
@@ -103,4 +134,4 @@ Automated tests never reach PayPal: they run the site on port 3100 against a loc
 
 - Visual baselines (`e2e/visual.spec.ts-snapshots/`) are local only and gitignored, because screenshots differ between machines. `visual.spec.ts` is skipped in CI and on any checkout without baselines; create them with `npm run test:e2e:update -- e2e/visual.spec.ts` on a known-good build (e.g. `main`) before changing UI code. The Golden Era page screenshot loads 15 large Cloudinary images and can fail on a very slow network; rerun it before treating a diff as real.
 - CI (`.github/workflows/e2e.yml`) reads an optional repository secret `PAYPAL_CLIENT` (passed to the tests as `Paypal_Client_2026`); without it the PayPal button test is skipped. Use a sandbox client id there. The Cloudinary cloud name is public and set in the workflow.
-- `npm run lint` runs ESLint directly (flat config in `eslint.config.mjs`). It passes with 6 warnings left in code not touched by this work (unused alternate banner components in `components/mutliBanner.tsx`, effect dependencies in `pages/cart.js`, which Phase 5 rewrites).
+- `npm run lint` runs ESLint directly (flat config in `eslint.config.mjs`). It passes with 6 warnings left in code not touched by this work (unused alternate banner components in `components/mutliBanner.tsx`, and an effect's dependencies in `pages/cart.js`).

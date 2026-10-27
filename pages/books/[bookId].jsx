@@ -6,6 +6,7 @@ import BookLayout from '../../components/bookLayout';
 import { Store } from '../../utils/Store';
 import { getProduct, getProductsByCategory, getSourceRecord } from '../../lib/catalog';
 import JsonLd, { productJsonLd } from '../../components/JsonLd';
+import { sellerLabel } from '../../components/sellerLabel';
 import YouTube from 'react-youtube';
 
 function BookDetails(props){
@@ -51,12 +52,14 @@ function BookDetails(props){
                     <a key={index}
                         className={`${i.addToCart ? '' : 'btn-secondary'} text-base-100 block px-6 py-3 btn-primary w-full items-center rounded-md border-2 border-transparent text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
                         href={i.link} target="_blank" rel="noreferrer"
+                        aria-label={sellerLabel(props.product, i)}
                     >
                             {i.name}</a>
                     ))
                 :
                 <button
                 className={`${props.bookDetails.outOfStock ? 'btn-disabled text-gray-700' : 'btn-primary'} w-full items-center rounded-md border-2 border-transparent px-6 py-3 text-lg font-medium shadow-sm focus:outline-none focus:ring-2`}
+                disabled={!!props.bookDetails.outOfStock}
                 onClick={props.bookDetails.outOfStock ? null : addToCartHandler}
                 >
                 {props.bookDetails.outOfStock ? 'Out of Stock': 'Add to cart'}

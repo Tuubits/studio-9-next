@@ -67,13 +67,29 @@ async function call<T>(method: string, path: string, body?: unknown, requestId?:
 
 export type Money = { currency_code: 'USD'; value: string };
 
+export type Address = {
+  address_line_1?: string;
+  address_line_2?: string;
+  admin_area_2?: string; // city
+  admin_area_1?: string; // state
+  postal_code?: string;
+  country_code: string;
+};
+
+export type Shipping = { name?: { full_name: string }; address: Address };
+
+export type OrderItem = { name: string; sku: string; quantity: string; unit_amount: Money; category: 'PHYSICAL_GOODS' };
+
 export type OrderRequest = {
   intent: 'CAPTURE';
   purchase_units: {
     amount: Money & { breakdown: { item_total: Money; shipping: Money } };
-    items: { name: string; sku: string; quantity: string; unit_amount: Money; category: 'PHYSICAL_GOODS' }[];
+    items: OrderItem[];
+    shipping?: Shipping;
   }[];
-  application_context: { shipping_preference: 'GET_FROM_FILE' };
+  // The website lets the buyer pick an address in PayPal; Store Sync orders
+  // carry the address the shopping agent sent.
+  application_context: { shipping_preference: 'GET_FROM_FILE' | 'SET_PROVIDED_ADDRESS' };
 };
 
 export type Order = OrderRequest & {

@@ -11,7 +11,7 @@ for (const mod of modules) {
     await page.goto(`/golden-era-gaming/${mod.id}`);
     await expect(page.getByRole('heading', { level: 1, name: mod.title, exact: true })).toBeVisible();
     await expect(page).toHaveTitle(new RegExp(mod.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
-    await expect(page.getByRole('link', { name: 'Purchase PDF Edition' })).toHaveAttribute('href', mod.driveThruLink!);
+    await expect(page.getByRole('link', { name: 'Purchase PDF Edition on DriveThruRPG', exact: true })).toHaveAttribute('href', mod.driveThruLink!);
     await expect(page.getByRole('link', { name: /All Golden Era modules/ })).toHaveAttribute('href', '/golden-era-gaming');
 
     if (mod.pdfOnly) {

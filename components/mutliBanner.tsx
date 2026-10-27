@@ -45,12 +45,9 @@ const MultiLinkBanner = () => {
     <div className="relative">
       {/* Mobile Banner - Carousel Style */}
       <div className="md:hidden bg-success text-white text-xl">
-        <a 
-          href={links[currentIndex].url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-between p-3 transition-colors"
-        >
+        {/* The arrows sit beside the link, not inside it: a button inside a
+            link is invalid HTML and confuses screen readers and browsing agents. */}
+        <div className="flex items-center justify-between p-3 transition-colors">
           <button
             onClick={goToPrevious}
             className="p-1 rounded"
@@ -59,9 +56,20 @@ const MultiLinkBanner = () => {
             <ChevronLeft size={20} />
           </button>
           
-          <div className="flex-1 text-center px-2">
-            <p className="font-bold text-xl">{links[currentIndex].text}</p>
-          </div>
+          {links[currentIndex].url ? (
+            <a
+              href={links[currentIndex].url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-center px-2"
+            >
+              <p className="font-bold text-xl">{links[currentIndex].text}</p>
+            </a>
+          ) : (
+            <div className="flex-1 text-center px-2">
+              <p className="font-bold text-xl">{links[currentIndex].text}</p>
+            </div>
+          )}
           
           <button
             onClick={goToNext}
@@ -70,7 +78,7 @@ const MultiLinkBanner = () => {
           >
             <ChevronRight size={20} />
           </button>
-        </a>
+        </div>
         
         {/* Dots indicator */}
         <div className="flex justify-center pb-2 gap-1">
@@ -91,17 +99,23 @@ const MultiLinkBanner = () => {
       <div className="hidden md:block bg-success text-white text-xl">
         <div className="flex items-center">
           <div className="flex-1 flex">
-            {links.map((link, index) => (
-              <a
-                key={index}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 p-3 text-center border-r border-neutral last:border-r-0"
-              >
-                <p className="font-bold text-base lg:text-lg">{link.text}</p>
-              </a>
-            ))}
+            {links.map((link, index) =>
+              link.url ? (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 p-3 text-center border-r border-neutral last:border-r-0"
+                >
+                  <p className="font-bold text-base lg:text-lg">{link.text}</p>
+                </a>
+              ) : (
+                <div key={index} className="flex-1 p-3 text-center border-r border-neutral last:border-r-0">
+                  <p className="font-bold text-base lg:text-lg">{link.text}</p>
+                </div>
+              ),
+            )}
           </div>
           
           {/* Close button */}
